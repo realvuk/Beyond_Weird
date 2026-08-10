@@ -1,0 +1,196 @@
+{
+  "topics": [
+    {
+      "topic_id": "pair01_serbian",
+      "pair_id": 1,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair01_serbian_p1",
+        "pair01_serbian_p2",
+        "pair01_serbian_p3",
+        "pair01_serbian_p4",
+        "pair01_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair01_weird",
+      "pair_id": 1,
+      "arm": "weird",
+      "gold_ids": [
+        "pair01_weird_p1",
+        "pair01_weird_p2",
+        "pair01_weird_p3",
+        "pair01_weird_p4",
+        "pair01_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair02_serbian",
+      "pair_id": 2,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair02_serbian_p1",
+        "pair02_serbian_p2",
+        "pair02_serbian_p3",
+        "pair02_serbian_p4",
+        "pair02_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair02_weird",
+      "pair_id": 2,
+      "arm": "weird",
+      "gold_ids": [
+        "pair02_weird_p1",
+        "pair02_weird_p2",
+        "pair02_weird_p3",
+        "pair02_weird_p4",
+        "pair02_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair03_serbian",
+      "pair_id": 3,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair03_serbian_p1",
+        "pair03_serbian_p2",
+        "pair03_serbian_p3",
+        "pair03_serbian_p4",
+        "pair03_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair03_weird",
+      "pair_id": 3,
+      "arm": "weird",
+      "gold_ids": [
+        "pair03_weird_p1",
+        "pair03_weird_p2",
+        "pair03_weird_p3",
+        "pair03_weird_p4",
+        "pair03_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair04_serbian",
+      "pair_id": 4,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair04_serbian_p1",
+        "pair04_serbian_p2",
+        "pair04_serbian_p3",
+        "pair04_serbian_p4",
+        "pair04_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair04_weird",
+      "pair_id": 4,
+      "arm": "weird",
+      "gold_ids": [
+        "pair04_weird_p1",
+        "pair04_weird_p2",
+        "pair04_weird_p3",
+        "pair04_weird_p4",
+        "pair04_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair05_serbian",
+      "pair_id": 5,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair05_serbian_p1",
+        "pair05_serbian_p2",
+        "pair05_serbian_p3",
+        "pair05_serbian_p4",
+        "pair05_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair05_weird",
+      "pair_id": 5,
+      "arm": "weird",
+      "gold_ids": [
+        "pair05_weird_p1",
+        "pair05_weird_p2",
+        "pair05_weird_p3",
+        "pair05_weird_p4",
+        "pair05_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair06_serbian",
+      "pair_id": 6,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair06_serbian_p1",
+        "pair06_serbian_p2",
+        "pair06_serbian_p3",
+        "pair06_serbian_p4",
+        "pair06_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair06_weird",
+      "pair_id": 6,
+      "arm": "weird",
+      "gold_ids": [
+        "pair06_weird_p1",
+        "pair06_weird_p2",
+        "pair06_weird_p3",
+        "pair06_weird_p4",
+        "pair06_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair07_serbian",
+      "pair_id": 7,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair07_serbian_p1",
+        "pair07_serbian_p2",
+        "pair07_serbian_p3",
+        "pair07_serbian_p4",
+        "pair07_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair07_weird",
+      "pair_id": 7,
+      "arm": "weird",
+      "gold_ids": [
+        "pair07_weird_p1",
+        "pair07_weird_p2",
+        "pair07_weird_p3",
+        "pair07_weird_p4",
+        "pair07_weird_p5"
+      ]
+    },
+    {
+      "topic_id": "pair08_serbian",
+      "pair_id": 8,
+      "arm": "serbian",
+      "gold_ids": [
+        "pair08_serbian_p1",
+        "pair08_serbian_p2",
+        "pair08_serbian_p3",
+        "pair08_serbian_p4",
+        "pair08_serbian_p5"
+      ]
+    },
+    {
+      "topic_id": "pair08_weird",
+      "pair_id": 8,
+      "arm": "weird",
+      "gold_ids": [
+        "pair08_weird_p1",
+        "pair08_weird_p2",
+        "pair08_weird_p3",
+        "pair08_weird_p4",
+        "pair08_weird_p5"
+      ]
+    }
+  ]
+}

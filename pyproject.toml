@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bweird"
+version = "1.0.0"
+description = "Beyond WEIRD: benchmarking perspective coverage of LLMs on Serbian sociopolitical topics"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.12",        # wilcoxon(method="exact") and PermutationMethod
+    "statsmodels>=0.14",  # mixed-effects robustness model
+    "requests>=2.31",     # OpenRouter HTTP client
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.10",
+    "pandas-stubs>=2.1",
+    "scipy-stubs>=1.12",
+    "types-requests>=2.31",
+    "ruff>=0.4",
+]
+figures = ["matplotlib>=3.8"]
+
+[tool.setuptools]
+packages = ["bweird"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+# The strict-typed core is the library and the two API stages. The numbered
+# analysis stages and the reanalysis pack are unannotated pandas code and are
+# deliberately outside it.
+files = [
+    "bweird/checkpoint.py",
+    "bweird/config.py",
+    "bweird/errors.py",
+    "bweird/logging_utils.py",
+    "bweird/openrouter.py",
+    "bweird/parsing.py",
+    "bweird/prompts.py",
+    "bweird/schemas.py",
+    "pipeline/1_generate_perspectives.py",
+    "pipeline/2_judge_panel.py",
+]
+
+[[tool.mypy.overrides]]
+module = ["statsmodels.*"]
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["_archive"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "N", "D"]
+pydocstyle = { convention = "google" }
+
+[tool.ruff.lint.per-file-ignores]
+# Prompt templates are verbatim model-facing text; wrapping would change them.
+"bweird/prompts.py" = ["E501"]
+# The reanalysis pack is a deliberately standalone, independently-written
+# corroboration of the pipeline. It is linted for correctness (F, B, E7/E9) but
+# not restyled to house conventions -- rewriting it would weaken the
+# independence that is the whole reason to ship it.
+"reanalysis/*.py" = ["D", "I", "N", "UP", "E501", "E701", "E702"]
+# Analysis stages: terse numeric code, documented in the README's method notes.
+"pipeline/[3-6]_*.py" = ["D"]
+"pipeline/adapter.py" = ["D"]
+# One-off operational scripts, written compactly on purpose. Correctness rules
+# still apply; layout rules do not.
+"annotation/*.py" = ["D", "E501", "E701", "E702", "N806"]
+"verify/reverify.py" = ["D", "E501", "E701", "E702", "N806", "N817"]
+"figures/*.py" = ["D", "E501", "N806"]

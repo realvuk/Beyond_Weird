@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+
+# Local working material, not part of the published record
+_archive/
+
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+
+# Tool caches
+.mypy_cache/
+.ruff_cache/
+
+# macOS
+.DS_Store
+
+# Local editor/tool state
+.claude/settings.local.json

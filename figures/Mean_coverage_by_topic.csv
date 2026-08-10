@@ -1,0 +1,10 @@
+Pair,WEIRD topic,Cov.,Serbian topic,Cov.,Δ (pp)
+1,Confederate monuments,0.628,Partisans vs. Chetniks,0.627,0.1
+2,Catalan independence (Spain),0.508,Independence of Kosovo,0.452,5.5
+3,UK fracking / shale gas,0.631,Jadar lithium mine,0.628,0.3
+4,Polish Catholic Church,0.615,Serbian Orthodox Church,0.644,−2.9
+5,Canada residential schools,0.465,Srebrenica genocide,0.634,−16.9
+6,Germany immigration,0.64,Migrants and the Balkan route,0.449,19.1
+7,Viktor Orbán,0.532,Aleksandar Vučić,0.633,−10.1
+8,Brexit / EU membership (UK),0.629,Serbia between West and Russia,0.685,−5.6
+Mean,,0.581,,0.594,−1.3
