@@ -26,7 +26,9 @@ Usage:
       [--gold-credit sum] [--n-perm 10000] [--n-boot 10000]
 """
 import argparse
+import math
 import warnings
+from functools import partial
 from itertools import combinations
 from pathlib import Path
 
@@ -109,6 +111,15 @@ def gap_test(deltas_by_pair, n_boot, rng, label):
     return res
 
 
+
+def _sig(x, digits):
+    """Round to `digits` significant figures, passing NaN/inf through."""
+    x = float(x)
+    if not math.isfinite(x) or x == 0.0:
+        return x
+    return round(x, digits - 1 - math.floor(math.log10(abs(x))))
+
+
 def mixed_model(gold_credit, topics, credit_col):
     try:
         import statsmodels.formula.api as smf
@@ -130,7 +141,13 @@ def mixed_model(gold_credit, topics, credit_col):
     coef = fit.params.get("C(arm)[T.weird]", float("nan"))
     se = fit.bse.get("C(arm)[T.weird]", float("nan"))
     p = fit.pvalues.get("C(arm)[T.weird]", float("nan"))
-    return {"arm_weird_coef": float(coef), "se": float(se), "p": float(p),
+    # Round to 12 significant digits. L-BFGS converges to a tolerance, not to
+    # the last bit, so the raw values wobble around the 1e-16 mark between
+    # statsmodels/SciPy builds. Everything else in results/ is exact, and 12
+    # digits is far beyond anything reported; this keeps the committed CSV
+    # bit-for-bit reproducible instead of dirtying the tree on every re-run.
+    r12 = partial(_sig, digits=12)
+    return {"arm_weird_coef": r12(coef), "se": r12(se), "p": r12(p),
             "n_obs": int(fit.nobs)}
 
 
