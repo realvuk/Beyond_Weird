@@ -1,0 +1,99 @@
+                                     Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1000   the data under the interval’s assumptions. Eight         7   Conclusion                                        1050
+1001   investigator-selected pairs provide limited statisti-                                                          1051
+                                                                Across eight matched WEIRD-Serbian topic pairs
+1002   cal resolution and do not represent a random sam-                                                              1052
+                                                                and 13 generators, we did not detect the predicted
+1003   ple of cultural controversies. We therefore report                                                             1053
+                                                                WEIRD recall advantage. Differences between in-
+1004   no detectable WEIRD advantage, not equivalent                                                                  1054
+                                                                dividual pairs were much larger than the pooled
+1005   coverage. Alternative intervals and an illustrative                                                            1055
+                                                                difference, and coverage remained incomplete in
+1006   sensitivity calculation appear in Appendix D.1.                                                                1056
+                                                                both settings and varied across models and con-
+1007                                                                                                                  1057
+       6.4   Serbia is one non-WEIRD setting                    troversies. The main methodological implication
+1008                                                                                                                  1058
+                                                                is to measure perspective coverage directly, using
+1009   The Serbian controversies studied here are Euro-                                                               1059
+                                                                comparisons that account for topic selection and
+1010
+       pean, relatively well documented, and often dis-                                                               1060
+                                                                examining which perspectives are omitted on par-
+1011
+       cussed in multilingual or internationally indexed                                                              1061
+                                                                ticular controversies.
+1012
+       sources. They represent one non-WEIRD setting.                                                                 1062
+       The findings cannot be generalised to all non-           8   Data and code availability
+1013                                                                                                                  1063
+       WEIRD populations. Larger coverage gaps may
+1014                                                            The final repository or archival identifier will be   1064
+       occur in less documented societies, lower-resource
+1015                                                            added before submission.                              1065
+       languages, or political contexts with less interna-
+1016                                                                                                                  1066
+       tional attention. Matched comparisons involving
+1017                                                            9   Acknowledgments                                   1067
+       additional populations are needed to test this pos-
+1018                                                                                                                  1068
+       sibility.                                                This paper was produced as part of the Datavysts
+1019                                                            MSCA network, funded by Horizon Europe [grant         1069
+1020   6.5   The paper tests direct elicitation at one          number 101169037] and UK Research and Inno-           1070
+1021         point in time                                      vation (UKRI) under the UK government’s Hori-         1071
+1022   We explicitly asked models for diverse perspec-          zon Europe funding Guarantee [grant number            1072
+1023   tives. The benchmark therefore measures recovery         EP/Z536581/1].                                        1073
+1024   under direct elicitation, rather than the perspec-                                                             1074
+1025   tives models would spontaneously include in or-                                                                1075
+1026   dinary conversation. All prompts were in English,        References                                            1076
+1027   holding elicitation and judging language constant        Dalia Ali, Dora Zhao, Allison Koenecke, and           1077
+1028   across settings. The study does not test Serbian-          Orestis Papakyriakopoulos. 2025. Operational-       1078
+1029   language or multilingual prompting, which may              izing Pluralistic Values in Large Language          1079
+1030   produce different coverage patterns.                       Model Alignment Reveals Trade-offs in Safety,       1080
+1031      The results also reflect one snapshot of chang-         Inclusivity, and Model Behavior.                    1081
+1032   ing model systems. Rankings may change as                                                                      1082
+       those systems are updated. The matched design            Valerio Basile, Michael Fell, Tommaso Fornaciari,
+1033                                                                                                                  1083
+       is intended to remain useful beyond the evaluated          Dirk Hovy, Silviu Paun, Barbara Plank, Mas-
+1034                                                                                                                  1084
+       model versions.                                            simo Poesio, and Alexandra Uma. 2021. We
+1035                                                                                                                  1085
+                                                                  Need to Consider Disagreement in Evaluation.
+1036   6.6   Structural matching reduces but does not                                                                 1086
+                                                                  In Proceedings of the 1st Workshop on Bench-
+1037         eliminate topic confounding                                                                              1087
+                                                                  marking: Past, Present and Future, pages 15–
+1038                                                              21, Online. Association for Computational Lin-      1088
+       The pairs share broad political structures, but may
+1039                                                              guistics.                                           1089
+       differ in documentation, historical depth, polarisa-
+1040                                                                                                                  1090
+       tion, and training-data prevalence. Matching im-
+1041                                                            Chun-Wei Chiang, Zhuoran Lu, Zhuoyan Li,              1091
+       proves the interpretability of the comparison with-
+1042
+                                                                  and Ming Yin. 2024.             Enhancing AI-       1092
+       out experimentally isolating cultural setting. It
+1043
+                                                                  Assisted Group Decision Making through              1093
+       was investigator-guided rather than based on a pre-
+1044
+                                                                  LLM-Powered Devil’s Advocate.          In Pro-      1094
+       specified quantitative rule, and alternative pairings
+                                                                  ceedings of the 29th International Conference
+1045   may be defensible.                                                                                             1095
+                                                                  on Intelligent User Interfaces, pages 103–119,
+1046      Releasing the topic definitions, matching ratio-                                                            1096
+                                                                  Greenville SC USA. ACM.
+1047   nales, reference perspectives, and their supporting                                                            1097
+1048   sources will allow others to inspect these choices       Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jil-       1098
+1049   and test alternative pairings.                             lian Fisher, Chan Young Park, Yejin Choi, and       1099
+
+
+
+
+                                                               11

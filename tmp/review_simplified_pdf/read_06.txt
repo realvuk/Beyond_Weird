@@ -1,0 +1,91 @@
+mapped back to the original identifiers. The design requires 25 decisions per model-topic response, or 5,200 in total. After retries, 5,184 decisions are valid: 1,024 outputs have five judgments
+and 16 have four. Failed calls are missing data. A
+valid no-match decision remains in the calculation
+and earns zero credit (Appendix C.6).
+3.3.3
+Rm =
+From assignments to recall
+Recall measures the proportion of the five reference perspectives recovered by a model’s five outputs. A repeated match does not recover an additional reference. We calculate recall in three steps.
+t=1
+.
+(2)
+Step 1: calculate recall for one judge. In the
+worked example (Tables 2 and 12), Claude Sonnet 5 assigns GPT 5.5’s five outputs to references
+2, 2, 1, 5, and 1. These assignments recover
+three distinct references, so this judge’s recall is
+3/5 = 0.60. All five outputs match a reference,
+but they cover only three. Precision counts matching outputs; recall counts distinct references recovered.
+W
+S
+dmp = Rmp
+− Rmp
+.
+(3)
+Positive differences favour the WEIRD topic. We
+then average the 13 model differences within each
+pair:
+1 X
+∆p =
+dmp .
+(4)
+m=1
+Step 2: combine the judges for one model and
+topic. Let m identify the model, t the topic, and
+j the judge. Write Rmtj for recall calculated from
+judge j’s assignments. When all five judges supply valid decisions for all five outputs, model-topic
+recall is their mean:
+1X
+Rmt =
+Rmtj .
+(1)
+j=1
+In the example, the five recalls are 0.60, 0.60,
+0.60, 0.60, and 0.40, giving Rmt = 0.56. Judges
+need not agree on which references were recovered; there is no majority-vote threshold.
+When judgments are missing, the available
+judges can differ between outputs. The calculation therefore splits duplicate matches within each
+judge, averages the resulting credits over valid
+judges for each output, and caps each reference’s
+total credit at one. Appendix C.3 gives the exact
+equations, which reduce to Eq. 1 for complete panels. Every output has at least four valid judgments.
+A missing judgment is excluded; a valid no-match
+decision remains and earns zero credit.
+Step 3: summarise a model across topics. We
+give each topic equal weight. Overall recall averages the 16 model-topic scores; WEIRD and Ser-
+3.3.4 Comparisons and statistical analysis
+RQ1: compare the eight matched pairs. For
+each model m and matched pair p, we subtract
+Serbian recall from WEIRD recall:
+Rmt =
+W
+S
+Rm + Rm
+on WEIRD and Serbian topics. To describe a topic
+across models, we instead average its scores over
+the 13 generators. Precision and F1 are defined in
+Appendix C.4 and reported in Appendix E.2.
+1 X
+W
+S
+Here, Rm and Rm denote the model’s mean recall
+bian recall each average eight:
+The primary analysis therefore uses eight pairlevel differences. We report their mean and a 95%
+t-based confidence interval with seven degrees of
+freedom. This interval assumes independent, approximately normally distributed pair-level differences. We test the hypothesised positive shift using an exact one-sided Wilcoxon signed-rank test,
+which assumes independent differences and symmetry under the null. The interval describes the
+arithmetic mean; the signed-rank test assesses a
+directional shift. The 104 model-pair differences
+are not independent replications. Supplementary
+calculations appear in Appendix D.
+RQ2: describe models and compare categories.
+We report overall, WEIRD, and Serbian recall for
+each model. For category comparisons, we first
+average the two topics within each matched pair
+and then average across models within each category, giving models equal weight. We compare
+the three categories pairwise and compare Frontier with all eight open-weight models combined.
+Individual-model intervals and pairwise tests are
+supplementary.
+RQ3: compare developer groups. We compare
+eight models from US developers with four from
+Chinese developers, weighting models equally
+within each group. Mistral is excluded only from

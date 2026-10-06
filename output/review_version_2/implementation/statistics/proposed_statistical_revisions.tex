@@ -1,0 +1,38 @@
+% Paste-ready blocks for the manuscript editor; this file is not a standalone paper.
+% Original estimates, original procedures, and original intervals are retained.
+
+% APPENDIX D.6: replace the current pairwise-model-comparisons subsection body.
+Pairwise model tests compare recall across the $16$ topics. For models $a$ and $b$, let $d_i=R_{a,i}-R_{b,i}$ for topic $i$. The observed statistic is
+\[
+T_{\mathrm{obs}}=\frac{1}{16}\sum_{i=1}^{16}d_i.
+\]
+The original analysis samples $10{,}000$ random sign vectors $s_i\in\{-1,+1\}$ and computes $T_s=16^{-1}\sum_i s_i d_i$. Its two-sided Monte Carlo $p$-value is
+\[
+p=\frac{1+\#\{|T_s|\geq|T_{\mathrm{obs}}|\}}{10{,}001}.
+\]
+The random-number generator is initialized with seed $42$, and Benjamini--Hochberg adjustment is applied jointly to the $78$ model comparisons. This procedure treats individual topics as the sign-flip units and assumes that their joint null distribution permits independent sign changes. It yields $15$ adjusted $p$-values below $0.05$. Exhaustive enumeration of all $2^{16}=65{,}536$ topic-level sign assignments also yields $15$ such comparisons, although the individual $p$-values differ from their Monte Carlo estimates.
+
+To check sensitivity to dependence within matched pairs, we retain both cultural arms of each pair as one block. For pair $p$, the model contrast is
+\[
+x_{ab,p}=\frac{R^{\mathrm W}_{ap}+R^{\mathrm S}_{ap}}{2}
+         -\frac{R^{\mathrm W}_{bp}+R^{\mathrm S}_{bp}}{2}.
+\]
+Its mean across the eight pairs equals the original overall-recall difference. We enumerate all $2^8=256$ pair-level sign assignments and calculate the two-sided tail proportion, including values within $10^{-12}$ of the observed absolute statistic to accommodate floating-point rounding. This sensitivity analysis assumes independent, sign-exchangeable pair-level contrasts and holds the selected models fixed. After Benjamini--Hochberg adjustment across the same $78$ comparisons, none has an adjusted $p<0.05$; the smallest adjusted value is $0.087$. Thus, the significance of individual model differences is sensitive to the treatment of matched topics. The original and sensitivity results are reported together in \path{supplementary/pair_blocked_model_comparisons.csv}.
+
+% RESULTS RQ2: replace the standalone sentence claiming 15 significant pairs.
+In the original tests treating the $16$ topics as sign-flip units, $15$ of the $78$ pairwise model comparisons remain significant after Benjamini--Hochberg adjustment. When each matched topic pair is retained as one block, none remains significant (minimum adjusted $p=0.087$; Appendix~\ref{app:model_pair_tests}). The significance of individual model differences therefore depends on the treatment of the matched topics.
+
+% RESULTS RQ3: delete the repeated 15-of-78 sentence; it belongs only in RQ2.
+% Add the following after the initial US/China group means.
+The US-minus-China difference is $-0.030$, or $-3.0$ percentage points (95\% pair-bootstrap CI: $-4.8$ to $-1.3$ points).
+
+% APPENDIX D.1: change ``The reported primary interval'' to
+% ``The pair-bootstrap interval'' for [-0.08096, 0.05823].
+% Add after the description of the original 16-topic model intervals.
+As a sensitivity analysis, we also calculate model-recall intervals by resampling the eight matched pairs, retaining both cultural arms of each sampled pair. We use $10{,}000$ percentile-bootstrap resamples with seed $42$. For a model, the mean of its eight pair averages equals its mean across the $16$ topics, so the point estimate is unchanged. The paired intervals are wider for six models and narrower for seven; neither resampling scheme uniformly gives wider intervals. Both sets are supplied in \path{supplementary/model_recall_interval_sensitivity.csv}. These intervals condition on the selected model and describe variation across the benchmark topics; they do not include repeated-generation uncertainty or establish representativeness of the selected controversies.
+
+% APPENDIX D.1: replace the existing power sentences with this block.
+For an illustrative one-sided one-sample $t$ test, we calculate power from the noncentral $t$ distribution with seven degrees of freedom and the observed between-pair SD. Under a normal location model for independent pair-level gaps, a five-point WEIRD advantage gives 32\% power, and 80\% power requires an advantage of 10.5 points. These are sensitivity values for hypothetical effects under that $t$-test model, not power estimates for the primary exact Wilcoxon signed-rank test or power at the observed effect. The $t$ interval and upper bound also rely on the normal location model; with only eight pairs, those assumptions cannot be strongly assessed from these data.
+
+% LIMITATIONS: replace the sentence beginning ``Given this between-pair variation''.
+An illustrative one-sided one-sample $t$-test calculation, using a normal location model and the observed between-pair SD, gives approximately 32\% power for a five-point WEIRD advantage and 80\% power for an advantage of about 10.5 points. These values describe that $t$-test approximation, not the power of the primary signed-rank test. We therefore report no detectable WEIRD advantage, not equality between settings.

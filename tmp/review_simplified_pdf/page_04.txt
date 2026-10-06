@@ -1,0 +1,91 @@
+                                         Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+300                                                                                                                            350
+      Table 1: The eight matched topic pairs. Parentheses in the WEIRD column identify the country used in the
+301                                                                                                                            351
+      reference-population prompt. All Serbian topics use the population “people in Serbia”; WEIRD topics use “people
+302   in” the indicated country. Pairing concerns the political dispute, not historical equivalence.                           352
+303                                                                                                                            353
+      Pair      WEIRD topic                         Serbian topic                         Matching rationale
+304                                                                                                                            354
+305        1    Confederate monuments (United       Partisans and Chetniks                Public memory of opposing sides      355
+                States)                                                                   in a civil war
+306                                                                                                                            356
+           2    Catalan independence (Spain)        Kosovo independence                   Secession and territorial
+307                                                                                                                            357
+                                                                                          sovereignty
+308                                                                                                                            358
+           3    Fracking / shale gas (United        Jadar lithium mine / Rio Tinto        Economic benefits and
+309             Kingdom)                                                                  environmental risks                  359
+310        4    Catholic Church (Poland)            Serbian Orthodox Church               Secularisation and the role of the   360
+311                                                                                       church                               361
+312        5    Residential schools (Canada)        Srebrenica                            Public debate concerning             362
+313                                                                                       genocide                             363
+314        6    Immigration after 2015              Migrants and the Balkan route         Migration policy                     364
+                (Germany)
+315                                                                                                                            365
+           7    Viktor Orbán (Hungary)              Aleksandar Vučić                    Democratic leadership and
+316                                                                                                                            366
+                                                                                          authoritarian governance
+317                                                                                                                            367
+           8    Brexit / EU membership (United      Serbia’s West-Russia alignment        Foreign-policy alignment
+318             Kingdom)                                                                                                       368
+319                                                                                                                            369
+320                                                                                                                            370
+321                                                                    seeing the references. Second, five judges inde-        371
+      Table 2: Reference summaries for UK fracking, repro-
+322   duced from the benchmark. The target population is               pendently match each generated perspective to a         372
+323   “people in the United Kingdom”. Each record also con-            reference or return no match. Third, we calcu-          373
+324   tains an explanation.                                            late recall from these assignments for each model       374
+325   ID       Reference summary                                       and topic. Finally, we use the model-topic scores       375
+326
+                                                                       to describe model performance and compare the           376
+       1       Restart UK fracking for energy security and jobs.
+                                                                       matched cultural settings, model categories, and
+327    2       Ban fracking permanently on environmental and                                                                   377
+               seismic grounds.                                        developer groups.
+328                                                                                                                            378
+329
+       3       Support fracking in principle but oppose it                                                                     379
+               locally.                                                3.3.1   Models and perspective generation
+330                                                                                                                            380
+       4       Reject fracking categorically on                        We evaluate 13 models (Table 3) and retain one
+331            climate-emergency grounds.                                                                                      381
+                                                                       response for each model-topic combination. The
+332    5       Conditional pragmatist, support shale gas only                                                                  382
+               with strict guarantees and a transition plan.
+                                                                       prompt asks for five distinct perspectives gen-
+333                                                                                                                            383
+                                                                       uinely held within the specified population. Each
+334                                                                                                                            384
+                                                                       perspective is written in an advocate’s voice. The
+335                                                                                                                            385
+      actly five legitimate positions. The score measures              prompt allows fewer than five positions if appro-
+336                                                                                                                            386
+      recovery of these references; it does not measure                priate. All 208 retained responses contain five,
+337                                                                                                                            387
+      every position that might exist outside them. Each               giving 1,040 generated perspectives, and no model
+338                                                                                                                            388
+      stored perspective consists of a short summary and               declined the task. Appendix A reproduces the
+339                                                                                                                            389
+      a longer explanation. Judges receive both.                       prompt.
+340                                                                                                                            390
+         Table 2 shows an actual reference set. It il-                    All generator prompts, judge prompts, and ref-
+341                                                                                                                            391
+      lustrates why identifying a broad side of a con-                 erence statements are in English. This holds elic-
+342                                                                    itation and judging language constant across the        392
+      troversy is insufficient. Support for fracking may
+343   be unconditional, conditional, or opposed to local               two settings. Generators and judges were queried        393
+344   development, opposition may emphasise different                  through the OpenRouter API with temperature             394
+345   grounds.                                                         zero, a fixed request seed, and a requested limit       395
+346                                                                    of 4,096 completion tokens. The seed takes ef-          396
+347   3.3      Evaluation procedure                                    fect only for providers that support seeded sam-        397
+348   The evaluation proceeds in four stages. First, each              pling. We set no reasoning parameters and did not       398
+349   model generates perspectives for a topic without                 pin providers, so each model used OpenRouter’s          399
+
+
+
+
+                                                                   4

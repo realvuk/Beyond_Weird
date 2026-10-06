@@ -1,0 +1,67 @@
+rather than collapse into a single preference target
+(Sorensen et al., 2024; Feng et al., 2024; Ali et al.,
+2025). This matters for political questions, where
+a useful answer may need to represent conflicting
+positions.
+Sorensen et al. (2024) distinguish three forms
+of pluralism. Overton pluralism concerns the
+range of positions a model represents. Steerable pluralism concerns its ability to adopt a requested position. Distributional pluralism concerns whether output frequencies reflect a target
+population. Our benchmark measures Overtonstyle coverage: whether documented perspectives
+are recovered at all.
+The concentration of training, preference, and
+evaluation data in WEIRD and English-language
+settings raises concerns about uneven cultural representation (Sorensen et al., 2024; Wang et al.,
+2025; Zewail et al., 2026). Multilingual and culturally adaptive prompting can improve diversity
+in some settings (Wang et al., 2025). Languagespecific evaluation resources also remain unevenly
+developed. Serbian SuperGLUE addresses gaps
+in complex language-understanding evaluation for
+Serbian and motivates broader coverage of South
+Slavic languages (Perovic and Mihajlov, 2026).
+This work motivates our directional hypothesis,
+but does not determine whether a particular coverage difference reflects cultural setting or the topics
+chosen for comparison.
+ics than on structurally matched WEIRD topics?
+We hypothesise higher recall on WEIRD topics.
+RQ2 (secondary). How does recall vary across
+individual models and across Frontier, larger
+open-weight, and smaller open-weight systems?
+RQ3 (exploratory). How do the selected models from US and Chinese developers differ in
+overall recall and in their WEIRD-Serbian recall
+gaps?
+Recall is the principal outcome because all three
+questions concern recovery of documented perspectives. Precision and F1 provide supplementary descriptions of matching behaviour. The category and developer-country comparisons are exploratory. The model categories describe access
+and relative size, not a capability ranking.
+We do not detect the predicted WEIRD advantage. Mean recall is 0.581 for WEIRD topics and
+0.594 for Serbian topics, with four matched pairs
+favouring each side. Coverage nevertheless remains incomplete. Even the highest-recall model
+misses roughly three of every ten reference perspectives on average.
+The paper makes two contributions:
+• A matched evaluation set: eight structurally
+analogous WEIRD-Serbian topic pairs, each
+topic with five reference perspectives documented in evidence about the relevant population, scored by LLM judges from other developers.
+2.2
+These findings motivate a more specific question for subsequent evaluation: which perspectives
+do models omit on which controversies?
+Related work
+Our paper connects research on cultural representation, perspective coverage, and LLM-based evaluation.
+2.1
+Measuring perspective coverage
+Political controversies rarely have a complete, uncontested set of correct labels. Perspectivist NLP
+therefore treats disagreement as part of the phenomenon being studied (Basile et al., 2021; Plank,
+2022; Frenda et al., 2025). Related approaches retain annotator-specific rationales or label distributions rather than combining all judgments into one
+target (Sarumi et al., 2026; Shetty et al., 2026). A
+fixed reference set can document positions known
+to exist, but cannot guarantee an exhaustive account of a debate.
+Other work uses LLMs as proxies for human
+opinion. Under some prompting strategies, models can reproduce population-level polling patterns
+(Sun et al., 2024; Gong et al., 2026). Their apparent political or cultural preferences can also
+change with prompt design and methodology
+(Khan et al., 2025). Hybrid approaches combine
+model-generated annotations with human atten-
+• A matched comparison of perspective coverage: we find no detectable WEIRD advantage. Differences between individual topic
+pairs are much larger than the pooled difference, and models miss reference perspectives
+in both settings.
+Pluralistic alignment and cultural
+representation
+Pluralistic alignment treats differences in human
+values and viewpoints as something to preserve,

@@ -1,0 +1,89 @@
+Table 1: The eight matched topic pairs. Parentheses in the WEIRD column identify the country used in the
+reference-population prompt. All Serbian topics use the population “people in Serbia”; WEIRD topics use “people
+in” the indicated country. Pairing concerns the political dispute, not historical equivalence.
+Pair
+WEIRD topic
+Serbian topic
+Matching rationale
+Confederate monuments (United
+States)
+Catalan independence (Spain)
+Partisans and Chetniks
+Fracking / shale gas (United
+Kingdom)
+Catholic Church (Poland)
+Jadar lithium mine / Rio Tinto
+Public memory of opposing sides
+in a civil war
+Secession and territorial
+sovereignty
+Economic benefits and
+environmental risks
+Secularisation and the role of the
+church
+Public debate concerning
+genocide
+Migration policy
+Kosovo independence
+Serbian Orthodox Church
+Residential schools (Canada)
+Srebrenica
+Immigration after 2015
+(Germany)
+Viktor Orbán (Hungary)
+Migrants and the Balkan route
+Brexit / EU membership (United
+Kingdom)
+Serbia’s West-Russia alignment
+Aleksandar Vučić
+Democratic leadership and
+authoritarian governance
+Foreign-policy alignment
+ID
+Reference summary
+Restart UK fracking for energy security and jobs.
+Ban fracking permanently on environmental and
+seismic grounds.
+Support fracking in principle but oppose it
+locally.
+Reject fracking categorically on
+climate-emergency grounds.
+Conditional pragmatist, support shale gas only
+with strict guarantees and a transition plan.
+actly five legitimate positions. The score measures
+recovery of these references; it does not measure
+every position that might exist outside them. Each
+stored perspective consists of a short summary and
+a longer explanation. Judges receive both.
+Table 2 shows an actual reference set. It illustrates why identifying a broad side of a controversy is insufficient. Support for fracking may
+be unconditional, conditional, or opposed to local
+development, opposition may emphasise different
+grounds.
+3.3
+seeing the references. Second, five judges independently match each generated perspective to a
+reference or return no match. Third, we calculate recall from these assignments for each model
+and topic. Finally, we use the model-topic scores
+to describe model performance and compare the
+matched cultural settings, model categories, and
+developer groups.
+3.3.1
+Models and perspective generation
+We evaluate 13 models (Table 3) and retain one
+response for each model-topic combination. The
+prompt asks for five distinct perspectives genuinely held within the specified population. Each
+perspective is written in an advocate’s voice. The
+prompt allows fewer than five positions if appropriate. All 208 retained responses contain five,
+giving 1,040 generated perspectives, and no model
+declined the task. Appendix A reproduces the
+prompt.
+All generator prompts, judge prompts, and reference statements are in English. This holds elicitation and judging language constant across the
+two settings. Generators and judges were queried
+through the OpenRouter API with temperature
+zero, a fixed request seed, and a requested limit
+of 4,096 completion tokens. The seed takes effect only for providers that support seeded sampling. We set no reasoning parameters and did not
+pin providers, so each model used OpenRouter’s
+Table 2: Reference summaries for UK fracking, reproduced from the benchmark. The target population is
+“people in the United Kingdom”. Each record also contains an explanation.
+Evaluation procedure
+The evaluation proceeds in four stages. First, each
+model generates perspectives for a topic without

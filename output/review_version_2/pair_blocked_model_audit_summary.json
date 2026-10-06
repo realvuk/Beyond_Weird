@@ -1,0 +1,17 @@
+{
+  "inputs": [
+    "results/agg/prf_per_topic.csv",
+    "results/agg/pairwise_models.csv"
+  ],
+  "contrast": "x_p = (R_a,W,p + R_a,S,p)/2 - (R_b,W,p + R_b,S,p)/2",
+  "statistic": "mean(x_p), retaining the original mean recall difference",
+  "pair_null": "all 256 sign vectors over 8 matched-pair contrasts",
+  "two_sided_tail": "mean(abs(null_statistic) >= abs(observed_statistic) - 1e-12)",
+  "correction": "Benjamini-Hochberg jointly over 78 tests, alpha=0.05",
+  "original_mc_significant": 15,
+  "exact_16topic_significant": 15,
+  "pair_blocked_significant": 0,
+  "pair_blocked_min_raw_p": 0.0078125,
+  "pair_blocked_min_bh_p": 0.08705357142857142,
+  "scope": "Existing-score sensitivity; no generation/judgment experiments or data authentication."
+}

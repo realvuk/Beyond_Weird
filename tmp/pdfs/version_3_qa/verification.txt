@@ -1,0 +1,36 @@
+PASS Compilation: no overfull boxes, undefined citations/references, or duplicate labels
+PASS PDF contains no unresolved reference markers
+PASS Undocumented extremity p-value removed
+PASS All identified proofreading errors removed
+PASS Exactly one References heading
+PASS Abstract preserves estimate and p-value and restores percentage points and confidence interval
+PASS Worked example correctly refers to Tables 2 and 10
+PASS Bibliography unchanged from editable source (1 blocks)
+PASS Numbered equations unchanged from editable source (16 blocks)
+PASS Archived prompts unchanged from editable source (1 blocks)
+PASS All 21 bibliography entries retained
+PASS Numerical table unchanged: tab:model-recall
+PASS Numerical table unchanged: tab:origin-recall
+PASS Numerical table unchanged: tab:judge-checks
+PASS Numerical table unchanged: tab:prf-supplement
+PASS Numerical table unchanged: tab:per_model_weird_gap
+PASS Numerical table unchanged: tab:fracking-matches
+PASS tab:generators: category counts 5/6/2
+PASS tab:generators: Qwen in Frontier/API and 13 unique models
+PASS tab:model-recall: category counts 5/6/2
+PASS tab:model-recall: Qwen in Frontier/API and 13 unique models
+PASS Saved paired differences reproduce mean -0.013076923 and exact one-sided p=0.6796875
+PASS Saved worked-example assignments reproduce judge recalls and combined recall 0.56
+PASS Supplementary data preserved: judges.json
+PASS Supplementary data preserved: model_recall.csv
+PASS Supplementary data preserved: models.json
+PASS Supplementary data preserved: access_group_recall.csv
+PASS Supplementary data preserved: sensitivity_results.json
+PASS Supplementary data preserved: gold_standard.json
+PASS Supplementary data preserved: developer_country_contrasts.csv
+PASS Supplementary data preserved: precision_recall_f1.csv
+PASS Supplementary data preserved: pairwise_models.csv
+PASS Supplementary data preserved: access_group_contrasts.csv
+PASS Supplementary data preserved: worked_example.json
+PASS Supplementary data preserved: topics.json
+PASS Supplementary data preserved: paired_differences_13x8.csv

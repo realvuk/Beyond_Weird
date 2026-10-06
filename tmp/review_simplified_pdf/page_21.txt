@@ -1,0 +1,81 @@
+                                      Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+2000                                                                                                                        2050
+       Table 11: The five generated summaries from GPT 5.5        Table 12: Recorded assignments for the five GPT 5.5
+2001                                                                                                                        2051
+       for UK fracking.                                           outputs. A number identifies the matched reference; 0
+2002                                                              denotes no match. Judge columns are Gemini 3.1 Pro        2052
+       Output   Summary
+2003                                                              (G), Claude Sonnet 5 (C), DeepSeek V4 Pro (D), Kimi       2053
+2004        1   Fracking should be banned because it              K2.6 (K), and Grok 4.5 (X). All 25 judgments are valid.   2054
+                threatens the climate, countryside, water,
+2005                                                                  Output           G      C      D      K       X       2055
+                and local communities.
+2006                                                                                                                        2056
+            2   I oppose fracking mainly because I do not             1                2      2      2       2      2
+2007            trust companies or government regulators to           2                0      2      0       0      0       2057
+2008            keep local people safe.                               3                1      1      1       1      1       2058
+2009        3   The UK should frack because we need                   4                5      5      5       5      0       2059
+2010
+                domestic gas for energy security, jobs, tax           5                1      1      1       1      1       2060
+                revenue, and lower reliance on imports.
+2011                                                                  Judge recall   0.60   0.60   0.60   0.60   0.40       2061
+            4   Fracking should be allowed only where
+2012            geology supports it, regulation is strict, and                                                              2062
+2013            local communities consent and benefit                                                                       2063
+2014            financially.                                                                                                2064
+2015        5   We should embrace fracking and stop letting                                                                 2065
+                net-zero politics block cheap domestic
+2016                                                                                                                        2066
+                energy.
+2017                                                                                                                        2067
+2018                                                                                                                        2068
+2019   H   Execution records and model                                                                                      2069
+2020       identifiers                                                                                                      2070
+2021                                                                                                                        2071
+       The saved generation file contains 208 unique
+2022                                                                                                                        2072
+       model-topic responses and 1,040 perspectives.
+2023                                                                                                                        2073
+       The prompt allowed one to five perspectives, but
+2024                                                                                                                        2074
+       every retained response contains five. One re-
+2025                                                                                                                        2075
+       tained response does not imply one API request:
+2026                                                                                                                        2076
+       failed requests could be retried and malformed
+2027                                                                                                                        2077
+       JSON could receive a repair request. Saved gener-
+2028                                                                                                                        2078
+       ation timestamps span 9-10 July 2026 UTC. Judg-
+2029   ment timestamps, including retries, span 10-20                                                                       2079
+2030   July 2026 UTC.                                                                                                       2080
+2031      Table 13 gives the configured endpoint identi-                                                                    2081
+2032   fiers. The GitHub repository includes the orig-                                                                      2082
+2033   inal generator and judge configurations. The                                                                         2083
+2034   judge configuration also identifies Claude Sonnet                                                                    2084
+2035   5 as anthropic/claude-sonnet-5 and the                                                                               2085
+2036   Grok substitute as x-ai/grok-4.5.                                                                                    2086
+2037      The release sources used for the public-weight                                                                    2087
+2038   categories are the published pages for DeepSeek                                                                      2088
+2039   V4 Pro, Kimi K2.6, GLM 5.2, Mistral Large 3,                                                                         2089
+2040   Meta’s Llama models, Gemma 4, and GPT-OSS                                                                            2090
+2041   120B. The smaller group contains the selected                                                                        2091
+2042   31B and 70B systems; the label is relative to the                                                                    2092
+2043
+       larger public-weight systems in this selection. It                                                                   2093
+2044
+       does not imply a common active-parameter count,                                                                      2094
+       runtime cost, licence, or training-data disclosure.
+2045                                                                                                                        2095
+2046                                                                                                                        2096
+2047                                                                                                                        2097
+2048                                                                                                                        2098
+2049                                                                                                                        2099
+
+
+
+
+                                                                 21

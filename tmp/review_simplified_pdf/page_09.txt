@@ -1,0 +1,79 @@
+                                   Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+800   for the eight models from US developers (Table 5).                                                                 850
+                                                                 Table 6: Descriptive judge agreement, measured by
+801   The US-minus-China difference is −3.0 percent-             nominal Krippendorff’s α. Agreement measures con-
+                                                                                                                         851
+802   age points (95% CI: −4.8 to −1.3; p = 0.047).              sistency, not correctness or absence of shared bias.    852
+803   This exploratory comparison holds the selected             Scope                                            α      853
+804   models fixed. It provides evidence of a difference                                                                 854
+      between these groups on this benchmark, but does           All topics                                     0.769
+805                                                                                                                      855
+                                                                 WEIRD topics                                   0.762
+806   not identify an effect of developer country.                                                                       856
+                                                                 Serbian topics                                 0.775
+807                                                                                                                      857
+808   Table 5: Recall by developer group. Models receive                                                                 858
+809   equal weight within each group. Mistral is excluded        lish equal judge error rates across settings: several   859
+810   from this US-China contrast. A positive WEIRD-             judges may agree on the same incorrect match.           860
+811   Serbian gap indicates higher recall on WEIRD topics.                                                               861
+812   Group     n   Overall   WEIRD     Serbian     Gap          5     Discussion                                        862
+813   US        8    0.579    0.570      0.589    −0.019         The primary comparison found no detectable              863
+814   China     4    0.609    0.613      0.606    +0.006         WEIRD recall advantage in this benchmark. Large         864
+815                                                              differences between individual topic pairs oc-          865
+816      The mean WEIRD-minus-Serbian gap is −1.9                curred in both directions, while coverage remained      866
+817   percentage points in the US group and +0.6 points          incomplete in both cultural settings. The results       867
+818   in the Chinese group. The US-minus-China differ-           therefore motivate attention to topic selection and     868
+819   ence between these gaps is −2.5 points (95% CI:            to the particular perspectives that models omit.        869
+820   −8.2 to 2.5; p = 0.453). We therefore do not de-                                                                   870
+821   tect a difference between the groups’ cultural gaps        5.1     Interpreting the cultural comparison            871
+822   (Appendix D.5).                                            Research on pluralistic and culturally adaptive         872
+823      The groups differ in composition. The Chi-              alignment motivated our expectation of better cov-      873
+824   nese group contains one Frontier model and three           erage in WEIRD contexts (Sorensen et al., 2024;         874
+825   larger open-weight models; the US group con-               Feng et al., 2024; Wang et al., 2025). This bench-      875
+826   tains four Frontier, two larger open-weight, and           mark does not support it for the selected contro-       876
+827
+      two smaller open-weight models. Only the US                versies.                                                877
+828
+      group includes smaller open-weight systems. Ex-               The primary matched-pair comparison provides         878
+      cluding them reduces the observed overall US-              no evidence for the predicted WEIRD recall ad-
+829                                                                                                                      879
+      minus-China difference from −3.0 to about −2.0             vantage. Judge agreement was also similar across
+830                                                                                                                      880
+      percentage points. Some US developers also con-            the two settings, although this does not establish
+831                                                                                                                      881
+      tribute more than one model. These comparisons             equal error rates. These findings concern the se-
+832                                                                                                                      882
+      consequently describe the selected systems and             lected controversies under direct elicitation in En-
+833                                                                                                                      883
+      cannot establish that Chinese models generally             glish. They do not establish equal representation
+834                                                                                                                      884
+      perform better or that developer country causes the        across cultures, languages, or tasks.
+835                                                                                                                      885
+      observed difference.                                          Several explanations remain possible. Con-
+836                                                                                                                      886
+                                                                 temporary training data may contain enough re-
+837   4.4     Descriptive checks on judge consistency            gional and multilingual material to recover well-
+                                                                                                                         887
+838                                                                                                                      888
+      Judge agreement is similar across the two settings:        documented Serbian positions when models are
+839                                                                                                                      889
+      Krippendorff’s α is 0.762 for WEIRD topics and             explicitly asked for diverse perspectives. Retrieval
+840                                                                                                                      890
+      0.775 for Serbian topics (Table 6). The corre-             limitations or post-training behaviour may con-
+841   sponding judge-level no-match rates are 32.9%              strain coverage across controversies more gener-        891
+842   and 31.1% of valid decisions. Additional agree-            ally. The five-perspective output limit also creates    892
+843   ment measures appear in Appendix F.1.                      competition among legitimate positions for inclu-       893
+844     Removing one judge at a time changes the                 sion. The experiment does not distinguish these         894
+845   pooled WEIRD-minus-Serbian recall gap from                 explanations.                                           895
+846   −1.3 percentage points to values between approxi-             Topic selection matters when interpreting the        896
+847   mately −2.0 and −0.8 points (Appendix F.3). The            result. Variation across controversies was much         897
+848   observed mean gap therefore remains small and              larger than the pooled cultural difference, with        898
+849   negative under each removal. This does not estab-          large pair differences favouring both settings. An      899
+
+
+
+
+                                                             9

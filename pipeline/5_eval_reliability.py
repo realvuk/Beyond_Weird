@@ -39,6 +39,7 @@ Usage:
       --panels panels.json --out out/ [--human human_annotations.csv]
 """
 import argparse
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -47,26 +48,23 @@ import pandas as pd
 from scipy.stats import mannwhitneyu
 
 from bweird.analysis import (
+    ADAPTED_DIR,
+    AGG_DIR,
     NO_MATCH,
     aggregate_all,
     cohen_kappa,
     fleiss_kappa,
     gwet_ac1,
     krippendorff_alpha,
+    load_eval_topics,
     load_panels,
-    load_topics,
     load_verdicts,
     log,
     observed_agreement,
     plurality_verdict,
     resolve_panel,
 )
-
-# Repo-root-relative defaults, resolved from this file so the stage runs from
-# any working directory. Every path can still be overridden on the command line.
-ROOT = Path(__file__).resolve().parent.parent
-ADAPTED = ROOT / "results" / "adapted"
-AGG = ROOT / "results" / "agg"
+from bweird.logging_utils import run_stage
 
 
 def positional(label, topics, topic_id):
@@ -250,19 +248,21 @@ def bias_control(verdicts, topics, panels, out, n_boot=10000, seed=42):
 
 # --------------------------------------------------------------------- main
 
-def main():
+def build_arg_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--verdicts", default=str(ADAPTED / "verdicts.jsonl"))
-    ap.add_argument("--topics", default=str(ADAPTED / "topics.json"))
-    ap.add_argument("--panels", default=str(ADAPTED / "panels.json"))
-    ap.add_argument("--out", default=str(AGG))
+    ap.add_argument("--verdicts", default=str(ADAPTED_DIR / "verdicts.jsonl"))
+    ap.add_argument("--topics", default=str(ADAPTED_DIR / "topics.json"))
+    ap.add_argument("--panels", default=str(ADAPTED_DIR / "panels.json"))
+    ap.add_argument("--out", default=str(AGG_DIR))
     ap.add_argument("--human", help="human annotations CSV (see docstring)")
     ap.add_argument("--n-boot", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=42)
-    args = ap.parse_args()
+    return ap
 
-    topics = load_topics(args.topics)
+
+def run(args: argparse.Namespace) -> int:
+    topics = load_eval_topics(args.topics)
     panels = load_panels(args.panels)
     verdicts = load_verdicts(args.verdicts, topics)
     out = Path(args.out)
@@ -285,6 +285,11 @@ def main():
     print(pk.round(3).to_string())
     pk.to_csv(out / "pairwise_judge_kappa.csv")
     pk_n.astype(int).to_csv(out / "pairwise_judge_overlap.csv")
+
+    print("\n=== 1c. Per-judge match rate (share of valid decisions matched to a reference) ===")
+    jm = pv.groupby("judge").match.agg(n_decisions="size", match_rate=lambda s: s.notna().mean())
+    print(jm.round(3).to_string())
+    jm.to_csv(out / "judge_match_rates.csv")
 
     hv = None
     if args.human:
@@ -335,7 +340,12 @@ def main():
         print("  (positive delta = own-family judge inflates coverage)")
 
     print(f"\nArtifacts written to {out}/")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    return run_stage(build_arg_parser(), run, argv)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

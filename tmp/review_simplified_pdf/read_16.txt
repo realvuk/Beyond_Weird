@@ -1,0 +1,77 @@
+do not retain matched-pair blocks. A sensitivity analysis for model recall instead resamples the
+eight matched pairs, retaining both topics and their
+equal weights, with 10,000 resamples and a fresh
+NumPy generator using seed 42. Both sets of recall intervals are supplied in the accompanying
+analysis files. The model means are unchanged.
+Neither overlapping intervals nor an absence of
+significant pairwise differences establishes model
+equivalence.
+Illustrative sensitivity calculation. For a onesided one-sample t-test at α = 0.05, normally
+distributed independent pair-level differences, and
+the observed between-pair SD, a hypothetical fivepercentage-point WEIRD advantage gives approximately 32% power. An advantage of about 10.5
+points gives 80% power. These values use a noncentral t distribution with seven degrees of freedom. They describe hypothetical effects under a
+t-test, not power at the observed effect or power of
+the exact Wilcoxon test.
+D.2
+Primary WEIRD-Serbian signed-rank
+test
+For model m and matched pair p, we first compute
+W
+S
+dmp = Rmp
+− Rmp
+.
+(10)
+We then average across the 13 generators within
+each pair,
+∆p =
+1 X
+dmp ,
+(11)
+m=1
+which yields eight pair-level WEIRD-minusSerbian differences. The observed differences are
+(0.000769, 0.055385, 0.003077,
+− 0.028846, −0.169231, 0.190769,
+− 0.100769, −0.055769).
+All eight differences are non-zero, and no two
+have the same absolute value, so there are no
+tied ranks. The primary exact Wilcoxon signedrank test uses a one-sided alternative of a positive
+shift in WEIRD-minus-Serbian recall and gives
+p = 0.6797. The observed mean difference is
+−0.0131, and the median is −0.0140. For completeness, the two-sided result is p = 0.7422,
+and the matched-pairs rank-biserial correlation is
+−0.1667. The signed-rank inference assumes
+independent pair-level differences and symmetry
+under the null; it does not directly test the arithmetic mean.
+D.3
+Sensitivity analyses of the model-pair
+gaps
+The primary test averages over generators within
+each matched pair. We also examine an alternative aggregation. The mean P
+over eight pairs
+within each generator, dm = 8 p dmp . An exact signed-rank calculation uses these 13 model
+means, removes numerical roundoff before ranking, assigns average ranks to ties, and enumerates every sign assignment. It gives one-sided
+p = 0.843 and two-sided p = 0.331. This comparison is conditional on the same eight pairs; the
+selected model families are not independent cultural replications.
+To examine both dimensions, a crossed bootstrap independently resamples generator rows and
+matched-pair columns with replacement. Each
+of 10,000 replicates retains the Cartesian-product
+submatrix. The resulting approximate 95% interval for the mean gap is [−0.090, 0.070].The resampling scheme follows Owen.
+A model-based check fits the 104 model-pair
+differences using crossed random intercepts:
+dmp = µ + um + vp + ϵmp .
+(12)
+Generator and pair effects and the residual are assumed independent. Restricted maximum likelihood gives µ = −0.013 (SE 0.038; 95% Wald
+CI [−0.088, 0.062]; approximate two-sided p =
+0.733). The fit converged but produced a boundary
+warning, so the result remains a sensitivity check.
+These procedures account for the two grouping
+dimensions under their respective assumptions.
+They do not establish that the selected models or
+topics are representative, or explicitly model dependence between different generators from the
+same developer family. The 104 differences are
+not treated as independent replicates. The perreference model in Appendix D.8 is a separate
+specification.
+D.4
+Exploratory category comparisons
+For each model and matched pair, we first average WEIRD and Serbian recall. We then average across models within each category, weighting models equally. Each category contrast therefore contains eight pair-level differences. The test

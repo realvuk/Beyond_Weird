@@ -1,0 +1,88 @@
+for the eight models from US developers (Table 5).
+The US-minus-China difference is −3.0 percentage points (95% CI: −4.8 to −1.3; p = 0.047).
+This exploratory comparison holds the selected
+models fixed. It provides evidence of a difference
+between these groups on this benchmark, but does
+not identify an effect of developer country.
+Table 6: Descriptive judge agreement, measured by
+nominal Krippendorff’s α. Agreement measures consistency, not correctness or absence of shared bias.
+α
+Scope
+All topics
+WEIRD topics
+Serbian topics
+0.769
+0.762
+0.775
+Group
+n
+Overall
+WEIRD
+Serbian
+Gap
+US
+China
+0.579
+0.609
+0.570
+0.613
+0.589
+0.606
+−0.019
++0.006
+The primary comparison found no detectable
+WEIRD recall advantage in this benchmark. Large
+differences between individual topic pairs occurred in both directions, while coverage remained
+incomplete in both cultural settings. The results
+therefore motivate attention to topic selection and
+to the particular perspectives that models omit.
+lish equal judge error rates across settings: several
+judges may agree on the same incorrect match.
+The mean WEIRD-minus-Serbian gap is −1.9
+percentage points in the US group and +0.6 points
+in the Chinese group. The US-minus-China difference between these gaps is −2.5 points (95% CI:
+−8.2 to 2.5; p = 0.453). We therefore do not detect a difference between the groups’ cultural gaps
+(Appendix D.5).
+The groups differ in composition. The Chinese group contains one Frontier model and three
+larger open-weight models; the US group contains four Frontier, two larger open-weight, and
+two smaller open-weight models. Only the US
+group includes smaller open-weight systems. Excluding them reduces the observed overall USminus-China difference from −3.0 to about −2.0
+percentage points. Some US developers also contribute more than one model. These comparisons
+consequently describe the selected systems and
+cannot establish that Chinese models generally
+perform better or that developer country causes the
+observed difference.
+4.4
+Judge agreement is similar across the two settings:
+Krippendorff’s α is 0.762 for WEIRD topics and
+0.775 for Serbian topics (Table 6). The corresponding judge-level no-match rates are 32.9%
+and 31.1% of valid decisions. Additional agreement measures appear in Appendix F.1.
+Removing one judge at a time changes the
+pooled WEIRD-minus-Serbian recall gap from
+−1.3 percentage points to values between approximately −2.0 and −0.8 points (Appendix F.3). The
+observed mean gap therefore remains small and
+negative under each removal. This does not estab-
+Discussion
+5.1
+Interpreting the cultural comparison
+Research on pluralistic and culturally adaptive
+alignment motivated our expectation of better coverage in WEIRD contexts (Sorensen et al., 2024;
+Feng et al., 2024; Wang et al., 2025). This benchmark does not support it for the selected controversies.
+The primary matched-pair comparison provides
+no evidence for the predicted WEIRD recall advantage. Judge agreement was also similar across
+the two settings, although this does not establish
+equal error rates. These findings concern the selected controversies under direct elicitation in English. They do not establish equal representation
+across cultures, languages, or tasks.
+Several explanations remain possible. Contemporary training data may contain enough regional and multilingual material to recover welldocumented Serbian positions when models are
+explicitly asked for diverse perspectives. Retrieval
+limitations or post-training behaviour may constrain coverage across controversies more generally. The five-perspective output limit also creates
+competition among legitimate positions for inclusion. The experiment does not distinguish these
+explanations.
+Topic selection matters when interpreting the
+result. Variation across controversies was much
+larger than the pooled cultural difference, with
+large pair differences favouring both settings. An
+Table 5: Recall by developer group. Models receive
+equal weight within each group. Mistral is excluded
+from this US-China contrast. A positive WEIRDSerbian gap indicates higher recall on WEIRD topics.
+Descriptive checks on judge consistency

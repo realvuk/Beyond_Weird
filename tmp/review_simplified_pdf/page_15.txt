@@ -1,0 +1,95 @@
+                                     Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1400   valid decision for output k, the panel credit is          C.6    Judgment execution and retries                  1450
+1401                                                                                                                    1451
+                              1 X                                The design requires 1,040 × 5 = 5,200 judge
+1402                 wkg =             cjkg .           (6)                                                             1452
+                             |Jk |                               decisions. The raw judgment log contains 5, 228
+1403                               j∈Jk                                                                                 1453
+                                                                 records because failed calls that were retried re-
+1404   We sum these credits for each reference, cap the                                                                 1454
+                                                                 main in the log. Of these records, 44 are failed or
+1405   sum at one, and average across the five references:                                                              1455
+                                                                 null calls. Twenty-eight were followed by success-
+1406                                                             ful retry records, leaving 16 intended judgments       1456
+                        5                          5
+                              !
+1407
+                      X                         1X                                                                      1457
+        Cg = min 1,       wkg ,        Rmt =          Cg .       unrecovered.
+1408                                            5                   The final evaluation therefore contains 5, 184      1458
+                       k=1                          g=1
+1409                                                      (7)    valid decisions. Of the 1, 040 generated perspec-      1459
+1410   With complete panels, these equations reduce to           tives, 1, 024 have five valid judge decisions and 16   1460
+1411   the mean judge recall in Eq. 1. When judgments            have four. A no-match decision is a valid judg-        1461
+1412   are missing, |Jk | can differ across outputs; the cap     ment in which the judge selects no reference. A        1462
+1413   prevents any reference receiving more than full           missing judgment is an execution failure. The two      1463
+1414   credit. All outputs in this dataset have at least four    are kept separate throughout the analysis.             1464
+1415   valid judgments.                                                                                                 1465
+1416                                                             D     Statistical details                              1466
+       C.4   Precision
+1417                                                                                                                    1467
+       For generated perspective k, let mjk = 1 if judge j       D.1    Confidence intervals and sensitivity
+1418                                                                    calculations                                    1468
+       assigns it to any reference perspective and mjk =
+1419                                                                                                                    1469
+       0 if the judge returns no match. Its precision con-       Primary interval for the mean cultural gap.
+1420                                                                                                                    1470
+       tribution is                                              Let ∆ and s∆ be the mean and sample standard
+1421                                                                                                                    1471
+                                                                 deviation of the eight pair-level differences. The
+1422                         1 X                                                                                        1472
+                       qk =       mjk .                   (8)    primary 95% confidence interval is
+1423                        |Jk |                                                                                       1473
+                                  j∈Jk
+1424                                                                                          s∆                        1474
+         Model-topic precision is                                                ∆ ± t0.975,7 √ .
+1425                                                                                           8                        1475
+1426                              5                                                                                     1476
+                              1   X                              The mean is −0.0131, the SD is 0.107, and the SE
+1427                      P =           qk .              (9)                                                           1477
+                              5                                  is 0.038. The resulting interval is [−0.103, 0.077],
+1428                              k=1                                                                                   1478
+                                                                 or −10.3 to 7.7 percentage points. The calcu-
+1429      Model-level recall and precision are the corre-                                                               1479
+                                                                 lation assumes independent, approximately nor-
+1430   sponding averages across the 16 topics. Model-                                                                   1480
+                                                                 mally distributed pair-level differences. It esti-
+1431   level F1 is the harmonic mean of model-level pre-                                                                1481
+                                                                 mates the arithmetic mean and is separate from the
+1432   cision and recall.                                                                                               1482
+                                                                 signed-rank test in Appendix D.2.
+1433      A failed judge call is missing data and is ex-                                                                1483
+1434
+       cluded from the denominator. It is not treated as a       Supplementary interval and upper bound.                1484
+1435
+       no-match decision.                                        The original percentile bootstrap resamples the        1485
+1436   C.5   Missing judgments and the recall cap                eight matched pairs 10,000 times, keeping all 13       1486
+1437                                                             models together within each sampled pair. It uses      1487
+       With a complete and identical judge panel across          seed 42 and the saved random-number stream, giv-
+1438                                                                                                                    1488
+       the five generations, the summed panel credit for         ing [−0.08096, 0.05823]. With only eight resam-
+1439                                                                                                                    1489
+       a reference cannot exceed one. Missing judge              pling units, percentile intervals may have limited
+1440                                                                                                                    1490
+       calls can change the denominator from one gen-            coverage accuracy. The corresponding one-sided
+1441                                                                                                                    1491
+       eration to another, however. In that case, sum-           95% t upper bound is 0.059. This is conditional on
+1442   ming generation-level weights can produce a value                                                                1492
+                                                                 the interval assumptions and the selected bench-
+1443   slightly above one.                                                                                              1493
+                                                                 mark, not a general upper bound on cultural dis-
+1444      The implementation therefore caps each refer-                                                                 1494
+                                                                 parities.
+1445   ence credit at one before topic recall is computed.                                                              1495
+1446   The cap affects two observed credits for Grok 4.3         Individual-model intervals. Table 8 retains the        1496
+1447   on the WEIRD topic in pair 8: their uncapped val-         original 95% percentile intervals for model-level      1497
+1448   ues are 1.0167 and 1.0917. Both are set to 1 in the       recall, precision, and F1, based on 10,000 resam-      1498
+1449   published scores.                                         ples of the 16 individual topics. These intervals      1499
+
+
+
+
+                                                                15

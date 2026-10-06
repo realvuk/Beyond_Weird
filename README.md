@@ -37,6 +37,11 @@ make analysis
 
 `make help` lists every target.
 
+To reproduce the charts from both manuscript versions, run `make figures`.
+PDF and PNG exports go to `output/pdf/paper_figures/`; see
+[`figures/README.md`](figures/README.md) for the figure-to-paper mapping,
+individual commands, input files, and reproducibility checks.
+
 ## What the study does
 
 ```
@@ -218,6 +223,77 @@ Strict typing covers the library's harness modules and the two API stages.
 The numbered analysis stages, `bweird/analysis.py` and `reanalysis/` are
 unannotated pandas code and are deliberately outside that scope; the
 boundary is set in `pyproject.toml`.
+
+## Execution configuration and saved records
+
+The study queried generators and judges through the OpenRouter chat-completions API. The configuration files and request builder define the execution settings:
+
+- [Generator configuration](config/models.json): model identifiers and developer-family labels.
+- [Judge configuration](config/judges.json): the base panel and family-disjoint substitutions.
+- [Prompt templates and output schemas](bweird/prompts.py): generation and matching prompts.
+- [API request builder](bweird/openrouter.py): configured request parameters and retry handling.
+
+| Parameter | Configured value |
+|---|---|
+| API endpoint | `https://openrouter.ai/api/v1/chat/completions` |
+| Temperature | `0.0` |
+| Completion-token limit | `4096` |
+| Request seed | `20260708`, effective only where the provider supports seeded sampling |
+| Reference-order randomisation seed | `20260708` by default; combined with each execution key to generate an independent reproducible shuffle |
+| Reasoning parameters | Not explicitly set |
+| Provider routing | OpenRouter default routing; providers were not pinned |
+| Serving-provider identity | Not recorded |
+| Prompt and reference language | English |
+
+The runner allows one repair request for an unparseable response and retries transient failures. Valid responses are saved and reused. Failed judging calls remain in the append-only log; later retry records supersede earlier records for the same execution. A missing decision is distinct from a valid no-match decision.
+
+### Configured generator identifiers
+
+These are the exact endpoint strings stored in the study configuration. Categories describe access and relative size within this model selection, not a capability ranking.
+
+| Model | Category | Configured endpoint |
+|---|---|---|
+| Claude Opus 4.8 | Frontier/API | `anthropic/claude-opus-4.8` |
+| GPT 5.5 | Frontier/API | `openai/gpt-5.5` |
+| Gemini 3.1 Pro Preview | Frontier/API | `google/gemini-3.1-pro-preview` |
+| Grok 4.3 | Frontier/API | `x-ai/grok-4.3` |
+| DeepSeek V4 Pro | Larger open-weight | `deepseek/deepseek-v4-pro` |
+| Qwen 3.7 Max | Frontier/API | `qwen/qwen3.7-max` |
+| Kimi K2.6 | Larger open-weight | `moonshotai/kimi-k2.6` |
+| GLM 5.2 | Larger open-weight | `z-ai/glm-5.2` |
+| Llama 4 Maverick | Larger open-weight | `meta-llama/llama-4-maverick` |
+| Mistral Large 3 | Larger open-weight | `mistralai/mistral-large-2512` |
+| GPT-OSS 120B | Larger open-weight | `openai/gpt-oss-120b` |
+| Gemma 4 31B | Smaller open-weight | `google/gemma-4-31b-it` |
+| Llama 3.3 70B | Smaller open-weight | `meta-llama/llama-3.3-70b-instruct` |
+
+### Judge identifiers and substitutions
+
+The base panel comprises `google/gemini-3.1-pro-preview`, `openai/gpt-5.5`, `anthropic/claude-sonnet-5`, `deepseek/deepseek-v4-pro`, and `moonshotai/kimi-k2.6`. A same-family judge is replaced by `x-ai/grok-4.5` for Google, OpenAI, Anthropic, or Moonshot generators, and by `qwen/qwen3.7-max` for DeepSeek generators. The five final judges are from distinct families and none shares the generator’s configured family.
+
+### Saved records and collection window
+
+- [Generated perspectives](data/outputs/generations.jsonl): 208 unique model-topic responses containing 1,040 perspectives. Every retained response contains five perspectives, although the prompt permitted fewer. Retained responses are not a count of API requests.
+- [Judge records](data/outputs/judgments.jsonl): 5,228 raw records, including failed calls and retries. Resolving retries yields 5,184 valid decisions out of 5,200 intended decisions; 16 remain missing.
+- [Reference perspectives](data/gold_standard.json) and [topic definitions](data/topics.json): the fixed scoring targets and matched topics.
+- Generation timestamps: 9–10 July 2026 UTC. Judgement timestamps, including retries: 10–20 July 2026 UTC.
+
+The disagreement examples can be located by `model_slug`, `topic_id`, and perspective `index` in the generation file, and by `generator_slug`, `topic_id`, and `gen_index` in the judgement file. The UK fracking example is `openai/gpt-5.5`, `pair03_weird`, perspective 2; the Jadar supply-chain example is `google/gemini-3.1-pro-preview`, `pair03_serbian`, perspective 4. Use the final record per judge and execution, and use the canonical `match_gold_id` rather than the shuffled `match_presented` index. Original summaries, explanations, assignments, and judge justifications remain available for inspection.
+
+### Sources used for the manuscript’s access categories
+
+The manuscript cites the following release pages for its public-weight classifications:
+
+- [DeepSeek V4 Pro](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)
+- [Kimi K2.6](https://huggingface.co/moonshotai/Kimi-K2.6)
+- [GLM 5.2](https://huggingface.co/zai-org/GLM-5.2)
+- [Mistral Large 3](https://huggingface.co/collections/mistralai/mistral-large-3)
+- [Meta Llama models](https://ai.meta.com/llama/get-started/)
+- [Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/)
+- [GPT-OSS 120B](https://huggingface.co/openai/gpt-oss-120b)
+
+The Frontier/API classification of Qwen 3.7 Max follows the manuscript’s cited [commercial-model announcement](https://www.alibabacloud.com/en/news/product/maxcompute-model-computing-service-supports-qwen37-max-and-other-commercial-models-mkv). The smaller open-weight group comprises the selected 31B and 70B systems. This relative grouping does not imply common active-parameter counts, runtime costs, licences, or training-data disclosure.
+````
 
 ## Citation
 

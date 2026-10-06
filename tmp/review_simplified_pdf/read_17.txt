@@ -1,0 +1,84 @@
+statistic is their mean. Exact two-sided sign-flip
+tests enumerate all 28 = 256 sign assignments
+and compare the absolute permuted mean with the
+absolute observed mean. These tests assume independent, sign-exchangeable pair-level contrasts
+and hold the selected models fixed.
+Holm correction is applied jointly to four
+overall-recall contrasts: the three pairwise comparisons among Frontier/API, larger open-weight,
+and smaller open-weight systems, and Frontier/API versus all eight open-weight models
+combined. The Frontier-versus-combined-openweight difference is 0.045, with raw p = 0.086
+and adjusted p = 0.258. None of the four comparisons meets the adjusted 0.05 threshold. The
+smallest adjusted value is 0.063, for Frontier versus smaller open-weight systems. The accompanying analysis files contain all four contrasts, including raw and adjusted p-values.
+D.5
+Exploratory developer-country
+comparisons
+The US group contains Claude Opus 4.8, GPT
+5.5, Gemini 3.1 Pro, Grok 4.3, Llama 4 Maverick, GPT-OSS 120B, Gemma 4 31B, and Llama
+3.3 70B. The Chinese group contains DeepSeek
+V4 Pro, Qwen 3.7 Max, Kimi K2.6, and GLM 5.2.
+Mistral is excluded from this contrast and retained
+elsewhere.
+We compare overall recall and, separately, the
+WEIRD-minus-Serbian recall gap. Models receive equal weight within each group. For each
+outcome, we calculate a US-minus-China contrast within each matched pair, giving eight contrasts. Exact two-sided sign-flip tests enumerate
+all 28 = 256 sign assignments, using the mean
+contrast as the statistic. The tests assume independent, sign-exchangeable pair-level contrasts and
+hold the selected models fixed. Confidence intervals are percentile intervals from 10,000 resamples of the eight matched pairs. Holm correction
+is applied across the two tests.
+For overall recall, the US-minus-China difference is −0.030 (95% CI [−0.048, −0.013]), with
+raw p = 0.023 and Holm-adjusted p = 0.047. For
+the cultural gap, the difference is −0.025 (95%
+CI [−0.082, 0.025]), with raw and adjusted p =
+0.453. These outcomes answer different questions: an overall recall difference does not establish a difference in the WEIRD-Serbian gap. The
+accompanying analysis files contain both contrasts
+and their uncertainty estimates.
+D.6
+Pairwise model comparisons
+Pairwise model tests compare recall across the 16
+topics. For models a and b, let di = Ra,i − Rb,i
+for topic i. The observed statistic is
+Tobs =
+1 X
+di .
+For each model pair, the analysis samples
+10, 000 random sign vectors si ∈ {−1, +1} and
+computes
+1 X
+si di .
+(13)
+i
+Ts =
+(14)
+i
+The test is two-sided. The Monte Carlo p-value
+is
+1 + #{|Ts | ≥ |Tobs |}
+.
+p=
+10,001
+(15)
+The random-number
+ generator is initialized
+with seed 42. All 2 = 78 model pairs use this
+procedure, and the resulting raw p-values are adjusted jointly using the Benjamini-Hochberg procedure. This is a Monte Carlo paired sign-flip test,
+not exhaustive enumeration of all 216 sign patterns.
+The individual-topic sign-flip procedure assumes sign exchangeability at the topic level and
+does not preserve the matched pairs. To assess
+sensitivity to this choice, we also form eight pairlevel contrasts,
+W + RS
+W + RS
+Rb,p
+Ra,p
+a,p
+b,p
+xp =
+−
+,
+and enumerate all 28 = 256 sign assignments using their mean as the statistic. Two-sided tail comparisons allow a numerical tolerance of 10−12 ,
+and Benjamini–Hochberg correction again covers
+all 78 model comparisons. This procedure assumes sign-exchangeable pair-level contrasts and
+preserves the original mean difference. As a numerical check, exhaustive enumeration of the 216
+individual-topic sign patterns still yields 15 adjusted significant comparisons, whereas the pairblocked procedure yields none (minimum adjusted
+p = 0.087). The discrepancy therefore reflects
+the inferential unit rather than Monte Carlo sampling alone. The pair-blocked results qualify the
+individual topic findings; neither procedure establishes equivalence between models

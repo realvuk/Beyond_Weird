@@ -1,0 +1,77 @@
+                                    Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1700   D.7    Per-model WEIRD-Serbian tests                   of model-level precision and recall, not an aver-      1750
+1701
+       The WEIRD-Serbian comparison is also repeated          age of topic-level F1 scores. The displayed inter-     1751
+1702
+       separately for each generator using its eight          vals use the original 10,000-resample individual-      1752
+1703
+       matched differences. Some generators contain           topic bootstrap. Appendix D.1 explains its distinc-    1753
+1704
+       zero differences or tied absolute differences. Dif-    tion from the matched-pair recall sensitivity anal-    1754
+1705   ferences read from the analysis files are therefore    ysis supplied with the accompanying files. An un-      1755
+1706   rounded to 12 decimal places to remove negligi-        matched output may express a legitimate position       1756
+1707   ble floating-point representation noise. Exact ze-     outside the reference set.                             1757
+1708   ros are dropped, and the remaining absolute differ-                                                           1758
+1709   ences receive midranks.                                E.3    Pairwise model comparisons                      1759
+1710      For the n remaining non-zero differences, all       The 78 pairwise model comparisons are supple-          1760
+1711   2n sign assignments are enumerated. For each as-       mentary and are not used to establish an inferen-      1761
+1712   signment, the positive-rank sum W + is calculated.     tial ranking in the main paper. The accompany-         1762
+1713   The directional p-value is                             ing analysis files report mean recall differences,     1763
+1714                                                          raw p-values, and Benjamini–Hochberg-adjusted          1764
+                          +       +
+                                      
+1715                   P Wnull ≥ Wobs   .            (16)     p-values for the procedures in Appendix D.6. Fif-      1765
+1716                                                          teen comparisons survive adjustment when the 16        1766
+         Rank-biserial correlation is calculated from the
+1717                                                          topics are treated as separate sign-flip units, both   1767
+       same signed ranks. The 13 resulting p-values are
+1718                                                          with the original Monte Carlo calculation and with     1768
+       adjusted using Benjamini-Hochberg.
+1719                                                          exhaustive enumeration. None survives when the         1769
+1720   D.8    Per-reference mixed-effects check               eight matched pairs are retained as blocks; the        1770
+1721                                                          smallest adjusted p-value is 0.087. The mean dif-      1771
+       A separate robustness check fits a mixed-effects
+1722                                                          ferences are unchanged. This sensitivity concerns      1772
+       model to the 1, 040 per-reference recall-credit ob-
+1723                                                          the inferential unit, not merely Monte Carlo sam-      1773
+       servations. Cultural arm is entered as a fixed ef-
+1724                                                          pling. Neither result establishes equivalence be-      1774
+       fect, with random intercepts for matched pair and
+1725
+                                                              tween models.                                          1775
+       generator. The estimated WEIRD coefficient is
+1726   βWEIRD = −0.0131 (SE = 0.0268, p = 0.626),                                                                    1776
+1727   consistent with the primary matched-pair analy-        E.4    Per-model WEIRD-Serbian comparisons             1777
+1728   sis. This specification uses per-reference cred-       Table 9 reports the per-model comparisons. No in-      1778
+1729   its, whereas Appendix D.3 models 104 model-pair        dividual generator has a one-sided raw p < 0.05,       1779
+1730   differences. The two results come from different       and none survives adjustment across the 13 gener-      1780
+1731   observational units and must not be interchanged.      ators. Figure 2, panel B, displays mean recall in      1781
+1732   The per-reference specification does not explicitly    each cultural group for every generator.               1782
+1733   model all dependence among references within a                                                                1783
+1734   model-topic response.                                  F     Judge reliability and robustness                 1784
+1735                                                                                                                 1785
+       E     Secondary results                                F.1    Agreement coefficients
+1736                                                                                                                 1786
+1737   E.1    Paired recall at three levels                   The main paper reports nominal Krippendorff’s α,       1787
+1738                                                                                                                 1788
+       Figure 2 shows the same paired scores at the topic-    which accommodates multiple judges and miss-
+1739                                                          ing ratings. Table 10 also preserves Fleiss’           1789
+       pair, model, and individual-cell levels. It comple-
+1740   ments the primary difference plot in Figure 1. The     κ and Gwet’s AC1 from the original analysis.           1790
+1741   104 cells share generators and matched pairs; they     The pipeline excludes missing ratings and uses         1791
+1742   are descriptive observations rather than indepen-      variable-rater formulations for κ and AC1. These       1792
+1743   dent replicates.                                       coefficients use different chance-agreement calcu-     1793
+1744                                                          lations; they need not agree in general. Their sim-    1794
+1745   E.2    Supplementary precision and F1                  ilar values here support the same descriptive ac-      1795
+1746   Table 8 preserves the model-level recall inter-        count of judge consistency, but do not establish       1796
+1747   vals and supplementary precision and F1 sum-           accuracy or equal error rates across cultural set-     1797
+1748   maries from the saved analysis. Recall remains         tings.                                                 1798
+1749   the primary outcome. F1 is the harmonic mean              “‘                                                  1799
+
+
+
+
+                                                             18

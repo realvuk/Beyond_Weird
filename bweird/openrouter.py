@@ -1,10 +1,10 @@
 """Minimal, retry-hardened OpenRouter chat-completions client.
 
 All pipeline API traffic goes through :class:`OpenRouterClient.chat`, which
-is wrapped by :func:`retry_on_transient`: exponential backoff with full
-jitter on rate limits (honouring ``Retry-After``), 5xx responses, timeouts,
-and malformed payloads. Authentication failures are permanent and are not
-retried.
+is wrapped by :func:`retry_on_transient` (built on `tenacity`): jittered
+exponential backoff on rate limits (honouring ``Retry-After``), 5xx
+responses, timeouts, and malformed payloads. Authentication failures are
+permanent and are not retried.
 
 The client always sends an explicit ``temperature`` (the pipeline uses 0.0
 everywhere for reproducibility) and a fixed ``seed`` for providers that
@@ -13,17 +13,16 @@ support it.
 
 from __future__ import annotations
 
-import functools
 import logging
 import os
-import random
-import time
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, TypeVar
 
 import requests
+from dotenv import load_dotenv
+from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential_jitter
 
 from bweird.errors import (
     ConfigError,
@@ -50,14 +49,7 @@ def _load_dotenv(path: Path = Path(".env")) -> None:
     Already-set environment variables win, so an exported key overrides the
     file. ponytail: reads .env from the cwd; run the scripts from the repo root.
     """
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, _, value = line.partition("=")
-        os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
+    load_dotenv(path, override=False)
 
 
 def retry_on_transient(
@@ -67,41 +59,41 @@ def retry_on_transient(
 ) -> Callable[[_F], _F]:
     """Decorator retrying transient API failures with jittered backoff.
 
-    Retries :class:`RateLimitError` and :class:`TransientAPIError`; attempt
-    ``n`` waits up to ``base_delay * 2**n`` seconds (full jitter, capped at
-    ``max_delay``), and a server ``Retry-After`` hint takes precedence over
-    the computed backoff. :class:`PermanentAPIError` and all non-API
-    exceptions propagate immediately.
+    Retries :class:`RateLimitError` and :class:`TransientAPIError`; a server
+    ``Retry-After`` hint on a :class:`RateLimitError` takes precedence over
+    the computed exponential backoff. :class:`PermanentAPIError` and all
+    non-API exceptions propagate immediately.
     """
     if max_attempts < 1:
         raise ValueError("max_attempts must be >= 1")
 
-    def decorator(func: _F) -> _F:
-        @functools.wraps(func)
-        def wrapper(*args: Any, **kwargs: Any) -> Any:
-            last_error: Exception | None = None
-            for attempt in range(max_attempts):
-                try:
-                    return func(*args, **kwargs)
-                except (RateLimitError, TransientAPIError) as exc:
-                    last_error = exc
-                    if attempt == max_attempts - 1:
-                        break
-                    delay = random.uniform(0.0, min(max_delay, base_delay * 2**attempt))
-                    if isinstance(exc, RateLimitError) and exc.retry_after is not None:
-                        delay = min(max_delay, exc.retry_after)
-                    logger.warning(
-                        "%s (attempt %d/%d) -- retrying in %.1fs",
-                        exc,
-                        attempt + 1,
-                        max_attempts,
-                        delay,
-                    )
-                    time.sleep(delay)
-            assert last_error is not None
-            raise last_error
+    backoff = wait_exponential_jitter(initial=base_delay, max=max_delay, jitter=base_delay)
 
-        return wrapper  # type: ignore[return-value]
+    def wait(retry_state: Any) -> float:
+        exc = retry_state.outcome.exception()
+        if isinstance(exc, RateLimitError) and exc.retry_after is not None:
+            return min(max_delay, exc.retry_after)
+        return float(backoff(retry_state))
+
+    def before_sleep(retry_state: Any) -> None:
+        logger.warning(
+            "%s (attempt %d/%d) -- retrying in %.1fs",
+            retry_state.outcome.exception(),
+            retry_state.attempt_number,
+            max_attempts,
+            retry_state.next_action.sleep,
+        )
+
+    tenacity_retry = retry(
+        retry=retry_if_exception_type((RateLimitError, TransientAPIError)),
+        stop=stop_after_attempt(max_attempts),
+        wait=wait,
+        before_sleep=before_sleep,
+        reraise=True,
+    )
+
+    def decorator(func: _F) -> _F:
+        return tenacity_retry(func)
 
     return decorator
 

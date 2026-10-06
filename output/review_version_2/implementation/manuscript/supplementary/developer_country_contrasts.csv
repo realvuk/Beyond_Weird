@@ -1,0 +1,2 @@
+contrast,recall_difference,recall_ci_lo,recall_ci_hi,recall_p_two_sided,gap_difference,gap_ci_lo,gap_ci_hi,gap_p_two_sided,recall_p_holm,gap_p_holm
+US minus China,-0.03011718750000001,-0.048437500000000015,-0.013359374999999951,0.0234375,-0.025390624999999993,-0.08171874999999997,0.02523437500000001,0.453125,0.046875,0.453125

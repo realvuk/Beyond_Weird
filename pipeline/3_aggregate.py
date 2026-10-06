@@ -25,30 +25,36 @@ Usage:
       --panels panels.json --out out/ [--panel disjoint|full]
 """
 import argparse
+import sys
 from pathlib import Path
 
-from bweird.analysis import aggregate_all, load_panels, load_topics, load_verdicts, log
+from bweird.analysis import (
+    ADAPTED_DIR,
+    AGG_DIR,
+    aggregate_all,
+    load_eval_topics,
+    load_panels,
+    load_verdicts,
+    log,
+)
+from bweird.logging_utils import run_stage
 
-# Repo-root-relative defaults, resolved from this file so the stage runs from
-# any working directory. Every path can still be overridden on the command line.
-ROOT = Path(__file__).resolve().parent.parent
-ADAPTED = ROOT / "results" / "adapted"
-AGG = ROOT / "results" / "agg"
 
-
-def main():
+def build_arg_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--verdicts", default=str(ADAPTED / "verdicts.jsonl"))
-    ap.add_argument("--topics", default=str(ADAPTED / "topics.json"))
-    ap.add_argument("--panels", default=str(ADAPTED / "panels.json"))
-    ap.add_argument("--out", default=str(AGG))
+    ap.add_argument("--verdicts", default=str(ADAPTED_DIR / "verdicts.jsonl"))
+    ap.add_argument("--topics", default=str(ADAPTED_DIR / "topics.json"))
+    ap.add_argument("--panels", default=str(ADAPTED_DIR / "panels.json"))
+    ap.add_argument("--out", default=str(AGG_DIR))
     ap.add_argument("--panel", choices=["disjoint", "full"], default="disjoint",
                     help="disjoint = family-disjoint scoring panel (default); "
                          "full = base panel incl. own-family judge (bias analysis only)")
-    args = ap.parse_args()
+    return ap
 
-    topics = load_topics(args.topics)
+
+def run(args: argparse.Namespace) -> int:
+    topics = load_eval_topics(args.topics)
     panels = load_panels(args.panels)
     verdicts = load_verdicts(args.verdicts, topics)
 
@@ -69,7 +75,12 @@ def main():
     print("\nMean topic coverage per generator (sum rule vs max rule):")
     print(summary.to_string())
     print(f"\nArtifacts written to {out}/")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    return run_stage(build_arg_parser(), run, argv)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

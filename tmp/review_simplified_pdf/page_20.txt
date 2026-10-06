@@ -1,0 +1,88 @@
+                                      Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1900                                                                                                                     1950
+       Table 9: Per-model WEIRD-minus-Serbian recall comparisons. Positive gaps favour the WEIRD topic. pBH is
+1901                                                                                                                     1951
+       adjusted across the 13 generators.
+1902                                                                                                                     1952
+                   Model               Mean gap     Median gap      One-sided p   Rank-biserial       pBH
+1903                                                                                                                     1953
+1904               GLM 5.2                 0.106         0.100          0.0625            0.639    0.6348                1954
+                   GPT-OSS 120B            0.058         0.100          0.0977            0.556    0.6348
+1905                                                                                                                     1955
+                   Llama 4 Maverick        0.035        −0.040          0.4805            0.056    0.9445
+1906                                                                                                                     1956
+                   Llama 3.3 70B           0.015         0.000          0.4336            0.111    0.9445
+1907               DeepSeek V4 Pro         0.010        −0.020          0.4688            0.071    0.9445                1957
+1908               Kimi K2.6              −0.019         0.000          0.6875           −0.200    0.9445                1958
+1909               GPT 5.5                −0.020         0.020          0.6523           −0.139    0.9445                1959
+1910
+                   Grok 4.3               −0.020        −0.040          0.6211           −0.111    0.9445                1960
+                   Mistral Large 3        −0.040        −0.040          0.7266           −0.250    0.9445
+1911                                                                                                                     1961
+                   Gemini 3.1 Pro         −0.045        −0.020          0.7188           −0.222    0.9445
+1912               Qwen 3.7 Max           −0.073        −0.100          0.9375           −0.583    0.9688                1962
+1913               Gemma 4 31B            −0.082        −0.100          0.9688           −0.810    0.9688                1963
+1914               Claude Opus 4.8        −0.095        −0.180          0.8555           −0.417    0.9688                1964
+1915                                                                                                                     1965
+1916                                                                                                                     1966
+                                                                judges received alongside its summary. The nu-
+1917   Table 10: Supplementary agreement coefficients. The                                                               1967
+       main paper reports the α column; all three measures      merical assignments in Table 12 are the recorded
+1918                                                                                                                     1968
+       describe consistency rather than correctness.            judge decisions.
+1919                                                                                                                     1969
+1920   Scope                  κ           AC1           α          All five judges match output 3 to reference 1:        1970
+                                                                both support UK fracking for energy security and
+1921   All topics           0.768         0.783       0.769                                                              1971
+       WEIRD topics         0.761         0.777       0.762     economic benefits. They also assign output 5 to
+1922                                                                                                                     1972
+       Serbian topics       0.774         0.789       0.775     reference 1. These two outputs therefore recover
+1923                                                                                                                     1973
+                                                                one reference, despite expressing their support dif-
+1924                                                                                                                     1974
+                                                                ferently.
+1925                                                                                                                     1975
+       ysis; the corresponding two-sided p-values range            Output 2 illustrates a disputed match. Its ex-
+1926                                                                                                                     1976
+       from approximately 0.38 to 0.84. The largest in-         planation emphasises distrust of companies and
+1927                                                                                                                     1977
+       dividual change in recall is 3.6 percentage points       regulators and the risks borne by local residents.
+1928   for Llama 3.3 70B when the Gemini judge is re-                                                                    1978
+                                                                Claude assigns it to reference 2; the other four
+1929   moved.                                                                                                            1979
+                                                                judges return no match because they do not con-
+1930                                                                                                                     1980
+                                                                sider that rationale identical to any of the five ref-
+1931   F.4     No-match decisions                                                                                        1981
+                                                                erences. This is a disagreement about correspon-
+1932   Across all valid judge decisions, 1, 658 of 5, 184                                                                1982
+                                                                dence to the benchmark, not a determination that
+1933   are no-match votes, giving a judge-level no-match        the generated perspective is illegitimate.               1983
+1934   vote rate of 32.0%. The corresponding rates are             The first four judges recover references 1, 2, and
+                                                                                                                         1984
+1935   32.9% for WEIRD topics and 31.1% for Serbian             5, giving each a recall of 3/5 = 0.60. Grok does         1985
+1936   topics.                                                  not match output 4 and recovers only references 1        1986
+1937      For completeness, 184 of the 1, 040 gener-            and 2, giving recall 2/5 = 0.40. The model-topic         1987
+1938   ated perspectives are unmatched by all available         recall is therefore                                      1988
+1939   judges, or 17.7%. This is a different quantity with                                                               1989
+1940   a different denominator and should not be referred                         4(0.60) + 0.40                         1990
+1941   to simply as the no-match rate.                                   Rmt =                   = 0.56.                 1991
+                                                                                        5
+1942                                                                                                                     1992
+1943
+       G     Worked example: UK fracking                                                                                 1993
+                                                                Equivalently, the five reference credits are
+1944   This example follows one saved GPT 5.5 response          (1, 1, 0, 0, 0.8). Their mean is 0.56. No majority-      1994
+1945   to the topic UK fracking / shale gas, with the refer-    vote threshold is applied: reference 5 receives          1995
+1946   ence population specified as “people in the United       fractional credit reflecting its recovery by four        1996
+1947   Kingdom”. Tables 2 and 11 reproduce the five ref-        judges. Reference 2 receives full credit because         1997
+1948   erence summaries and generated summaries. Each           all five judges recover it through output 1; the extra   1998
+1949   perspective also has an explanation, which the           match from output 2 does not increase its credit.        1999
+
+
+
+
+                                                               20

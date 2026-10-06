@@ -1,0 +1,60 @@
+Table 11: The five generated summaries from GPT 5.5
+for UK fracking.
+Output
+Summary
+Fracking should be banned because it
+threatens the climate, countryside, water,
+and local communities.
+I oppose fracking mainly because I do not
+trust companies or government regulators to
+keep local people safe.
+The UK should frack because we need
+domestic gas for energy security, jobs, tax
+revenue, and lower reliance on imports.
+Fracking should be allowed only where
+geology supports it, regulation is strict, and
+local communities consent and benefit
+financially.
+We should embrace fracking and stop letting
+net-zero politics block cheap domestic
+energy.
+Table 12: Recorded assignments for the five GPT 5.5
+outputs. A number identifies the matched reference; 0
+denotes no match. Judge columns are Gemini 3.1 Pro
+(G), Claude Sonnet 5 (C), DeepSeek V4 Pro (D), Kimi
+K2.6 (K), and Grok 4.5 (X). All 25 judgments are valid.
+Output
+G
+C
+D
+K
+X
+0.60
+0.60
+0.60
+0.60
+0.40
+Judge recall
+H
+Execution records and model
+identifiers
+The saved generation file contains 208 unique
+model-topic responses and 1,040 perspectives.
+The prompt allowed one to five perspectives, but
+every retained response contains five. One retained response does not imply one API request:
+failed requests could be retried and malformed
+JSON could receive a repair request. Saved generation timestamps span 9-10 July 2026 UTC. Judgment timestamps, including retries, span 10-20
+July 2026 UTC.
+Table 13 gives the configured endpoint identifiers. The GitHub repository includes the original generator and judge configurations. The
+judge configuration also identifies Claude Sonnet
+5 as anthropic/claude-sonnet-5 and the
+Grok substitute as x-ai/grok-4.5.
+The release sources used for the public-weight
+categories are the published pages for DeepSeek
+V4 Pro, Kimi K2.6, GLM 5.2, Mistral Large 3,
+Meta’s Llama models, Gemma 4, and GPT-OSS
+120B. The smaller group contains the selected
+31B and 70B systems; the label is relative to the
+larger public-weight systems in this selection. It
+does not imply a common active-parameter count,
+runtime cost, licence, or training-data disclosure.

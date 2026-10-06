@@ -35,9 +35,8 @@ reanalysis:  ## Rebuild results/reanalysis/ via the independent pack
 	$(PY) reanalysis/lojo_audit.py
 	$(PY) reanalysis/human_assignment_audit.py
 
-figures:  ## Regenerate the manuscript figures into figures/
-	$(PY) figures/plot_1.py
-	$(PY) figures/plot_2.py
+figures:  ## Reproduce both paper versions' charts as PDF/PNG in output/pdf/paper_figures/
+	$(PY) figures/reproduce.py
 
 lint:  ## Static checks
 	$(PY) -m ruff check .

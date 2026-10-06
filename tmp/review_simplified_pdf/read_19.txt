@@ -1,0 +1,84 @@
+Figure 2: Paired recall at three levels. Panel A averages the 13 generators within each matched topic pair. Panel B
+averages the eight pairs within each generator. Panel C plots all 104 model-pair comparisons, with the dashed line
+indicating equal recall. Points above the line favour WEIRD topics. Panel C is descriptive: its observations share
+generators and matched topic pairs and are not independent replicates.
+Table 8: Supplementary metrics with 95% bootstrap intervals, reproduced from the saved analysis. Rows are
+ordered by recall.
+Model
+Gemini 3.1 Pro
+DeepSeek V4 Pro
+GPT 5.5
+Gemma 4 31B
+GLM 5.2
+Kimi K2.6
+Qwen 3.7 Max
+Claude Opus 4.8
+Grok 4.3
+Mistral Large 3
+GPT-OSS 120B
+Llama 4 Maverick
+Llama 3.3 70B
+Recall (95% CI)
+Precision (95% CI)
+F1 (95% CI)
+0.698 (0.630-0.765)
+0.645 (0.560-0.730)
+0.645 (0.600-0.692)
+0.638 (0.578-0.698)
+0.607 (0.542-0.667)
+0.604 (0.548-0.656)
+0.582 (0.524-0.639)
+0.578 (0.512-0.643)
+0.575 (0.522-0.625)
+0.565 (0.485-0.640)
+0.541 (0.468-0.612)
+0.502 (0.432-0.580)
+0.458 (0.400-0.518)
+0.755 (0.685-0.825)
+0.705 (0.632-0.775)
+0.765 (0.710-0.815)
+0.761 (0.681-0.838)
+0.662 (0.592-0.732)
+0.723 (0.638-0.806)
+0.649 (0.589-0.709)
+0.660 (0.595-0.720)
+0.808 (0.765-0.855)
+0.652 (0.568-0.720)
+0.596 (0.522-0.666)
+0.582 (0.495-0.675)
+0.528 (0.445-0.618)
+0.725 (0.658-0.790)
+0.674 (0.596-0.751)
+0.700 (0.654-0.744)
+0.694 (0.630-0.756)
+0.633 (0.567-0.700)
+0.658 (0.594-0.717)
+0.614 (0.558-0.668)
+0.616 (0.555-0.676)
+0.672 (0.634-0.708)
+0.606 (0.524-0.674)
+0.567 (0.496-0.638)
+0.540 (0.464-0.617)
+0.490 (0.423-0.560)
+F.2
+Pairwise judge agreement
+Pairwise Cohen’s κ is calculated for each pair of
+base-panel judges using only generated perspectives rated by both judges. The number of corated perspectives ranges from approximately 720
+to 880 across judge pairs. Pairwise κ values range
+from approximately 0.67 to 0.85. The three lowest values are 0.671 for Gemini-Claude, 0.684 for
+Gemini-GPT, and 0.695 for Gemini-DeepSeek.
+These results show that judge decisions are related
+but not identical; they do not identify which judge
+is more accurate.
+F.3
+Leave-one-judge-out robustness
+We repeat the aggregation after removing each of
+the seven models that appears anywhere in the
+judge roster. The remaining valid judgments are
+re-averaged before recall, precision, and F1 are recalculated.
+Spearman correlations between the full-panel
+and leave-one-judge-out recall rankings range
+from 0.971 to 0.999. The corresponding F1ranking correlations range from 0.978 to 1.000.
+Gemini 3.1 Pro remains first by F1 under every
+exclusion. The pooled WEIRD-minus-Serbian recall difference ranges from approximately −0.008
+to −0.020, compared with −0.013 in the full anal-

@@ -1,0 +1,1363 @@
+{
+  "reference_record": {
+    "topic_id": "pair03_weird",
+    "pair_id": 3,
+    "arm": "weird",
+    "topic_title": "UK fracking / shale gas",
+    "population": "people in the United Kingdom",
+    "perspectives": [
+      {
+        "explanation": "Britain needs energy security and cheap gas. Russia weaponises supplies, the North Sea is dwindling, and shale gas under Lancashire and Yorkshire could create jobs and lower bills.",
+        "summary": "Restart UK fracking for energy security and jobs.",
+        "extremity_tier": 2,
+        "perspective_id": "pair03_weird_p1"
+      },
+      {
+        "explanation": "Fracking is just bad science. It causes earthquakes, pollutes groundwater, and locks us into another decade of fossil fuels when we should be investing in offshore wind and grid storage. Britain must stay frack-free.",
+        "summary": "Ban fracking permanently on environmental and seismic grounds.",
+        "extremity_tier": 1,
+        "perspective_id": "pair03_weird_p2"
+      },
+      {
+        "explanation": "I get the argument for shale gas as a national policy, but not in my village. The lorries, the noise, the wells next to schools? No thanks. Frack somewhere else, ideally somewhere uninhabited.",
+        "summary": "Support fracking in principle but oppose it locally.",
+        "extremity_tier": 1,
+        "perspective_id": "pair03_weird_p3"
+      },
+      {
+        "explanation": "We're in a climate emergency. The IPCC is clear: we cannot open new fossil-fuel reserves and stay below 1.5°C. Every shale well drilled in the UK is a brick in the wall against our children's future. This isn't about price, it's about survival.",
+        "summary": "Reject fracking categorically on climate-emergency grounds.",
+        "extremity_tier": 2,
+        "perspective_id": "pair03_weird_p4"
+      },
+      {
+        "explanation": "If shale gas can really be done safely, with proper regulation, community compensation, and a clear bridge to renewables, I could be persuaded. But the operators and ministers have to actually prove it, and right now they haven't.",
+        "summary": "Conditional pragmatist, support shale gas only with strict guarantees and a transition plan.",
+        "extremity_tier": 3,
+        "perspective_id": "pair03_weird_p5"
+      }
+    ]
+  },
+  "generated_response": {
+    "key": "openai/gpt-5.5::pair03_weird",
+    "model_slug": "openai/gpt-5.5",
+    "model_family": "openai",
+    "topic_id": "pair03_weird",
+    "perspectives": [
+      {
+        "index": 1,
+        "summary": "Fracking should be banned because it threatens the climate, countryside, water, and local communities.",
+        "explanation": "I do not want shale gas extracted in the UK because it locks us into more fossil fuel use when we should be cutting emissions. The risks of tremors, industrialisation of rural areas, water contamination, lorry traffic, and damage to nature are not worth it. We should put the money and political effort into insulation, renewables, storage, and public transport instead."
+      },
+      {
+        "index": 2,
+        "summary": "I oppose fracking mainly because I do not trust companies or government regulators to keep local people safe.",
+        "explanation": "Even if industry says it can be done safely, I have no confidence that corners will not be cut once drilling starts. If something goes wrong with earthquakes, water, noise, or house values, it is local residents who pay the price while companies take the profit. I do not want my community used as a test site."
+      },
+      {
+        "index": 3,
+        "summary": "The UK should frack because we need domestic gas for energy security, jobs, tax revenue, and lower reliance on imports.",
+        "explanation": "Britain still uses a lot of gas, so it makes no sense to import it from abroad while refusing to use our own resources. Fracking could create skilled jobs, support industry, raise tax revenue, and make us less vulnerable to foreign suppliers and price shocks. I would rather have tightly regulated British gas than buy more from overseas."
+      },
+      {
+        "index": 4,
+        "summary": "Fracking should be allowed only where geology supports it, regulation is strict, and local communities consent and benefit financially.",
+        "explanation": "I am not against shale gas in principle, but it should not be forced on places that do not want it. Let proper test drilling establish whether the resource is viable, enforce tough seismic and environmental rules, and give host communities a real say and a real share of the benefits. If those conditions are not met, projects should not go ahead."
+      },
+      {
+        "index": 5,
+        "summary": "We should embrace fracking and stop letting net-zero politics block cheap domestic energy.",
+        "explanation": "I think the opposition to fracking is driven too much by green ideology and fearmongering. People are struggling with bills, and Britain needs reliable energy, not just promises about wind and solar. We should scrap the moratorium, get drilling, and prioritise affordability and national self-reliance over climate targets."
+      }
+    ],
+    "raw_response": "{\"perspectives\":[{\"summary\":\"Fracking should be banned because it threatens the climate, countryside, water, and local communities.\",\"explanation\":\"I do not want shale gas extracted in the UK because it locks us into more fossil fuel use when we should be cutting emissions. The risks of tremors, industrialisation of rural areas, water contamination, lorry traffic, and damage to nature are not worth it. We should put the money and political effort into insulation, renewables, storage, and public transport instead.\"},{\"summary\":\"I oppose fracking mainly because I do not trust companies or government regulators to keep local people safe.\",\"explanation\":\"Even if industry says it can be done safely, I have no confidence that corners will not be cut once drilling starts. If something goes wrong with earthquakes, water, noise, or house values, it is local residents who pay the price while companies take the profit. I do not want my community used as a test site.\"},{\"summary\":\"The UK should frack because we need domestic gas for energy security, jobs, tax revenue, and lower reliance on imports.\",\"explanation\":\"Britain still uses a lot of gas, so it makes no sense to import it from abroad while refusing to use our own resources. Fracking could create skilled jobs, support industry, raise tax revenue, and make us less vulnerable to foreign suppliers and price shocks. I would rather have tightly regulated British gas than buy more from overseas.\"},{\"summary\":\"Fracking should be allowed only where geology supports it, regulation is strict, and local communities consent and benefit financially.\",\"explanation\":\"I am not against shale gas in principle, but it should not be forced on places that do not want it. Let proper test drilling establish whether the resource is viable, enforce tough seismic and environmental rules, and give host communities a real say and a real share of the benefits. If those conditions are not met, projects should not go ahead.\"},{\"summary\":\"We should embrace fracking and stop letting net-zero politics block cheap domestic energy.\",\"explanation\":\"I think the opposition to fracking is driven too much by green ideology and fearmongering. People are struggling with bills, and Britain needs reliable energy, not just promises about wind and solar. We should scrap the moratorium, get drilling, and prioritise affordability and national self-reliance over climate targets.\"}]}",
+    "usage": {
+      "prompt_tokens": 313,
+      "completion_tokens": 633,
+      "total_tokens": 946,
+      "cost": 0,
+      "is_byok": 0
+    },
+    "created_at": "2026-07-09T11:00:59.459742+00:00"
+  },
+  "judge_decisions": [
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p1::google/gemini-3.1-pro-preview::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 1,
+      "judge_slug": "google/gemini-3.1-pro-preview",
+      "judge_family": "google",
+      "role": "panel",
+      "presentation_order": [
+        1,
+        5,
+        2,
+        4,
+        3
+      ],
+      "match_presented": 3,
+      "match_gold_id": 2,
+      "attributes": [
+        "Core stance: Fracking should be banned in the UK.",
+        "Whose view: A UK resident concerned about the environment and local communities.",
+        "Advocates: Banning shale gas extraction and investing in renewables, insulation, and public transport.",
+        "Claim: Fracking locks the UK into fossil fuels, causes tremors, contaminates water, and damages rural areas."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Advocates restarting fracking for energy security, which is the exact opposite of the candidate's stance."
+        },
+        {
+          "match": false,
+          "note": "Expresses conditional support for fracking, whereas the candidate demands a complete ban."
+        },
+        {
+          "match": true,
+          "note": "Both advocate a permanent ban on fracking due to a combination of climate concerns, fossil fuel lock-in, seismic risks, and water contamination, while supporting renewables."
+        },
+        {
+          "match": false,
+          "note": "Rejects fracking solely on global climate emergency grounds, missing the candidate's emphasis on local environmental and seismic impacts."
+        },
+        {
+          "match": false,
+          "note": "Supports fracking nationally but opposes it locally (NIMBY), whereas the candidate opposes it entirely."
+        }
+      ],
+      "reason": "Option 3 perfectly captures the candidate's stance of banning fracking based on a combination of climate concerns (fossil fuel lock-in), local environmental impacts (water contamination), seismic risks (tremors/earthquakes), and the need to invest in renewables instead.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: Fracking should be banned in the UK.\",\n    \"Whose view: A UK resident concerned about the environment and local communities.\",\n    \"Advocates: Banning shale gas extraction and investing in renewables, insulation, and public transport.\",\n    \"Claim: Fracking locks the UK into fossil fuels, causes tremors, contaminates water, and damages rural areas.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Advocates restarting fracking for energy security, which is the exact opposite of the candidate's stance.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Expresses conditional support for fracking, whereas the candidate demands a complete ban.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both advocate a permanent ban on fracking due to a combination of climate concerns, fossil fuel lock-in, seismic risks, and water contamination, while supporting renewables.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Rejects fracking solely on global climate emergency grounds, missing the candidate's emphasis on local environmental and seismic impacts.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Supports fracking nationally but opposes it locally (NIMBY), whereas the candidate opposes it entirely.\"\n    }\n  ],\n  \"match\": 3,\n  \"reason\": \"Option 3 perfectly captures the candidate's stance of banning fracking based on a combination of climate concerns (fossil fuel lock-in), local environmental impacts (water contamination), seismic risks (tremors/earthquakes), and the need to invest in renewables instead.\"\n}",
+      "created_at": "2026-07-11T20:57:19.179947+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p1::anthropic/claude-sonnet-5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 1,
+      "judge_slug": "anthropic/claude-sonnet-5",
+      "judge_family": "anthropic",
+      "role": "panel",
+      "presentation_order": [
+        1,
+        3,
+        4,
+        2,
+        5
+      ],
+      "match_presented": 4,
+      "match_gold_id": 2,
+      "attributes": [
+        "Advocates a full ban on fracking/shale gas in the UK",
+        "Voiced from a general public/environmental-concern standpoint within the UK",
+        "Cites multiple harms: climate impact, countryside industrialisation, water contamination, seismic/tremor risk, community disruption",
+        "Calls for redirecting resources to insulation, renewables, storage, and public transport instead"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "This reference supports restarting fracking for energy security, the opposite stance."
+        },
+        {
+          "match": false,
+          "note": "This reference accepts fracking nationally but opposes it locally (NIMBY), unlike the candidate's outright ban stance."
+        },
+        {
+          "match": false,
+          "note": "This reference bases its ban solely on climate-emergency/IPCC survival framing, narrower than the candidate's multi-issue rationale."
+        },
+        {
+          "match": true,
+          "note": "This reference bans fracking on environmental and seismic grounds (earthquakes, groundwater, fossil-fuel lock-in) and calls for investment in renewables/storage, matching the candidate's broad multi-factor rationale for a permanent ban."
+        },
+        {
+          "match": false,
+          "note": "This reference is conditionally open to fracking with safeguards, not an outright ban like the candidate."
+        }
+      ],
+      "reason": "The candidate's rationale mirrors option 4's combination of environmental, seismic, and fossil-fuel-lock-in arguments for a permanent nationwide ban, going beyond the narrower climate-only framing of option 3.",
+      "raw_response": "{\"attributes\":[\"Advocates a full ban on fracking/shale gas in the UK\",\"Voiced from a general public/environmental-concern standpoint within the UK\",\"Cites multiple harms: climate impact, countryside industrialisation, water contamination, seismic/tremor risk, community disruption\",\"Calls for redirecting resources to insulation, renewables, storage, and public transport instead\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"This reference supports restarting fracking for energy security, the opposite stance.\"},{\"match\":false,\"note\":\"This reference accepts fracking nationally but opposes it locally (NIMBY), unlike the candidate's outright ban stance.\"},{\"match\":false,\"note\":\"This reference bases its ban solely on climate-emergency/IPCC survival framing, narrower than the candidate's multi-issue rationale.\"},{\"match\":true,\"note\":\"This reference bans fracking on environmental and seismic grounds (earthquakes, groundwater, fossil-fuel lock-in) and calls for investment in renewables/storage, matching the candidate's broad multi-factor rationale for a permanent ban.\"},{\"match\":false,\"note\":\"This reference is conditionally open to fracking with safeguards, not an outright ban like the candidate.\"}],\"match\":4,\"reason\":\"The candidate's rationale mirrors option 4's combination of environmental, seismic, and fossil-fuel-lock-in arguments for a permanent nationwide ban, going beyond the narrower climate-only framing of option 3.\"}",
+      "created_at": "2026-07-11T20:57:58.998409+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p1::deepseek/deepseek-v4-pro::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 1,
+      "judge_slug": "deepseek/deepseek-v4-pro",
+      "judge_family": "deepseek",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        5,
+        1,
+        4,
+        2
+      ],
+      "match_presented": 5,
+      "match_gold_id": 2,
+      "attributes": [
+        "Core stance: categorical opposition to fracking, advocating a permanent ban.",
+        "Voiced as a UK resident concerned about climate and local environmental impacts.",
+        "Advocates: redirecting investment to renewables, insulation, storage, and public transport instead of fracking.",
+        "Claim rests on: fracking locks in fossil fuel use, hinders emissions cuts, and causes unacceptable local risks (tremors, water contamination, traffic, industrialisation of countryside)."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Candidate advocates a permanent national ban, while this option supports fracking in principle but opposes it locally, a NIMBY stance."
+        },
+        {
+          "match": false,
+          "note": "Candidate calls for a ban, while this option is conditional support only if strict guarantees are met."
+        },
+        {
+          "match": false,
+          "note": "Candidate is anti-fracking; this option is pro-fracking for energy security and jobs."
+        },
+        {
+          "match": false,
+          "note": "Both reject fracking, but the candidate's rationale also includes local environmental and seismic risks, while this option focuses solely on climate emergency."
+        },
+        {
+          "match": true,
+          "note": "This option calls for a permanent ban on environmental and seismic grounds, exactly matching the candidate's stance, rationale, and demand for a frack-free Britain."
+        }
+      ],
+      "reason": "The candidate perspective aligns exactly with option 5, which calls for a permanent ban on fracking due to seismic, groundwater, and fossil fuel lock-in concerns, matching the candidate's stance, rationale, and demand for a frack-free Britain.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: categorical opposition to fracking, advocating a permanent ban.\",\n    \"Voiced as a UK resident concerned about climate and local environmental impacts.\",\n    \"Advocates: redirecting investment to renewables, insulation, storage, and public transport instead of fracking.\",\n    \"Claim rests on: fracking locks in fossil fuel use, hinders emissions cuts, and causes unacceptable local risks (tremors, water contamination, traffic, industrialisation of countryside).\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Candidate advocates a permanent national ban, while this option supports fracking in principle but opposes it locally, a NIMBY stance.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Candidate calls for a ban, while this option is conditional support only if strict guarantees are met.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Candidate is anti-fracking; this option is pro-fracking for energy security and jobs.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Both reject fracking, but the candidate's rationale also includes local environmental and seismic risks, while this option focuses solely on climate emergency.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"This option calls for a permanent ban on environmental and seismic grounds, exactly matching the candidate's stance, rationale, and demand for a frack-free Britain.\"\n    }\n  ],\n  \"match\": 5,\n  \"reason\": \"The candidate perspective aligns exactly with option 5, which calls for a permanent ban on fracking due to seismic, groundwater, and fossil fuel lock-in concerns, matching the candidate's stance, rationale, and demand for a frack-free Britain.\"\n}",
+      "created_at": "2026-07-11T20:58:10.943636+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p1::moonshotai/kimi-k2.6::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 1,
+      "judge_slug": "moonshotai/kimi-k2.6",
+      "judge_family": "moonshot",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        4,
+        2,
+        1,
+        5
+      ],
+      "match_presented": 3,
+      "match_gold_id": 2,
+      "attributes": [
+        "Core stance: categorical opposition to all UK shale gas extraction and a permanent ban on fracking",
+        "Viewpoint holder: a person in the United Kingdom arguing from environmental and climate concerns",
+        "What it advocates: prohibition of fracking and redirection of money and political effort into insulation, renewables, energy storage, and public transport",
+        "Claim it rests on: fracking causes unacceptable seismic, water, countryside, nature, and community harms while locking the UK into fossil fuel use instead of cutting emissions"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate opposes fracking absolutely on environmental and climate grounds, whereas reference 1 supports fracking in principle and only objects to local siting."
+        },
+        {
+          "match": false,
+          "note": "Reference 2 rests opposition exclusively on the climate emergency and IPCC carbon budgets, while the candidate explicitly cites broader seismic, water, and rural community harms beyond climate alone."
+        },
+        {
+          "match": true,
+          "note": "Both the candidate and reference 3 demand a permanent UK ban on fracking based on seismic risks, environmental pollution, fossil-fuel lock-in, and the need to invest in renewables and storage instead."
+        },
+        {
+          "match": false,
+          "note": "Reference 4 advocates restarting fracking for energy security and jobs, which is the direct opposite of the candidate's position."
+        },
+        {
+          "match": false,
+          "note": "Reference 5 is conditionally open to fracking with strict regulation, whereas the candidate rejects it categorically."
+        }
+      ],
+      "reason": "The candidate and reference 3 share the exact same categorical anti-fracking side and stance for Britain, grounded in overlapping environmental, seismic, and fossil-fuel-lock-in harms while calling for investment in renewable energy and storage; no other reference captures this combination of total opposition and policy redirection.",
+      "raw_response": "{\"attributes\":[\"Core stance: categorical opposition to all UK shale gas extraction and a permanent ban on fracking\",\"Viewpoint holder: a person in the United Kingdom arguing from environmental and climate concerns\",\"What it advocates: prohibition of fracking and redirection of money and political effort into insulation, renewables, energy storage, and public transport\",\"Claim it rests on: fracking causes unacceptable seismic, water, countryside, nature, and community harms while locking the UK into fossil fuel use instead of cutting emissions\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"The candidate opposes fracking absolutely on environmental and climate grounds, whereas reference 1 supports fracking in principle and only objects to local siting.\"},{\"match\":false,\"note\":\"Reference 2 rests opposition exclusively on the climate emergency and IPCC carbon budgets, while the candidate explicitly cites broader seismic, water, and rural community harms beyond climate alone.\"},{\"match\":true,\"note\":\"Both the candidate and reference 3 demand a permanent UK ban on fracking based on seismic risks, environmental pollution, fossil-fuel lock-in, and the need to invest in renewables and storage instead.\"},{\"match\":false,\"note\":\"Reference 4 advocates restarting fracking for energy security and jobs, which is the direct opposite of the candidate's position.\"},{\"match\":false,\"note\":\"Reference 5 is conditionally open to fracking with strict regulation, whereas the candidate rejects it categorically.\"}],\"match\":3,\"reason\":\"The candidate and reference 3 share the exact same categorical anti-fracking side and stance for Britain, grounded in overlapping environmental, seismic, and fossil-fuel-lock-in harms while calling for investment in renewable energy and storage; no other reference captures this combination of total opposition and policy redirection.\"}",
+      "created_at": "2026-07-11T20:59:23.041325+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p2::google/gemini-3.1-pro-preview::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 2,
+      "judge_slug": "google/gemini-3.1-pro-preview",
+      "judge_family": "google",
+      "role": "panel",
+      "presentation_order": [
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "match_presented": 0,
+      "match_gold_id": 0,
+      "attributes": [
+        "Core stance: Opposes fracking.",
+        "Whose view: A UK resident concerned about local impacts and corporate accountability.",
+        "Advocates: Keeping fracking out of their community.",
+        "Claim: Companies and regulators cannot be trusted to prioritize local safety over corporate profit, leaving residents to bear the risks of earthquakes, pollution, and noise."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate opposes fracking due to a lack of trust and local risk versus corporate profit, rather than focusing on bad science and fossil fuel lock-in."
+        },
+        {
+          "match": false,
+          "note": "This reference supports fracking, whereas the candidate opposes it."
+        },
+        {
+          "match": false,
+          "note": "This reference opposes fracking strictly on global climate emergency grounds, which the candidate does not mention."
+        },
+        {
+          "match": false,
+          "note": "The candidate outright opposes fracking due to a fundamental lack of trust, rather than being conditionally open to persuasion."
+        },
+        {
+          "match": false,
+          "note": "The candidate does not express support for fracking in principle as a national policy, unlike this NIMBY perspective."
+        }
+      ],
+      "reason": "The candidate's perspective is uniquely centered on a lack of trust in regulators and companies, emphasizing the unfair distribution of local risks versus corporate profits. None of the reference options capture this specific anti-corporate, trust-based opposition.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: Opposes fracking.\",\n    \"Whose view: A UK resident concerned about local impacts and corporate accountability.\",\n    \"Advocates: Keeping fracking out of their community.\",\n    \"Claim: Companies and regulators cannot be trusted to prioritize local safety over corporate profit, leaving residents to bear the risks of earthquakes, pollution, and noise.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"The candidate opposes fracking due to a lack of trust and local risk versus corporate profit, rather than focusing on bad science and fossil fuel lock-in.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference supports fracking, whereas the candidate opposes it.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference opposes fracking strictly on global climate emergency grounds, which the candidate does not mention.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate outright opposes fracking due to a fundamental lack of trust, rather than being conditionally open to persuasion.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate does not express support for fracking in principle as a national policy, unlike this NIMBY perspective.\"\n    }\n  ],\n  \"match\": 0,\n  \"reason\": \"The candidate's perspective is uniquely centered on a lack of trust in regulators and companies, emphasizing the unfair distribution of local risks versus corporate profits. None of the reference options capture this specific anti-corporate, trust-based opposition.\"\n}",
+      "created_at": "2026-07-11T21:12:27.401878+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p2::anthropic/claude-sonnet-5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 2,
+      "judge_slug": "anthropic/claude-sonnet-5",
+      "judge_family": "anthropic",
+      "role": "panel",
+      "presentation_order": [
+        5,
+        3,
+        2,
+        1,
+        4
+      ],
+      "match_presented": 3,
+      "match_gold_id": 2,
+      "attributes": [
+        "Opposes fracking based on distrust of industry and regulators, not necessarily on environmental or climate grounds",
+        "Voiced from perspective of a local resident/community member",
+        "Advocates against allowing fracking due to lack of confidence in safety enforcement",
+        "Rests on claim that local communities bear risks (earthquakes, water contamination, noise, property devaluation) while companies profit",
+        "Implies a general opposition to fracking, not limited to local siting only (does not explicitly support it elsewhere)"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Candidate expresses firm distrust and opposition, not conditional openness to being persuaded by guarantees."
+        },
+        {
+          "match": false,
+          "note": "Candidate does not concede support for fracking elsewhere; it's a broader risk-based objection, not NIMBY 'not-in-my-backyard' framing."
+        },
+        {
+          "match": true,
+          "note": "Both oppose fracking outright due to risks like earthquakes, water contamination, and lack of safety assurance, even though justification framing differs (distrust vs. science)."
+        },
+        {
+          "match": false,
+          "note": "This reference supports restarting fracking for energy security, opposite stance to the candidate's opposition."
+        },
+        {
+          "match": false,
+          "note": "This reference frames opposition purely in climate-emergency terms, whereas candidate's reasoning centers on distrust of safety enforcement, not climate change."
+        }
+      ],
+      "reason": "The candidate and option 3 both oppose fracking entirely due to fears of environmental and safety risks (earthquakes, water contamination), making them the closest match in stance despite differing emphasis on distrust versus science-based argument.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Opposes fracking based on distrust of industry and regulators, not necessarily on environmental or climate grounds\",\n    \"Voiced from perspective of a local resident/community member\",\n    \"Advocates against allowing fracking due to lack of confidence in safety enforcement\",\n    \"Rests on claim that local communities bear risks (earthquakes, water contamination, noise, property devaluation) while companies profit\",\n    \"Implies a general opposition to fracking, not limited to local siting only (does not explicitly support it elsewhere)\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Candidate expresses firm distrust and opposition, not conditional openness to being persuaded by guarantees.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Candidate does not concede support for fracking elsewhere; it's a broader risk-based objection, not NIMBY 'not-in-my-backyard' framing.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both oppose fracking outright due to risks like earthquakes, water contamination, and lack of safety assurance, even though justification framing differs (distrust vs. science).\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference supports restarting fracking for energy security, opposite stance to the candidate's opposition.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference frames opposition purely in climate-emergency terms, whereas candidate's reasoning centers on distrust of safety enforcement, not climate change.\"\n    }\n  ],\n  \"match\": 3,\n  \"reason\": \"The candidate and option 3 both oppose fracking entirely due to fears of environmental and safety risks (earthquakes, water contamination), making them the closest match in stance despite differing emphasis on distrust versus science-based argument.\"\n}",
+      "created_at": "2026-07-11T21:13:21.784421+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p2::deepseek/deepseek-v4-pro::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 2,
+      "judge_slug": "deepseek/deepseek-v4-pro",
+      "judge_family": "deepseek",
+      "role": "panel",
+      "presentation_order": [
+        1,
+        3,
+        5,
+        2,
+        4
+      ],
+      "match_presented": 0,
+      "match_gold_id": 0,
+      "attributes": [
+        "Core stance: outright opposition to fracking",
+        "Viewpoint: a local resident in the UK",
+        "Advocates: preventing fracking in their community due to distrust in safety assurances",
+        "Claim: companies and regulators will cut corners, leaving local people to suffer the consequences"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "This reference supports fracking for energy security and jobs, which is the opposite side."
+        },
+        {
+          "match": false,
+          "note": "This reference supports fracking in principle but opposes it locally; the candidate opposes fracking outright due to distrust, not just locally."
+        },
+        {
+          "match": false,
+          "note": "This reference is conditionally supportive if strict guarantees are met; the candidate is not open to persuasion because they fundamentally distrust any guarantees."
+        },
+        {
+          "match": false,
+          "note": "This reference opposes fracking on environmental and seismic grounds; the candidate's opposition is based on distrust of safety implementation, not inherent dangers."
+        },
+        {
+          "match": false,
+          "note": "This reference rejects fracking on climate-emergency grounds; the candidate does not mention climate and focuses on local safety distrust."
+        }
+      ],
+      "reason": "The candidate opposes fracking due to distrust in safety and regulation, a stance not represented by any reference. The references cover pro-fracking, NIMBY, conditional support, environmental ban, and climate rejection, none of which match the candidate's specific rationale of safety distrust.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: outright opposition to fracking\",\n    \"Viewpoint: a local resident in the UK\",\n    \"Advocates: preventing fracking in their community due to distrust in safety assurances\",\n    \"Claim: companies and regulators will cut corners, leaving local people to suffer the consequences\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"This reference supports fracking for energy security and jobs, which is the opposite side.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference supports fracking in principle but opposes it locally; the candidate opposes fracking outright due to distrust, not just locally.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference is conditionally supportive if strict guarantees are met; the candidate is not open to persuasion because they fundamentally distrust any guarantees.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference opposes fracking on environmental and seismic grounds; the candidate's opposition is based on distrust of safety implementation, not inherent dangers.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This reference rejects fracking on climate-emergency grounds; the candidate does not mention climate and focuses on local safety distrust.\"\n    }\n  ],\n  \"match\": 0,\n  \"reason\": \"The candidate opposes fracking due to distrust in safety and regulation, a stance not represented by any reference. The references cover pro-fracking, NIMBY, conditional support, environmental ban, and climate rejection, none of which match the candidate's specific rationale of safety distrust.\"\n}",
+      "created_at": "2026-07-11T21:13:42.331242+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p2::moonshotai/kimi-k2.6::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 2,
+      "judge_slug": "moonshotai/kimi-k2.6",
+      "judge_family": "moonshot",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        1,
+        2,
+        4,
+        5
+      ],
+      "match_presented": 0,
+      "match_gold_id": 0,
+      "attributes": [
+        "Opposes fracking due to deep distrust of industry operators and government regulators to uphold safety standards",
+        "Voiced from the perspective of a UK local resident or community member",
+        "Advocates against subjecting the local community to fracking-related risks (earthquakes, water, noise, property values) for corporate profit",
+        "Rests on the claim that safety corners will be cut and that risk and cost asymmetry falls on local residents while companies extract profits"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate opposes fracking out of safety distrust, whereas reference 1 supports fracking in principle and only objects to its local proximity."
+        },
+        {
+          "match": false,
+          "note": "The candidate is anti-fracking, while reference 2 actively advocates restarting fracking for energy security and jobs."
+        },
+        {
+          "match": false,
+          "note": "The candidate’s opposition is grounded in institutional distrust and local risk, not in the categorical environmental and anti-fossil-fuel stance of reference 3."
+        },
+        {
+          "match": false,
+          "note": "The candidate does not invoke climate emergency or IPCC carbon budgets, so the underlying basis for opposition differs from reference 4."
+        },
+        {
+          "match": false,
+          "note": "The candidate is firmly opposed due to lack of trust, while reference 5 remains conditionally open to shale gas if strict guarantees are proven."
+        }
+      ],
+      "reason": "The candidate’s viewpoint centers on skepticism toward corporate and regulatory safety assurances and the unfair risk burden on local communities, which does not correspond exactly to the core stance of any reference option.",
+      "raw_response": " {\"attributes\":[\"Opposes fracking due to deep distrust of industry operators and government regulators to uphold safety standards\",\"Voiced from the perspective of a UK local resident or community member\",\"Advocates against subjecting the local community to fracking-related risks (earthquakes, water, noise, property values) for corporate profit\",\"Rests on the claim that safety corners will be cut and that risk and cost asymmetry falls on local residents while companies extract profits\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"The candidate opposes fracking out of safety distrust, whereas reference 1 supports fracking in principle and only objects to its local proximity.\"},{\"match\":false,\"note\":\"The candidate is anti-fracking, while reference 2 actively advocates restarting fracking for energy security and jobs.\"},{\"match\":false,\"note\":\"The candidate’s opposition is grounded in institutional distrust and local risk, not in the categorical environmental and anti-fossil-fuel stance of reference 3.\"},{\"match\":false,\"note\":\"The candidate does not invoke climate emergency or IPCC carbon budgets, so the underlying basis for opposition differs from reference 4.\"},{\"match\":false,\"note\":\"The candidate is firmly opposed due to lack of trust, while reference 5 remains conditionally open to shale gas if strict guarantees are proven.\"}],\"match\":0,\"reason\":\"The candidate’s viewpoint centers on skepticism toward corporate and regulatory safety assurances and the unfair risk burden on local communities, which does not correspond exactly to the core stance of any reference option.\"}",
+      "created_at": "2026-07-11T21:15:06.995935+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p3::google/gemini-3.1-pro-preview::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 3,
+      "judge_slug": "google/gemini-3.1-pro-preview",
+      "judge_family": "google",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        4,
+        1,
+        2,
+        5
+      ],
+      "match_presented": 3,
+      "match_gold_id": 1,
+      "attributes": [
+        "Core stance: Strongly supports fracking in the UK.",
+        "Whose view: A resident of the UK.",
+        "Advocates: Utilizing domestic shale gas resources rather than relying on foreign imports.",
+        "Claim: Fracking will provide energy security, create skilled jobs, generate tax revenue, and protect against foreign price shocks."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate fully supports fracking, whereas this reference opposes it locally (NIMBY)."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking, whereas this reference categorically rejects it on climate grounds."
+        },
+        {
+          "match": true,
+          "note": "Both strongly support UK fracking to achieve energy security, create jobs, and reduce reliance on foreign gas imports."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking, whereas this reference seeks a permanent ban on environmental grounds."
+        },
+        {
+          "match": false,
+          "note": "The candidate is firmly pro-fracking, whereas this reference is only conditionally supportive if strict guarantees are met."
+        }
+      ],
+      "reason": "The candidate and reference 3 share the exact same pro-fracking stance, arguing that the UK should utilize its domestic shale gas to ensure energy security, create jobs, and reduce dependence on foreign imports.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: Strongly supports fracking in the UK.\",\n    \"Whose view: A resident of the UK.\",\n    \"Advocates: Utilizing domestic shale gas resources rather than relying on foreign imports.\",\n    \"Claim: Fracking will provide energy security, create skilled jobs, generate tax revenue, and protect against foreign price shocks.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"The candidate fully supports fracking, whereas this reference opposes it locally (NIMBY).\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking, whereas this reference categorically rejects it on climate grounds.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both strongly support UK fracking to achieve energy security, create jobs, and reduce reliance on foreign gas imports.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking, whereas this reference seeks a permanent ban on environmental grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate is firmly pro-fracking, whereas this reference is only conditionally supportive if strict guarantees are met.\"\n    }\n  ],\n  \"match\": 3,\n  \"reason\": \"The candidate and reference 3 share the exact same pro-fracking stance, arguing that the UK should utilize its domestic shale gas to ensure energy security, create jobs, and reduce dependence on foreign imports.\"\n}",
+      "created_at": "2026-07-11T21:20:18.325480+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p3::anthropic/claude-sonnet-5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 3,
+      "judge_slug": "anthropic/claude-sonnet-5",
+      "judge_family": "anthropic",
+      "role": "panel",
+      "presentation_order": [
+        5,
+        1,
+        3,
+        4,
+        2
+      ],
+      "match_presented": 2,
+      "match_gold_id": 1,
+      "attributes": [
+        "Pro-fracking stance",
+        "Voiced by a UK resident/citizen",
+        "Advocates restarting/allowing UK shale gas extraction",
+        "Rests on claims of energy security, jobs, tax revenue, and reduced import dependence"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "This is a conditional/skeptical stance requiring proof of safety, not an outright pro-fracking position."
+        },
+        {
+          "match": true,
+          "note": "Same core stance: support restarting UK fracking for energy security, jobs, and reduced reliance on imports."
+        },
+        {
+          "match": false,
+          "note": "This is a NIMBY stance that supports fracking nationally but opposes it locally, which is a different nuance."
+        },
+        {
+          "match": false,
+          "note": "This is an anti-fracking climate-emergency stance, opposite to the candidate."
+        },
+        {
+          "match": false,
+          "note": "This is an anti-fracking environmental/seismic stance, opposite to the candidate."
+        }
+      ],
+      "reason": "The candidate and option 2 both advocate restarting UK fracking based on energy security, jobs, and reducing import dependence, making them the same underlying stance.",
+      "raw_response": "{\"attributes\":[\"Pro-fracking stance\",\"Voiced by a UK resident/citizen\",\"Advocates restarting/allowing UK shale gas extraction\",\"Rests on claims of energy security, jobs, tax revenue, and reduced import dependence\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"This is a conditional/skeptical stance requiring proof of safety, not an outright pro-fracking position.\"},{\"match\":true,\"note\":\"Same core stance: support restarting UK fracking for energy security, jobs, and reduced reliance on imports.\"},{\"match\":false,\"note\":\"This is a NIMBY stance that supports fracking nationally but opposes it locally, which is a different nuance.\"},{\"match\":false,\"note\":\"This is an anti-fracking climate-emergency stance, opposite to the candidate.\"},{\"match\":false,\"note\":\"This is an anti-fracking environmental/seismic stance, opposite to the candidate.\"}],\"match\":2,\"reason\":\"The candidate and option 2 both advocate restarting UK fracking based on energy security, jobs, and reducing import dependence, making them the same underlying stance.\"}",
+      "created_at": "2026-07-11T21:20:54.276733+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p3::deepseek/deepseek-v4-pro::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 3,
+      "judge_slug": "deepseek/deepseek-v4-pro",
+      "judge_family": "deepseek",
+      "role": "panel",
+      "presentation_order": [
+        5,
+        1,
+        3,
+        2,
+        4
+      ],
+      "match_presented": 2,
+      "match_gold_id": 1,
+      "attributes": [
+        "Pro-fracking stance",
+        "UK domestic perspective",
+        "Advocates for shale gas development",
+        "Claims it ensures energy security, creates jobs, raises tax revenue, and reduces reliance on imports"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "This is conditional support requiring strict guarantees, while the candidate is unqualified support."
+        },
+        {
+          "match": true,
+          "note": "Both advocate restarting fracking for energy security and jobs, with the same underlying rationale."
+        },
+        {
+          "match": false,
+          "note": "This supports fracking in principle but opposes it locally, which is not the candidate's stance."
+        },
+        {
+          "match": false,
+          "note": "This wants to ban fracking, opposite to the candidate's pro-fracking stance."
+        },
+        {
+          "match": false,
+          "note": "This rejects fracking on climate grounds, opposite to the candidate's stance."
+        }
+      ],
+      "reason": "The candidate and reference 2 both argue for fracking in the UK based on energy security, job creation, and reducing reliance on imports, sharing the same pro-fracking stance.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Pro-fracking stance\",\n    \"UK domestic perspective\",\n    \"Advocates for shale gas development\",\n    \"Claims it ensures energy security, creates jobs, raises tax revenue, and reduces reliance on imports\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"This is conditional support requiring strict guarantees, while the candidate is unqualified support.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both advocate restarting fracking for energy security and jobs, with the same underlying rationale.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This supports fracking in principle but opposes it locally, which is not the candidate's stance.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This wants to ban fracking, opposite to the candidate's pro-fracking stance.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"This rejects fracking on climate grounds, opposite to the candidate's stance.\"\n    }\n  ],\n  \"match\": 2,\n  \"reason\": \"The candidate and reference 2 both argue for fracking in the UK based on energy security, job creation, and reducing reliance on imports, sharing the same pro-fracking stance.\"\n}",
+      "created_at": "2026-07-11T21:21:01.032874+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p3::moonshotai/kimi-k2.6::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 3,
+      "judge_slug": "moonshotai/kimi-k2.6",
+      "judge_family": "moonshot",
+      "role": "panel",
+      "presentation_order": [
+        2,
+        1,
+        3,
+        4,
+        5
+      ],
+      "match_presented": 2,
+      "match_gold_id": 1,
+      "attributes": [
+        "Pro-fracking stance advocating domestic shale gas extraction in the UK",
+        "Voiced from within the UK population using 'Britain', 'our own resources', and 'British gas'",
+        "Advocates fracking to deliver energy security, skilled jobs, tax revenue, and reduced import dependence",
+        "Rests on the claim that using regulated domestic gas is preferable to relying on foreign suppliers and price shocks"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate supports fracking while reference 1 calls for a permanent ban on environmental and seismic grounds."
+        },
+        {
+          "match": true,
+          "note": "Both advocate restarting UK fracking for energy security and jobs while reducing reliance on foreign gas imports."
+        },
+        {
+          "match": false,
+          "note": "Reference 3 opposes local fracking despite national support in principle, whereas the candidate advocates fracking without local conditions."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking for economic and security reasons, while reference 4 rejects it categorically on climate emergency grounds."
+        },
+        {
+          "match": false,
+          "note": "Reference 5 demands strict preconditions and proof before supporting shale gas, while the candidate actively advocates fracking now."
+        }
+      ],
+      "reason": "The candidate and reference 2 share the exact same pro-fracking stance, both advocating the restart of UK shale gas extraction to achieve energy security and economic benefits while reducing dependence on foreign suppliers.",
+      "raw_response": "{\"attributes\":[\"Pro-fracking stance advocating domestic shale gas extraction in the UK\",\"Voiced from within the UK population using 'Britain', 'our own resources', and 'British gas'\",\"Advocates fracking to deliver energy security, skilled jobs, tax revenue, and reduced import dependence\",\"Rests on the claim that using regulated domestic gas is preferable to relying on foreign suppliers and price shocks\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"The candidate supports fracking while reference 1 calls for a permanent ban on environmental and seismic grounds.\"},{\"match\":true,\"note\":\"Both advocate restarting UK fracking for energy security and jobs while reducing reliance on foreign gas imports.\"},{\"match\":false,\"note\":\"Reference 3 opposes local fracking despite national support in principle, whereas the candidate advocates fracking without local conditions.\"},{\"match\":false,\"note\":\"The candidate supports fracking for economic and security reasons, while reference 4 rejects it categorically on climate emergency grounds.\"},{\"match\":false,\"note\":\"Reference 5 demands strict preconditions and proof before supporting shale gas, while the candidate actively advocates fracking now.\"}],\"match\":2,\"reason\":\"The candidate and reference 2 share the exact same pro-fracking stance, both advocating the restart of UK shale gas extraction to achieve energy security and economic benefits while reducing dependence on foreign suppliers.\"}",
+      "created_at": "2026-07-11T21:21:45.874203+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p4::google/gemini-3.1-pro-preview::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 4,
+      "judge_slug": "google/gemini-3.1-pro-preview",
+      "judge_family": "google",
+      "role": "panel",
+      "presentation_order": [
+        4,
+        3,
+        1,
+        2,
+        5
+      ],
+      "match_presented": 5,
+      "match_gold_id": 5,
+      "attributes": [
+        "Core stance: Conditional support for fracking.",
+        "Whose view: A UK resident.",
+        "Advocates: Allowing fracking only if strict environmental and seismic rules are met, and local communities consent and receive financial benefits.",
+        "Claim: Shale gas is acceptable in principle but must be proven viable and safe, and must not be forced on unwilling communities."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Rejects fracking categorically on climate grounds, whereas the candidate is open to it conditionally."
+        },
+        {
+          "match": false,
+          "note": "Expresses a NIMBY stance (opposing locally), whereas the candidate focuses on strict regulation and community consent generally."
+        },
+        {
+          "match": false,
+          "note": "Unconditionally supports restarting fracking for economic and security reasons, ignoring the candidate's strict prerequisites."
+        },
+        {
+          "match": false,
+          "note": "Advocates a permanent ban, whereas the candidate is willing to allow fracking if specific conditions are met."
+        },
+        {
+          "match": true,
+          "note": "Both advocate for conditional support of fracking, requiring strict safety regulations and community compensation or benefits before proceeding."
+        }
+      ],
+      "reason": "Both the candidate and reference 5 share the 'conditional pragmatist' stance, agreeing that fracking should only proceed if strict safety and environmental regulations are enforced and local communities are compensated.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: Conditional support for fracking.\",\n    \"Whose view: A UK resident.\",\n    \"Advocates: Allowing fracking only if strict environmental and seismic rules are met, and local communities consent and receive financial benefits.\",\n    \"Claim: Shale gas is acceptable in principle but must be proven viable and safe, and must not be forced on unwilling communities.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Rejects fracking categorically on climate grounds, whereas the candidate is open to it conditionally.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Expresses a NIMBY stance (opposing locally), whereas the candidate focuses on strict regulation and community consent generally.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Unconditionally supports restarting fracking for economic and security reasons, ignoring the candidate's strict prerequisites.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Advocates a permanent ban, whereas the candidate is willing to allow fracking if specific conditions are met.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both advocate for conditional support of fracking, requiring strict safety regulations and community compensation or benefits before proceeding.\"\n    }\n  ],\n  \"match\": 5,\n  \"reason\": \"Both the candidate and reference 5 share the 'conditional pragmatist' stance, agreeing that fracking should only proceed if strict safety and environmental regulations are enforced and local communities are compensated.\"\n}",
+      "created_at": "2026-07-11T21:22:14.038957+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p4::anthropic/claude-sonnet-5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 4,
+      "judge_slug": "anthropic/claude-sonnet-5",
+      "judge_family": "anthropic",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        2,
+        4,
+        5,
+        1
+      ],
+      "match_presented": 4,
+      "match_gold_id": 5,
+      "attributes": [
+        "Core stance: conditional support for fracking, not outright opposition or unconditional support",
+        "Advocates permitting fracking only where geological testing confirms viability",
+        "Requires strict regulatory/environmental (seismic) safeguards",
+        "Requires local community consent and financial benefit-sharing before projects proceed",
+        "Rests on the claim that fracking can be acceptable if specific conditions are met, but not otherwise"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Option 1 supports fracking nationally but opposes it locally regardless of conditions, which is a NIMBY stance rather than a conditional-approval framework."
+        },
+        {
+          "match": false,
+          "note": "Option 2 calls for a permanent ban on environmental/seismic grounds, rejecting fracking outright rather than allowing it under conditions."
+        },
+        {
+          "match": false,
+          "note": "Option 3 rejects fracking categorically due to climate emergency concerns, not conditional on regulation or consent."
+        },
+        {
+          "match": true,
+          "note": "Option 4 is also a conditional pragmatist stance requiring proof of safety, regulation, and community compensation before supporting fracking, matching the candidate's conditional approach."
+        },
+        {
+          "match": false,
+          "note": "Option 5 supports restarting fracking unconditionally for energy security and jobs, without emphasis on local consent or proof of safety."
+        }
+      ],
+      "reason": "The candidate's conditional, evidence-and-consent-based support for fracking aligns most closely with option 4's stance that fracking could be acceptable only if safety, regulation, and community benefits are proven.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: conditional support for fracking, not outright opposition or unconditional support\",\n    \"Advocates permitting fracking only where geological testing confirms viability\",\n    \"Requires strict regulatory/environmental (seismic) safeguards\",\n    \"Requires local community consent and financial benefit-sharing before projects proceed\",\n    \"Rests on the claim that fracking can be acceptable if specific conditions are met, but not otherwise\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\"match\": false, \"note\": \"Option 1 supports fracking nationally but opposes it locally regardless of conditions, which is a NIMBY stance rather than a conditional-approval framework.\"},\n    {\"match\": false, \"note\": \"Option 2 calls for a permanent ban on environmental/seismic grounds, rejecting fracking outright rather than allowing it under conditions.\"},\n    {\"match\": false, \"note\": \"Option 3 rejects fracking categorically due to climate emergency concerns, not conditional on regulation or consent.\"},\n    {\"match\": true, \"note\": \"Option 4 is also a conditional pragmatist stance requiring proof of safety, regulation, and community compensation before supporting fracking, matching the candidate's conditional approach.\"},\n    {\"match\": false, \"note\": \"Option 5 supports restarting fracking unconditionally for energy security and jobs, without emphasis on local consent or proof of safety.\"}\n  ],\n  \"match\": 4,\n  \"reason\": \"The candidate's conditional, evidence-and-consent-based support for fracking aligns most closely with option 4's stance that fracking could be acceptable only if safety, regulation, and community benefits are proven.\"\n}",
+      "created_at": "2026-07-11T21:22:53.615323+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p4::deepseek/deepseek-v4-pro::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 4,
+      "judge_slug": "deepseek/deepseek-v4-pro",
+      "judge_family": "deepseek",
+      "role": "panel",
+      "presentation_order": [
+        1,
+        2,
+        5,
+        4,
+        3
+      ],
+      "match_presented": 3,
+      "match_gold_id": 5,
+      "attributes": [
+        "Core stance: conditional support for fracking, not opposed in principle but only under strict conditions.",
+        "Voiced from within the UK population, discussing domestic shale gas policy.",
+        "Advocates allowing fracking solely where geology is favourable, regulations are rigorously enforced, and local communities give consent and receive financial benefits.",
+        "Claims that fracking should not be imposed on unwilling places and that test drilling and tough rules are prerequisites for any project."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Advocates unconditional restart for energy security and jobs, ignoring the candidate's requirement for local consent and strict conditions."
+        },
+        {
+          "match": false,
+          "note": "Calls for a permanent ban on environmental grounds, while the candidate is not against fracking in principle."
+        },
+        {
+          "match": true,
+          "note": "Both adopt a conditional pragmatic stance demanding strict guarantees, community compensation, and proof of safety before proceeding."
+        },
+        {
+          "match": false,
+          "note": "Rejects fracking categorically on climate emergency grounds, contrary to the candidate's conditional willingness to entertain it."
+        },
+        {
+          "match": false,
+          "note": "Supports fracking as a national policy but opposes it locally, whereas the candidate only backs fracking when communities consent and would not support it elsewhere."
+        }
+      ],
+      "reason": "Option 3 shares the identical conditional perspective: it is not opposed to shale gas in principle but insists on strict guarantees, community compensation, and a safety case that operators must actually prove—mirroring the candidate's demand for geology, regulation, and community consent with benefits.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: conditional support for fracking, not opposed in principle but only under strict conditions.\",\n    \"Voiced from within the UK population, discussing domestic shale gas policy.\",\n    \"Advocates allowing fracking solely where geology is favourable, regulations are rigorously enforced, and local communities give consent and receive financial benefits.\",\n    \"Claims that fracking should not be imposed on unwilling places and that test drilling and tough rules are prerequisites for any project.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Advocates unconditional restart for energy security and jobs, ignoring the candidate's requirement for local consent and strict conditions.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Calls for a permanent ban on environmental grounds, while the candidate is not against fracking in principle.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both adopt a conditional pragmatic stance demanding strict guarantees, community compensation, and proof of safety before proceeding.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Rejects fracking categorically on climate emergency grounds, contrary to the candidate's conditional willingness to entertain it.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Supports fracking as a national policy but opposes it locally, whereas the candidate only backs fracking when communities consent and would not support it elsewhere.\"\n    }\n  ],\n  \"match\": 3,\n  \"reason\": \"Option 3 shares the identical conditional perspective: it is not opposed to shale gas in principle but insists on strict guarantees, community compensation, and a safety case that operators must actually prove—mirroring the candidate's demand for geology, regulation, and community consent with benefits.\"\n}",
+      "created_at": "2026-07-11T21:23:06.928146+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p4::moonshotai/kimi-k2.6::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 4,
+      "judge_slug": "moonshotai/kimi-k2.6",
+      "judge_family": "moonshot",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        5,
+        4,
+        2,
+        1
+      ],
+      "match_presented": 2,
+      "match_gold_id": 5,
+      "attributes": [
+        "Core stance: Conditional or pragmatic support for UK shale gas that is not opposed in principle but requires stringent preconditions to be met before any project proceeds.",
+        "Whose view: A member of the UK public adopting a non-ideological, evidence-based position on national energy policy.",
+        "What it advocates: Allowing fracking only where geological testing confirms viability, regulation is strict on seismic and environmental standards, and local communities give consent and receive direct financial benefits; projects failing these criteria should be blocked.",
+        "Claim it rests on: Fracking is acceptable only if it simultaneously passes tests of scientific feasibility, robust environmental protection, and local democratic legitimacy; otherwise the risks outweigh the gains."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate sets universal conditional requirements for any project, whereas this reference expresses local self-interest (NIMBYism) that simply wants fracking moved elsewhere without demanding strict regulatory or benefit guarantees."
+        },
+        {
+          "match": true,
+          "note": "Both perspectives share the exact same conditional-pragmatist side and stance: not opposed to shale gas in principle, but willing to support it only if strict regulatory, community-benefit, and viability safeguards are proven first."
+        },
+        {
+          "match": false,
+          "note": "The candidate explicitly leaves the door open to fracking under certain conditions, rejecting the categorical climate-emergency opposition that demands no new fossil-fuel reserves whatsoever."
+        },
+        {
+          "match": false,
+          "note": "The candidate does not advocate a permanent ban on environmental or seismic grounds and accepts fracking in principle if conditions are satisfied, unlike this unconditionally negative stance."
+        },
+        {
+          "match": false,
+          "note": "The candidate does not push for broad restart of fracking to secure energy or jobs; instead, it advocates restrictive conditions that would severely limit development, contrary to this pro-development stance."
+        }
+      ],
+      "reason": "The candidate is a conditional pragmatist who is open to UK shale gas only if strict guarantees—covering regulation, community consent, financial benefits, and geological viability—are met, which is the identical underlying side and stance captured by reference option 2. The other options represent categorical bans, blanket support, or purely local self-interest, so none of them match.",
+      "raw_response": "{\"attributes\":[\"Core stance: Conditional or pragmatic support for UK shale gas that is not opposed in principle but requires stringent preconditions to be met before any project proceeds.\",\"Whose view: A member of the UK public adopting a non-ideological, evidence-based position on national energy policy.\",\"What it advocates: Allowing fracking only where geological testing confirms viability, regulation is strict on seismic and environmental standards, and local communities give consent and receive direct financial benefits; projects failing these criteria should be blocked.\",\"Claim it rests on: Fracking is acceptable only if it simultaneously passes tests of scientific feasibility, robust environmental protection, and local democratic legitimacy; otherwise the risks outweigh the gains.\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"The candidate sets universal conditional requirements for any project, whereas this reference expresses local self-interest (NIMBYism) that simply wants fracking moved elsewhere without demanding strict regulatory or benefit guarantees.\"},{\"match\":true,\"note\":\"Both perspectives share the exact same conditional-pragmatist side and stance: not opposed to shale gas in principle, but willing to support it only if strict regulatory, community-benefit, and viability safeguards are proven first.\"},{\"match\":false,\"note\":\"The candidate explicitly leaves the door open to fracking under certain conditions, rejecting the categorical climate-emergency opposition that demands no new fossil-fuel reserves whatsoever.\"},{\"match\":false,\"note\":\"The candidate does not advocate a permanent ban on environmental or seismic grounds and accepts fracking in principle if conditions are satisfied, unlike this unconditionally negative stance.\"},{\"match\":false,\"note\":\"The candidate does not push for broad restart of fracking to secure energy or jobs; instead, it advocates restrictive conditions that would severely limit development, contrary to this pro-development stance.\"}],\"match\":2,\"reason\":\"The candidate is a conditional pragmatist who is open to UK shale gas only if strict guarantees—covering regulation, community consent, financial benefits, and geological viability—are met, which is the identical underlying side and stance captured by reference option 2. The other options represent categorical bans, blanket support, or purely local self-interest, so none of them match.\"}",
+      "created_at": "2026-07-11T21:23:40.837397+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p5::google/gemini-3.1-pro-preview::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 5,
+      "judge_slug": "google/gemini-3.1-pro-preview",
+      "judge_family": "google",
+      "role": "panel",
+      "presentation_order": [
+        5,
+        2,
+        4,
+        1,
+        3
+      ],
+      "match_presented": 4,
+      "match_gold_id": 1,
+      "attributes": [
+        "Core stance: Strongly pro-fracking.",
+        "Whose view: A UK resident concerned about energy bills and national self-reliance.",
+        "Advocates: Scrapping the fracking moratorium and prioritizing cheap domestic energy over climate targets.",
+        "Claim: Opposition to fracking is driven by green ideology, and Britain needs reliable, affordable energy for self-reliance."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate is unconditionally pro-fracking, whereas this reference requires strict guarantees and a transition plan."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking, whereas this reference opposes it on environmental and seismic grounds."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking, whereas this reference opposes it on climate grounds."
+        },
+        {
+          "match": true,
+          "note": "Both advocate restarting UK fracking to ensure national energy security, self-reliance, and cheaper energy bills."
+        },
+        {
+          "match": false,
+          "note": "The candidate does not express local NIMBY opposition to fracking."
+        }
+      ],
+      "reason": "Both the candidate and reference 4 strongly advocate for restarting UK fracking to achieve national energy security, self-reliance, and lower energy bills, representing the exact same core pro-fracking stance.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: Strongly pro-fracking.\",\n    \"Whose view: A UK resident concerned about energy bills and national self-reliance.\",\n    \"Advocates: Scrapping the fracking moratorium and prioritizing cheap domestic energy over climate targets.\",\n    \"Claim: Opposition to fracking is driven by green ideology, and Britain needs reliable, affordable energy for self-reliance.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"The candidate is unconditionally pro-fracking, whereas this reference requires strict guarantees and a transition plan.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking, whereas this reference opposes it on environmental and seismic grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking, whereas this reference opposes it on climate grounds.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both advocate restarting UK fracking to ensure national energy security, self-reliance, and cheaper energy bills.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate does not express local NIMBY opposition to fracking.\"\n    }\n  ],\n  \"match\": 4,\n  \"reason\": \"Both the candidate and reference 4 strongly advocate for restarting UK fracking to achieve national energy security, self-reliance, and lower energy bills, representing the exact same core pro-fracking stance.\"\n}",
+      "created_at": "2026-07-11T21:27:22.447667+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p5::anthropic/claude-sonnet-5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 5,
+      "judge_slug": "anthropic/claude-sonnet-5",
+      "judge_family": "anthropic",
+      "role": "panel",
+      "presentation_order": [
+        4,
+        5,
+        2,
+        3,
+        1
+      ],
+      "match_presented": 5,
+      "match_gold_id": 1,
+      "attributes": [
+        "Pro-fracking stance",
+        "Voiced by a UK resident/citizen concerned about energy costs and policy",
+        "Advocates scrapping the fracking moratorium and resuming domestic shale gas extraction",
+        "Rests on claim that net-zero/green ideology is blocking cheap, reliable domestic energy and that affordability and self-reliance should be prioritised over climate targets"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Opposite stance: this reference rejects fracking on climate-emergency grounds, while candidate supports fracking and downplays climate priority."
+        },
+        {
+          "match": false,
+          "note": "This is a conditional, skeptical stance requiring proof of safety and a transition plan, whereas candidate unconditionally supports immediate resumption."
+        },
+        {
+          "match": false,
+          "note": "Opposite stance: permanent ban on environmental/seismic grounds contradicts candidate's pro-fracking view."
+        },
+        {
+          "match": false,
+          "note": "This is a NIMBY-style support-in-principle-but-not-locally stance, differing from candidate's unqualified national support."
+        },
+        {
+          "match": true,
+          "note": "Same unconditional pro-fracking stance emphasizing energy security, affordability, and reducing reliance on foreign supply, matching candidate's core claims."
+        }
+      ],
+      "reason": "Both the candidate and reference 5 advocate restarting UK fracking without preconditions, grounding this in energy security, affordability, and reduced dependence on external supply, directly aligning in side and stance.",
+      "raw_response": "{\"attributes\":[\"Pro-fracking stance\",\"Voiced by a UK resident/citizen concerned about energy costs and policy\",\"Advocates scrapping the fracking moratorium and resuming domestic shale gas extraction\",\"Rests on claim that net-zero/green ideology is blocking cheap, reliable domestic energy and that affordability and self-reliance should be prioritised over climate targets\"],\"scope_ok\":true,\"comparisons\":[{\"match\":false,\"note\":\"Opposite stance: this reference rejects fracking on climate-emergency grounds, while candidate supports fracking and downplays climate priority.\"},{\"match\":false,\"note\":\"This is a conditional, skeptical stance requiring proof of safety and a transition plan, whereas candidate unconditionally supports immediate resumption.\"},{\"match\":false,\"note\":\"Opposite stance: permanent ban on environmental/seismic grounds contradicts candidate's pro-fracking view.\"},{\"match\":false,\"note\":\"This is a NIMBY-style support-in-principle-but-not-locally stance, differing from candidate's unqualified national support.\"},{\"match\":true,\"note\":\"Same unconditional pro-fracking stance emphasizing energy security, affordability, and reducing reliance on foreign supply, matching candidate's core claims.\"}],\"match\":5,\"reason\":\"Both the candidate and reference 5 advocate restarting UK fracking without preconditions, grounding this in energy security, affordability, and reduced dependence on external supply, directly aligning in side and stance.\"}",
+      "created_at": "2026-07-11T21:28:12.430350+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p5::deepseek/deepseek-v4-pro::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 5,
+      "judge_slug": "deepseek/deepseek-v4-pro",
+      "judge_family": "deepseek",
+      "role": "panel",
+      "presentation_order": [
+        2,
+        5,
+        1,
+        4,
+        3
+      ],
+      "match_presented": 3,
+      "match_gold_id": 1,
+      "attributes": [
+        "Pro-fracking, anti-net-zero stance",
+        "Priority: cheap domestic energy and affordability over climate targets",
+        "Advocates scrapping the moratorium and immediate drilling",
+        "Claims opposition is driven by green ideology and fearmongering",
+        "Voiced from UK people struggling with bills and seeking energy self-reliance"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Opposite stance: advocates a permanent ban on fracking."
+        },
+        {
+          "match": false,
+          "note": "Conditional support requiring strict guarantees and a transition plan, not an unconditional embrace and rejection of net-zero."
+        },
+        {
+          "match": true,
+          "note": "Both advocate restarting fracking for energy security, lower bills, and domestic self-reliance without climate-driven conditions."
+        },
+        {
+          "match": false,
+          "note": "Opposite stance: advocates categorical rejection of fracking on climate-emergency grounds."
+        },
+        {
+          "match": false,
+          "note": "NIMBY stance: supports fracking in principle but opposes it locally, while the candidate calls for immediate drilling anywhere."
+        }
+      ],
+      "reason": "Reference 3 and the candidate share the same underlying viewpoint: both argue for restarting UK fracking to achieve cheap domestic energy, energy security, and self-reliance, without conditions or climate constraints. The other references either oppose this stance or qualify it.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Pro-fracking, anti-net-zero stance\",\n    \"Priority: cheap domestic energy and affordability over climate targets\",\n    \"Advocates scrapping the moratorium and immediate drilling\",\n    \"Claims opposition is driven by green ideology and fearmongering\",\n    \"Voiced from UK people struggling with bills and seeking energy self-reliance\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Opposite stance: advocates a permanent ban on fracking.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Conditional support requiring strict guarantees and a transition plan, not an unconditional embrace and rejection of net-zero.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both advocate restarting fracking for energy security, lower bills, and domestic self-reliance without climate-driven conditions.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Opposite stance: advocates categorical rejection of fracking on climate-emergency grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"NIMBY stance: supports fracking in principle but opposes it locally, while the candidate calls for immediate drilling anywhere.\"\n    }\n  ],\n  \"match\": 3,\n  \"reason\": \"Reference 3 and the candidate share the same underlying viewpoint: both argue for restarting UK fracking to achieve cheap domestic energy, energy security, and self-reliance, without conditions or climate constraints. The other references either oppose this stance or qualify it.\"\n}",
+      "created_at": "2026-07-11T21:28:28.475107+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p5::moonshotai/kimi-k2.6::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 5,
+      "judge_slug": "moonshotai/kimi-k2.6",
+      "judge_family": "moonshot",
+      "role": "panel",
+      "presentation_order": [
+        5,
+        2,
+        4,
+        3,
+        1
+      ],
+      "match_presented": 5,
+      "match_gold_id": 1,
+      "attributes": [
+        "Core stance: Unconditional support for restarting UK fracking to provide cheap, reliable domestic energy.",
+        "Whose view it is: A UK resident concerned with high energy bills and national energy self-reliance, skeptical of green ideology blocking extraction.",
+        "What it advocates: Scrapping the fracking moratorium, commencing drilling, and prioritizing affordability and energy security over net-zero climate targets.",
+        "Claim it rests on: Opposition to fracking is driven by fearmongering and ideology rather than science, and Britain cannot rely solely on renewables while households face unaffordable bills."
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "The candidate supports fracking unconditionally, while this reference demands strict regulatory guarantees and a transition plan before acceptance."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking, whereas this reference calls for a permanent ban on environmental and seismic grounds."
+        },
+        {
+          "match": false,
+          "note": "The candidate prioritizes energy affordability over climate targets, while this reference rejects fracking categorically on climate emergency grounds."
+        },
+        {
+          "match": false,
+          "note": "The candidate supports fracking without local objections, while this reference opposes it specifically in their own area."
+        },
+        {
+          "match": true,
+          "note": "Both advocate restarting UK fracking for energy security, affordable domestic gas, and national self-reliance, rejecting the current moratorium."
+        }
+      ],
+      "reason": "The candidate and reference 5 share the same underlying pro-fracking stance, advocating the restart of UK shale gas extraction for energy security, lower bills, and national self-reliance. Although the candidate explicitly criticizes net-zero politics while reference 5 cites geopolitical supply risks, both advocate the same policy outcome for the same core economic and security reasons.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: Unconditional support for restarting UK fracking to provide cheap, reliable domestic energy.\",\n    \"Whose view it is: A UK resident concerned with high energy bills and national energy self-reliance, skeptical of green ideology blocking extraction.\",\n    \"What it advocates: Scrapping the fracking moratorium, commencing drilling, and prioritizing affordability and energy security over net-zero climate targets.\",\n    \"Claim it rests on: Opposition to fracking is driven by fearmongering and ideology rather than science, and Britain cannot rely solely on renewables while households face unaffordable bills.\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking unconditionally, while this reference demands strict regulatory guarantees and a transition plan before acceptance.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking, whereas this reference calls for a permanent ban on environmental and seismic grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate prioritizes energy affordability over climate targets, while this reference rejects fracking categorically on climate emergency grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"The candidate supports fracking without local objections, while this reference opposes it specifically in their own area.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both advocate restarting UK fracking for energy security, affordable domestic gas, and national self-reliance, rejecting the current moratorium.\"\n    }\n  ],\n  \"match\": 5,\n  \"reason\": \"The candidate and reference 5 share the same underlying pro-fracking stance, advocating the restart of UK shale gas extraction for energy security, lower bills, and national self-reliance. Although the candidate explicitly criticizes net-zero politics while reference 5 cites geopolitical supply risks, both advocate the same policy outcome for the same core economic and security reasons.\"\n}",
+      "created_at": "2026-07-11T21:30:49.017652+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p1::x-ai/grok-4.5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 1,
+      "judge_slug": "x-ai/grok-4.5",
+      "judge_family": "xai",
+      "role": "panel",
+      "presentation_order": [
+        2,
+        5,
+        1,
+        4,
+        3
+      ],
+      "match_presented": 1,
+      "match_gold_id": 2,
+      "attributes": [
+        "core stance: permanent ban on UK fracking/shale gas extraction",
+        "whose view: a person in the United Kingdom opposing domestic shale gas",
+        "what it advocates: stop all extraction and redirect effort/money to insulation, renewables, storage and public transport",
+        "claim it rests on: fossil-fuel lock-in plus unacceptable risks of tremors, rural industrialisation, water contamination, lorry traffic and nature damage"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": true,
+          "note": "Identical anti-fracking ban stance citing seismic, groundwater, fossil lock-in and shift to renewables/storage."
+        },
+        {
+          "match": false,
+          "note": "Conditional openness to fracking under guarantees contrasts with candidate's outright ban."
+        },
+        {
+          "match": false,
+          "note": "Pro-restart for security and jobs is the opposite side from the candidate's ban."
+        },
+        {
+          "match": false,
+          "note": "Pure climate-emergency framing omits the candidate's multi-risk local/environmental grounds."
+        },
+        {
+          "match": false,
+          "note": "NIMBY local-only opposition differs from candidate's nationwide ban."
+        }
+      ],
+      "reason": "The candidate and reference 1 share the exact same side and stance: a permanent UK-wide ban justified by seismic, pollution, countryside and fossil-lock-in harms, plus redirection to renewables. Other references diverge in conditionality, support, pure-climate focus or local-only scope.",
+      "raw_response": "{\n  \"attributes\": [\n    \"core stance: permanent ban on UK fracking/shale gas extraction\",\n    \"whose view: a person in the United Kingdom opposing domestic shale gas\",\n    \"what it advocates: stop all extraction and redirect effort/money to insulation, renewables, storage and public transport\",\n    \"claim it rests on: fossil-fuel lock-in plus unacceptable risks of tremors, rural industrialisation, water contamination, lorry traffic and nature damage\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": true,\n      \"note\": \"Identical anti-fracking ban stance citing seismic, groundwater, fossil lock-in and shift to renewables/storage.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Conditional openness to fracking under guarantees contrasts with candidate's outright ban.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Pro-restart for security and jobs is the opposite side from the candidate's ban.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Pure climate-emergency framing omits the candidate's multi-risk local/environmental grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"NIMBY local-only opposition differs from candidate's nationwide ban.\"\n    }\n  ],\n  \"match\": 1,\n  \"reason\": \"The candidate and reference 1 share the exact same side and stance: a permanent UK-wide ban justified by seismic, pollution, countryside and fossil-lock-in harms, plus redirection to renewables. Other references diverge in conditionality, support, pure-climate focus or local-only scope.\"\n}",
+      "created_at": "2026-07-19T15:25:49.442447+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p2::x-ai/grok-4.5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 2,
+      "judge_slug": "x-ai/grok-4.5",
+      "judge_family": "xai",
+      "role": "panel",
+      "presentation_order": [
+        4,
+        3,
+        5,
+        2,
+        1
+      ],
+      "match_presented": 0,
+      "match_gold_id": 0,
+      "attributes": [
+        "Core stance: opposes fracking",
+        "Whose view: local UK resident/community member",
+        "Advocates: rejection of fracking in their community due to safety risks",
+        "Claim rests on: distrust of companies and regulators to prevent corners being cut, with locals bearing costs of earthquakes/water/noise/house values while companies profit"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Reference rejects on climate grounds; candidate rejects on distrust of safety enforcement."
+        },
+        {
+          "match": false,
+          "note": "Reference supports fracking in principle but not locally; candidate does not support it in principle."
+        },
+        {
+          "match": false,
+          "note": "Reference is conditionally open if safety is proven; candidate has no confidence and opposes outright on trust grounds."
+        },
+        {
+          "match": false,
+          "note": "Reference bans on inherent environmental/seismic science; candidate focuses on distrust of operators/regulators rather than impossibility."
+        },
+        {
+          "match": false,
+          "note": "Reference supports restarting fracking; candidate opposes it."
+        }
+      ],
+      "reason": "The candidate opposes fracking specifically from distrust that companies and regulators will protect locals from harms, with no matching reference sharing that exact distrust-based anti-fracking stance. Loose anti-fracking overlap with 1/3/4 is insufficient for identity of side and stance.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: opposes fracking\",\n    \"Whose view: local UK resident/community member\",\n    \"Advocates: rejection of fracking in their community due to safety risks\",\n    \"Claim rests on: distrust of companies and regulators to prevent corners being cut, with locals bearing costs of earthquakes/water/noise/house values while companies profit\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Reference rejects on climate grounds; candidate rejects on distrust of safety enforcement.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference supports fracking in principle but not locally; candidate does not support it in principle.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference is conditionally open if safety is proven; candidate has no confidence and opposes outright on trust grounds.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference bans on inherent environmental/seismic science; candidate focuses on distrust of operators/regulators rather than impossibility.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference supports restarting fracking; candidate opposes it.\"\n    }\n  ],\n  \"match\": 0,\n  \"reason\": \"The candidate opposes fracking specifically from distrust that companies and regulators will protect locals from harms, with no matching reference sharing that exact distrust-based anti-fracking stance. Loose anti-fracking overlap with 1/3/4 is insufficient for identity of side and stance.\"\n}",
+      "created_at": "2026-07-19T15:26:07.468724+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p3::x-ai/grok-4.5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 3,
+      "judge_slug": "x-ai/grok-4.5",
+      "judge_family": "xai",
+      "role": "panel",
+      "presentation_order": [
+        2,
+        5,
+        1,
+        3,
+        4
+      ],
+      "match_presented": 3,
+      "match_gold_id": 1,
+      "attributes": [
+        "Core stance: pro-fracking / support restarting UK shale gas extraction",
+        "Whose view: a person in the United Kingdom",
+        "What it advocates: proceed with tightly regulated domestic fracking",
+        "Claim it rests on: energy security, skilled jobs, tax revenue, and reduced import dependence/vulnerability to foreign suppliers and price shocks"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Opposite side: permanent ban on environmental/seismic grounds versus active support for fracking."
+        },
+        {
+          "match": false,
+          "note": "Different stance: only conditional/possible support pending proof versus clear advocacy for fracking now."
+        },
+        {
+          "match": true,
+          "note": "Exact same side and stance: both urge restarting UK fracking specifically for energy security and jobs."
+        },
+        {
+          "match": false,
+          "note": "Different stance: national support paired with local opposition (NIMBY) versus unqualified national support."
+        },
+        {
+          "match": false,
+          "note": "Opposite side: categorical rejection on climate-emergency grounds versus pro-fracking economic/security case."
+        }
+      ],
+      "reason": "The candidate and reference 3 both express unconditional support for restarting UK fracking on the grounds of energy security, domestic supply, and jobs; the other references are either opposed, merely conditional, or locally opposed.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: pro-fracking / support restarting UK shale gas extraction\",\n    \"Whose view: a person in the United Kingdom\",\n    \"What it advocates: proceed with tightly regulated domestic fracking\",\n    \"Claim it rests on: energy security, skilled jobs, tax revenue, and reduced import dependence/vulnerability to foreign suppliers and price shocks\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Opposite side: permanent ban on environmental/seismic grounds versus active support for fracking.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Different stance: only conditional/possible support pending proof versus clear advocacy for fracking now.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Exact same side and stance: both urge restarting UK fracking specifically for energy security and jobs.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Different stance: national support paired with local opposition (NIMBY) versus unqualified national support.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Opposite side: categorical rejection on climate-emergency grounds versus pro-fracking economic/security case.\"\n    }\n  ],\n  \"match\": 3,\n  \"reason\": \"The candidate and reference 3 both express unconditional support for restarting UK fracking on the grounds of energy security, domestic supply, and jobs; the other references are either opposed, merely conditional, or locally opposed.\"\n}",
+      "created_at": "2026-07-19T15:26:22.951514+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p4::x-ai/grok-4.5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 4,
+      "judge_slug": "x-ai/grok-4.5",
+      "judge_family": "xai",
+      "role": "panel",
+      "presentation_order": [
+        3,
+        1,
+        2,
+        4,
+        5
+      ],
+      "match_presented": 0,
+      "match_gold_id": 0,
+      "attributes": [
+        "Core stance: conditional acceptance of fracking (not opposed in principle)",
+        "Whose view: a person in the UK open to shale gas under safeguards",
+        "What it advocates: allow only where geology/viability is proven by test drilling, with strict seismic/environmental rules, plus local community consent and financial benefits; otherwise block projects",
+        "Claim it rests on: fracking must not be forced on unwilling places and requires real local say plus proven safety/viability"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Reference is classic NIMBY (national yes, local no); candidate instead makes local consent a binding national condition without endorsing fracking elsewhere."
+        },
+        {
+          "match": false,
+          "note": "Reference gives unconditional pro-fracking support for security and jobs; candidate attaches strict preconditions and will block if unmet."
+        },
+        {
+          "match": false,
+          "note": "Reference demands a permanent ban on environmental/seismic grounds; candidate is willing to allow fracking when conditions are satisfied."
+        },
+        {
+          "match": false,
+          "note": "Reference rejects all new fossil reserves on climate-emergency grounds; candidate is not categorically opposed and allows conditional development."
+        },
+        {
+          "match": false,
+          "note": "Both are conditional, yet reference requires a renewables transition plan and current proof of safety while lacking explicit local veto/consent; candidate prioritises geology, consent and benefits without a transition clause."
+        }
+      ],
+      "reason": "The candidate’s precise conditions (geological viability, strict rules, binding local consent and financial share) do not identically match any reference’s side and stance; reference 5 is thematically closest but adds an unmentioned transition requirement and omits consent as a veto, so no exact match exists.",
+      "raw_response": "{\n  \"attributes\": [\n    \"Core stance: conditional acceptance of fracking (not opposed in principle)\",\n    \"Whose view: a person in the UK open to shale gas under safeguards\",\n    \"What it advocates: allow only where geology/viability is proven by test drilling, with strict seismic/environmental rules, plus local community consent and financial benefits; otherwise block projects\",\n    \"Claim it rests on: fracking must not be forced on unwilling places and requires real local say plus proven safety/viability\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Reference is classic NIMBY (national yes, local no); candidate instead makes local consent a binding national condition without endorsing fracking elsewhere.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference gives unconditional pro-fracking support for security and jobs; candidate attaches strict preconditions and will block if unmet.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference demands a permanent ban on environmental/seismic grounds; candidate is willing to allow fracking when conditions are satisfied.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Reference rejects all new fossil reserves on climate-emergency grounds; candidate is not categorically opposed and allows conditional development.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Both are conditional, yet reference requires a renewables transition plan and current proof of safety while lacking explicit local veto/consent; candidate prioritises geology, consent and benefits without a transition clause.\"\n    }\n  ],\n  \"match\": 0,\n  \"reason\": \"The candidate’s precise conditions (geological viability, strict rules, binding local consent and financial share) do not identically match any reference’s side and stance; reference 5 is thematically closest but adds an unmentioned transition requirement and omits consent as a veto, so no exact match exists.\"\n}",
+      "created_at": "2026-07-19T15:26:34.828571+00:00"
+    },
+    {
+      "key": "openai/gpt-5.5::pair03_weird::p5::x-ai/grok-4.5::panel",
+      "generator_slug": "openai/gpt-5.5",
+      "generator_family": "openai",
+      "topic_id": "pair03_weird",
+      "gen_index": 5,
+      "judge_slug": "x-ai/grok-4.5",
+      "judge_family": "xai",
+      "role": "panel",
+      "presentation_order": [
+        4,
+        2,
+        3,
+        5,
+        1
+      ],
+      "match_presented": 5,
+      "match_gold_id": 1,
+      "attributes": [
+        "core stance: strongly pro-fracking and anti-net-zero obstruction",
+        "whose view: a person in the UK concerned about energy bills and domestic supply",
+        "advocates: scrap the moratorium, start drilling immediately, prioritise affordability and national self-reliance over climate targets",
+        "claim rests on: opposition is green ideology/fearmongering; households struggle with bills; Britain needs reliable cheap energy not just renewables promises"
+      ],
+      "scope_ok": true,
+      "comparisons": [
+        {
+          "match": false,
+          "note": "Categorically rejects fracking on climate-emergency grounds, the opposite side from the candidate."
+        },
+        {
+          "match": false,
+          "note": "Calls for permanent ban on environmental and seismic grounds, directly opposing the candidate's pro-drilling stance."
+        },
+        {
+          "match": false,
+          "note": "Supports fracking only elsewhere while opposing it locally (NIMBY), unlike the candidate's unconditional national embrace."
+        },
+        {
+          "match": false,
+          "note": "Offers only conditional support requiring strict guarantees and transition proof, whereas the candidate demands immediate unrestricted restart."
+        },
+        {
+          "match": true,
+          "note": "Both urge restarting UK fracking specifically for energy security, cheap domestic gas, lower bills and self-reliance."
+        }
+      ],
+      "reason": "The candidate's core demand to scrap the moratorium and prioritise cheap domestic energy and self-reliance over climate targets is the same pro-fracking energy-security stance expressed in reference 5. No other reference shares this unconditional pro-development position.",
+      "raw_response": "{\n  \"attributes\": [\n    \"core stance: strongly pro-fracking and anti-net-zero obstruction\",\n    \"whose view: a person in the UK concerned about energy bills and domestic supply\",\n    \"advocates: scrap the moratorium, start drilling immediately, prioritise affordability and national self-reliance over climate targets\",\n    \"claim rests on: opposition is green ideology/fearmongering; households struggle with bills; Britain needs reliable cheap energy not just renewables promises\"\n  ],\n  \"scope_ok\": true,\n  \"comparisons\": [\n    {\n      \"match\": false,\n      \"note\": \"Categorically rejects fracking on climate-emergency grounds, the opposite side from the candidate.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Calls for permanent ban on environmental and seismic grounds, directly opposing the candidate's pro-drilling stance.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Supports fracking only elsewhere while opposing it locally (NIMBY), unlike the candidate's unconditional national embrace.\"\n    },\n    {\n      \"match\": false,\n      \"note\": \"Offers only conditional support requiring strict guarantees and transition proof, whereas the candidate demands immediate unrestricted restart.\"\n    },\n    {\n      \"match\": true,\n      \"note\": \"Both urge restarting UK fracking specifically for energy security, cheap domestic gas, lower bills and self-reliance.\"\n    }\n  ],\n  \"match\": 5,\n  \"reason\": \"The candidate's core demand to scrap the moratorium and prioritise cheap domestic energy and self-reliance over climate targets is the same pro-fracking energy-security stance expressed in reference 5. No other reference shares this unconditional pro-development position.\"\n}",
+      "created_at": "2026-07-19T15:27:02.805083+00:00"
+    }
+  ]
+}

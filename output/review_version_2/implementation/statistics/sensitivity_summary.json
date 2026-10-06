@@ -1,0 +1,41 @@
+{
+  "inputs": [
+    "results/agg/prf_per_topic.csv",
+    "results/agg/pairwise_models.csv"
+  ],
+  "contrast": "x_p = (R_a,W,p + R_a,S,p)/2 - (R_b,W,p + R_b,S,p)/2",
+  "statistic": "mean(x_p), retaining the original mean recall difference",
+  "pair_null": "all 256 sign vectors over 8 matched-pair contrasts",
+  "two_sided_tail": "mean(abs(null_statistic) >= abs(observed_statistic) - 1e-12)",
+  "correction": "Benjamini-Hochberg jointly over 78 tests, alpha=0.05",
+  "original_mc_significant": 15,
+  "exact_16topic_significant": 15,
+  "pair_blocked_significant": 0,
+  "pair_blocked_min_raw_p": 0.0078125,
+  "pair_blocked_min_bh_p": 0.08705357142857142,
+  "model_interval_sensitivity": {
+    "n_resamples": 10000,
+    "seed": 42,
+    "method": "percentile 2.5 and 97.5",
+    "resampling_unit": "8 matched pairs, retaining both arms and fixed selected models",
+    "point_estimates": "unchanged; mean of 8 pair averages equals mean of 16 topics",
+    "original_16topic_intervals": "reproduced and matched results/agg/ranking.csv within 1e-12",
+    "original_topic_order": "ascending topic_id; shared seed42 draws independently initialized for topic and pair schemes",
+    "paired_intervals_wider_count": 6,
+    "paired_intervals_narrower_count": 7
+  },
+  "rq3_overall_recall": {
+    "contrast": "US minus China",
+    "n_us_models": 8,
+    "n_chinese_models": 4,
+    "difference": -0.030117187500000003,
+    "pair_bootstrap_ci": [
+      -0.04843750000000002,
+      -0.013359374999999993
+    ],
+    "raw_p": 0.0234375,
+    "holm_p": 0.046875,
+    "verification": "effect, pair-bootstrap interval, and raw sign-flip p independently reproduce saved table"
+  },
+  "scope": "Existing-score sensitivity; no generation/judgment experiments or data authentication."
+}

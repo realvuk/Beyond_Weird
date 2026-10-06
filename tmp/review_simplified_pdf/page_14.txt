@@ -1,0 +1,99 @@
+                                    Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1300                                                          ignated substitute. Generators from families not          1350
+               # 1-based number of the
+1301       best-matching reference (1 to N), or 0             represented in the base panel use the unchanged           1351
+1302       if none matches or scope_ok is false               five-judge panel. Table 7 lists the substitutions.        1352
+1303           reason: str                                                                                              1353
+1304           # One or two sentences justifying                                                                        1354
+           the final decision                                       Table 7: Family-disjoint judge substitutions.
+1305                                                                                                                    1355
+           === USER ===
+                                                              Generator                   Base judge       Substitute
+1306                                                                                                                    1356
+           Topic: {topic_title}                                                           removed
+1307       Population: {population}                                                                                     1357
+                                                              GPT 5.5 / GPT-OSS           GPT 5.5          Grok 4.5
+1308                                                                                                                    1358
+           CANDIDATE perspective to evaluate:                 120B
+1309                                                                                                                    1359
+           Summary: {candidate_summary}                       Claude Opus 4.8             Claude Son-      Grok 4.5
+1310       Explanation: {candidate_explanation}                                           net 5                         1360
+1311       REFERENCE perspectives (numbered                   Gemini 3.1 Pro /            Gemini 3.1       Grok 4.5     1361
+1312       options):                                          Gemma 4 31B                 Pro                           1362
+           {gold_block}                                       DeepSeek V4 Pro             DeepSeek V4      Qwen 3.7
+1313                                                                                                                    1363
+                                                                                          Pro              Max
+1314       Task: decide which single reference                                                                          1364
+           perspective (if any) expresses the                 Kimi K2.6                   Kimi K2.6        Grok 4.5
+1315       same underlying viewpoint as the                                                                             1365
+1316       CANDIDATE, for this topic and                                                                                1366
+           population. Work through the following                The final valid judgments contain no same-
+1317       reasoning chain and report it.                                                                               1367
+                                                              family generator-judge assignments. Family dis-
+1318                                                                                                                    1368
+           Output format (STRICT):                            jointness prevents direct same-family evaluation,
+1319       Respond with ONLY a JSON object                                                                              1369
+                                                              but it does not imply that judges from different
+1320       conforming to the schema defined in the                                                                      1370
+           system prompt. Exactly these keys:                 families are free from shared biases.
+1321       "attributes": array of strings -                                                                             1371
+1322       detailed key attributes of the                                                                               1372
+           candidate perspective: state the core
+                                                              C.2    Reference-order randomisation
+1323       stance, whose view it is, what it                                                                            1373
+           advocates, and the claim it rests on.
+                                                              The five reference perspectives are independently
+1324                                                                                                                    1374
+           "scope_ok": boolean - true if the                  randomized for every judge execution. Judges
+1325                                                                                                                    1375
+           candidate is voiced from within                    respond to the displayed reference index. After
+1326       {population} and on-topic. If it is                                                                          1376
+           voiced from outside {population} (a                judging, the displayed index is mapped back to the
+1327                                                                                                                    1377
+           different standpoint), this is false.              canonical reference identifier before aggregation.
+1328       "comparisons": array of {n_gold}                                                                             1378
+           objects corresponding to reference                 This prevents any reference perspective from sys-
+1329                                                                                                                    1379
+           options 1 through {n_gold} in order.               tematically occupying the same list position.
+1330       Each object must have keys: "match"                                                                          1380
+           (boolean, true if it advocates the
+1331                                                          C.3    Panel aggregation and duplicate                    1381
+           EXACT SAME side and stance) and "note"
+1332       (string, one short sentence justifying                    handling                                           1382
+           why or why not).
+1333                                                                                                                    1383
+           "match": integer - the number of the               The implementation combines fractional reference
+1334       single best-matching reference (1                                                                            1384
+           through {n_gold}). If none matches, or             credits and accounts for missing judgments sep-
+1335                                                                                                                    1385
+           if "scope_ok" is false, output 0.                  arately for each output. For a fixed model and
+1336       Loose thematic overlap is NOT a match.                                                                       1386
+           When in doubt, output 0.
+                                                              topic, let yjk be judge j’s assignment for gener-
+1337                                                                                                                    1387
+           "reason": string - one or two                      ated perspective k, where references are indexed
+1338       sentences justifying the final                                                                               1388
+                                                              by g ∈ {1, . . . , 5} and zero denotes no match.
+           decision.
+1339                                                          Let njg be the number of available assignments by         1389
+1340                                                          judge j to reference g. Each assignment receives          1390
+1341   C     Evaluation and aggregation details               credit                                                    1391
+1342                                                                             (                                      1392
+1343   C.1    Family-disjoint judge panels                                         1/njg , yjk = g,                     1393
+                                                                         cjkg =                             (5)
+1344   The base panel contains five judges from distinct                           0,      otherwise.                   1394
+1345   model families: Gemini 3.1 Pro, GPT 5.5, Claude                                                                  1395
+1346   Sonnet 5, DeepSeek V4 Pro, and Kimi K2.6. No           Thus, two matches to the same reference receive           1396
+1347   generator is evaluated by a judge from the same        one half each; together they contribute one unit          1397
+1348   model family. If a generator shares a family with a    for
+                                                              P that judge. For each judge and reference,
+                                                                                                                        1398
+1349   base-panel judge, that judge is replaced by a des-        k cjkg ≤ 1. If Jk contains the judges with a           1399
+
+
+
+
+                                                             14

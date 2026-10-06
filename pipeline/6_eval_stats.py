@@ -13,8 +13,9 @@ Per the Methodology:
     signed-rank test. The hypothesised direction (WEIRD > Serbian) is fixed
     in advance, so the one-sided test is primary; the two-sided p is
     reported alongside, with the median paired gap, the matched-pairs
-    rank-biserial effect size, and a bootstrap CI over pairs. A null result
-    is informative and reported as such.
+    rank-biserial effect size, a bootstrap CI over pairs, a t-based CI with
+    the one-sided upper bound, and the gap detectable with 80% power
+    (noncentral t). A null result is informative and reported as such.
   * SECONDARY: the same Wilcoxon per model (BH-adjusted) to identify which
     models carry the gap; a mixed-effects robustness check on per-gold
     credit with crossed random effects for topic pair and generator
@@ -27,6 +28,7 @@ Usage:
 """
 import argparse
 import math
+import sys
 import warnings
 from functools import partial
 from itertools import combinations
@@ -34,17 +36,14 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy import stats
+from scipy.optimize import brentq
 from scipy.stats import rankdata, wilcoxon
 
-from bweird.analysis import bh_correction, load_topics, log
+from bweird.analysis import ADAPTED_DIR, AGG_DIR, bh_correction, load_eval_topics, log
+from bweird.logging_utils import run_stage
 
 # ------------------------------------------------------------------ helpers
-
-# Repo-root-relative defaults, resolved from this file so the stage runs from
-# any working directory. Every path can still be overridden on the command line.
-ROOT = Path(__file__).resolve().parent.parent
-ADAPTED = ROOT / "results" / "adapted"
-AGG = ROOT / "results" / "agg"
 
 
 def exact_wilcoxon(d, alternative):
@@ -67,6 +66,25 @@ def rank_biserial(d):
     r = rankdata(np.abs(d))
     w_pos = r[d > 0].sum()
     return float((2 * w_pos - r.sum()) / r.sum())
+
+
+def exact_signed_rank(d):
+    """One-sided exact signed-rank test using midranks and all sign assignments."""
+    # Coverage is rational but arrives through CSV floats; canonicalise away
+    # representation noise so exact zeros and tied magnitudes remain exact.
+    d = np.round(np.asarray(d, float), 12)
+    d = d[d != 0]
+    if len(d) == 0:
+        return float("nan"), float("nan")
+    ranks = rankdata(np.abs(d))
+    w_obs = ranks[d > 0].sum()
+    n_extreme = 0
+    for mask in range(1 << len(d)):
+        w = sum(r for i, r in enumerate(ranks) if mask >> i & 1)
+        n_extreme += w >= w_obs - 1e-12
+    p = n_extreme / (1 << len(d))
+    effect = (2 * w_obs - ranks.sum()) / ranks.sum()
+    return float(p), float(effect)
 
 
 def paired_permutation(x, y, n_iter, rng):
@@ -108,7 +126,31 @@ def gap_test(deltas_by_pair, n_boot, rng, label):
     res["mean_ci_lo"], res["mean_ci_hi"] = map(float, np.percentile(boots.mean(1), [2.5, 97.5]))
     res["median_ci_lo"], res["median_ci_hi"] = map(
         float, np.percentile(np.median(boots, 1), [2.5, 97.5]))
+    res.update(t_summary(d))
     return res
+
+
+def t_summary(d, alpha=0.05, power=0.8):
+    """t-based CI, one-sided upper bound, and sensitivity (MDE) for the pair gaps.
+
+    Deterministic (no RNG draws), so bootstrap outputs are unchanged. Power
+    uses the noncentral t with the observed between-pair SD, i.e. power for
+    hypothetical true gaps, not power at the observed effect.
+    """
+    d = np.asarray(d, float)
+    n = len(d)
+    se = d.std(ddof=1) / np.sqrt(n)
+    df = n - 1
+    lo, hi = stats.t.interval(1 - alpha, df, loc=d.mean(), scale=se)
+    crit = stats.t.ppf(1 - alpha, df)
+
+    def pw(eff):  # one-sided power at a true WEIRD advantage `eff`
+        return float(stats.nct.sf(crit, df, eff / se))
+
+    return {"mean_t_lo": float(lo), "mean_t_hi": float(hi),
+            "mean_upper_one_sided": float(d.mean() + crit * se),
+            "power_at_gap_0.05": pw(0.05),
+            "mde_80pct": float(brentq(lambda e: pw(e) - power, 1e-4, 1.0))}
 
 
 
@@ -153,20 +195,22 @@ def mixed_model(gold_credit, topics, credit_col):
 
 # --------------------------------------------------------------------- main
 
-def main():
+def build_arg_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--agg", default=str(AGG), help="directory with 3_aggregate.py outputs")
-    ap.add_argument("--topics", default=str(ADAPTED / "topics.json"))
-    ap.add_argument("--out", default=str(AGG))
+    ap.add_argument("--agg", default=str(AGG_DIR), help="directory with 3_aggregate.py outputs")
+    ap.add_argument("--topics", default=str(ADAPTED_DIR / "topics.json"))
+    ap.add_argument("--out", default=str(AGG_DIR))
     ap.add_argument("--gold-credit", choices=["sum", "max"], default="sum")
     ap.add_argument("--n-perm", type=int, default=10000)
     ap.add_argument("--n-boot", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=42)
-    args = ap.parse_args()
+    return ap
 
+
+def run(args: argparse.Namespace) -> int:
     rng = np.random.default_rng(args.seed)
-    topics = load_topics(args.topics)
+    topics = load_eval_topics(args.topics)
     agg = Path(args.agg)
     cov = pd.read_csv(agg / "coverage_topic.csv")
     prec = pd.read_csv(agg / "precision_topic.csv")
@@ -213,8 +257,9 @@ def main():
     pm_rows = []
     for g, sub in deltas.groupby("generator"):
         d = sub.delta.to_numpy(float)
+        p, effect = exact_signed_rank(d)
         pm_rows.append((g, len(d), float(d.mean()), float(np.median(d)),
-                        exact_wilcoxon(d, "greater"), rank_biserial(d)))
+                        p, effect))
     pm = pd.DataFrame(pm_rows, columns=["generator", "n_pairs", "mean_gap",
                                         "median_gap", "p_one_sided",
                                         "rank_biserial"])
@@ -243,7 +288,12 @@ def main():
 
     pd.DataFrame([primary, jres]).to_csv(out / "weird_gap_summary.csv", index=False)
     print(f"\nArtifacts written to {out}/")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    return run_stage(build_arg_parser(), run, argv)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

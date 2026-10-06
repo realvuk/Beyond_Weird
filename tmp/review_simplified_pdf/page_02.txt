@@ -1,0 +1,91 @@
+                                   Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+100   ics than on structurally matched WEIRD topics?             rather than collapse into a single preference target     150
+101   We hypothesise higher recall on WEIRD topics.              (Sorensen et al., 2024; Feng et al., 2024; Ali et al.,   151
+102                                                              2025). This matters for political questions, where       152
+      RQ2 (secondary). How does recall vary across
+103                                                              a useful answer may need to represent conflicting        153
+      individual models and across Frontier, larger
+104                                                              positions.                                               154
+      open-weight, and smaller open-weight systems?
+105                                                                 Sorensen et al. (2024) distinguish three forms        155
+106   RQ3 (exploratory). How do the selected mod-                of pluralism. Overton pluralism concerns the             156
+107   els from US and Chinese developers differ in               range of positions a model represents. Steer-            157
+108   overall recall and in their WEIRD-Serbian recall           able pluralism concerns its ability to adopt a re-       158
+109   gaps?                                                      quested position. Distributional pluralism con-          159
+110      Recall is the principal outcome because all three       cerns whether output frequencies reflect a target        160
+111   questions concern recovery of documented per-              population. Our benchmark measures Overton-              161
+112
+      spectives. Precision and F1 provide supplemen-             style coverage: whether documented perspectives          162
+113
+      tary descriptions of matching behaviour. The cat-          are recovered at all.                                    163
+114
+      egory and developer-country comparisons are ex-               The concentration of training, preference, and        164
+      ploratory. The model categories describe access            evaluation data in WEIRD and English-language
+115                                                                                                                       165
+      and relative size, not a capability ranking.               settings raises concerns about uneven cultural rep-
+116                                                                                                                       166
+         We do not detect the predicted WEIRD advan-             resentation (Sorensen et al., 2024; Wang et al.,
+117                                                                                                                       167
+      tage. Mean recall is 0.581 for WEIRD topics and            2025; Zewail et al., 2026). Multilingual and cul-
+118                                                                                                                       168
+      0.594 for Serbian topics, with four matched pairs          turally adaptive prompting can improve diversity
+119                                                                                                                       169
+      favouring each side. Coverage nevertheless re-             in some settings (Wang et al., 2025). Language-
+120                                                                                                                       170
+      mains incomplete. Even the highest-recall model            specific evaluation resources also remain unevenly
+121                                                                                                                       171
+      misses roughly three of every ten reference per-           developed. Serbian SuperGLUE addresses gaps
+122   spectives on average.                                                                                               172
+                                                                 in complex language-understanding evaluation for
+123      The paper makes two contributions:                                                                               173
+                                                                 Serbian and motivates broader coverage of South
+124                                                                                                                       174
+          • A matched evaluation set: eight structurally         Slavic languages (Perovic and Mihajlov, 2026).
+125                                                                                                                       175
+            analogous WEIRD-Serbian topic pairs, each            This work motivates our directional hypothesis,
+126                                                              but does not determine whether a particular cover-       176
+            topic with five reference perspectives docu-
+127                                                              age difference reflects cultural setting or the topics   177
+            mented in evidence about the relevant popu-
+128                                                              chosen for comparison.                                   178
+            lation, scored by LLM judges from other de-
+129                                                                                                                       179
+            velopers.
+130                                                              2.2   Measuring perspective coverage                     180
+131       • A matched comparison of perspective cov-                                                                      181
+                                                                 Political controversies rarely have a complete, un-
+132         erage: we find no detectable WEIRD advan-                                                                     182
+                                                                 contested set of correct labels. Perspectivist NLP
+133         tage. Differences between individual topic                                                                    183
+                                                                 therefore treats disagreement as part of the phe-
+134         pairs are much larger than the pooled differ-                                                                 184
+                                                                 nomenon being studied (Basile et al., 2021; Plank,
+135         ence, and models miss reference perspectives                                                                  185
+                                                                 2022; Frenda et al., 2025). Related approaches re-
+136         in both settings.                                                                                             186
+                                                                 tain annotator-specific rationales or label distribu-
+137                                                                                                                       187
+         These findings motivate a more specific ques-           tions rather than combining all judgments into one
+138   tion for subsequent evaluation: which perspectives                                                                  188
+                                                                 target (Sarumi et al., 2026; Shetty et al., 2026). A
+139   do models omit on which controversies?                     fixed reference set can document positions known         189
+140                                                              to exist, but cannot guarantee an exhaustive ac-         190
+141   2     Related work                                         count of a debate.                                       191
+142                                                                 Other work uses LLMs as proxies for human             192
+      Our paper connects research on cultural represen-
+143                                                              opinion. Under some prompting strategies, mod-           193
+      tation, perspective coverage, and LLM-based eval-
+144   uation.                                                    els can reproduce population-level polling patterns      194
+145                                                              (Sun et al., 2024; Gong et al., 2026). Their ap-         195
+146   2.1    Pluralistic alignment and cultural                  parent political or cultural preferences can also        196
+147          representation                                      change with prompt design and methodology                197
+148   Pluralistic alignment treats differences in human          (Khan et al., 2025). Hybrid approaches combine           198
+149   values and viewpoints as something to preserve,            model-generated annotations with human atten-            199
+
+
+
+
+                                                             2

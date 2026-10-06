@@ -1,0 +1,94 @@
+valid decision for output k, the panel credit is
+1 X
+wkg =
+cjkg .
+(6)
+|Jk |
+j∈Jk
+We sum these credits for each reference, cap the
+sum at one, and average across the five references:
+!
+X
+1X
+Cg = min 1,
+Cg .
+wkg ,
+Rmt =
+g=1
+k=1
+(7)
+With complete panels, these equations reduce to
+the mean judge recall in Eq. 1. When judgments
+are missing, |Jk | can differ across outputs; the cap
+prevents any reference receiving more than full
+credit. All outputs in this dataset have at least four
+valid judgments.
+C.4
+Precision
+For generated perspective k, let mjk = 1 if judge j
+assigns it to any reference perspective and mjk =
+0 if the judge returns no match. Its precision contribution is
+1 X
+qk =
+mjk .
+|Jk |
+P =
+Statistical details
+D.1
+Confidence intervals and sensitivity
+calculations
+Primary interval for the mean cultural gap.
+Let ∆ and s∆ be the mean and sample standard
+deviation of the eight pair-level differences. The
+primary 95% confidence interval is
+s∆
+∆ ± t0.975,7 √ .
+qk .
+(9)
+k=1
+Model-level recall and precision are the corresponding averages across the 16 topics. Modellevel F1 is the harmonic mean of model-level precision and recall.
+A failed judge call is missing data and is excluded from the denominator. It is not treated as a
+no-match decision.
+C.5
+Missing judgments and the recall cap
+With a complete and identical judge panel across
+the five generations, the summed panel credit for
+a reference cannot exceed one. Missing judge
+calls can change the denominator from one generation to another, however. In that case, summing generation-level weights can produce a value
+slightly above one.
+The implementation therefore caps each reference credit at one before topic recall is computed.
+The cap affects two observed credits for Grok 4.3
+on the WEIRD topic in pair 8: their uncapped values are 1.0167 and 1.0917. Both are set to 1 in the
+published scores.
+D
+Model-topic precision is
+X
+Judgment execution and retries
+The design requires 1,040 × 5 = 5,200 judge
+decisions. The raw judgment log contains 5, 228
+records because failed calls that were retried remain in the log. Of these records, 44 are failed or
+null calls. Twenty-eight were followed by successful retry records, leaving 16 intended judgments
+unrecovered.
+The final evaluation therefore contains 5, 184
+valid decisions. Of the 1, 040 generated perspectives, 1, 024 have five valid judge decisions and 16
+have four. A no-match decision is a valid judgment in which the judge selects no reference. A
+missing judgment is an execution failure. The two
+are kept separate throughout the analysis.
+j∈Jk
+(8)
+C.6
+The mean is −0.0131, the SD is 0.107, and the SE
+is 0.038. The resulting interval is [−0.103, 0.077],
+or −10.3 to 7.7 percentage points. The calculation assumes independent, approximately normally distributed pair-level differences. It estimates the arithmetic mean and is separate from the
+signed-rank test in Appendix D.2.
+Supplementary interval and upper bound.
+The original percentile bootstrap resamples the
+eight matched pairs 10,000 times, keeping all 13
+models together within each sampled pair. It uses
+seed 42 and the saved random-number stream, giving [−0.08096, 0.05823]. With only eight resampling units, percentile intervals may have limited
+coverage accuracy. The corresponding one-sided
+95% t upper bound is 0.059. This is conditional on
+the interval assumptions and the selected benchmark, not a general upper bound on cultural disparities.
+Individual-model intervals. Table 8 retains the
+original 95% percentile intervals for model-level
+recall, precision, and F1, based on 10,000 resamples of the 16 individual topics. These intervals

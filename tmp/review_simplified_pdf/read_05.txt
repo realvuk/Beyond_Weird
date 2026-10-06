@@ -1,0 +1,95 @@
+3.3.2
+Table 3: The 13 generators, grouped by the access and
+relative-size categories used throughout the analysis.
+Model
+Developer
+Frontier (5)
+Claude Opus 4.8
+GPT 5.5
+Gemini 3.1 Pro
+Grok 4.3
+Qwen 3.7 Max
+Anthropic
+OpenAI
+Google
+xAI
+Alibaba
+Larger open-weight (6)
+DeepSeek V4 Pro
+Kimi K2.6
+GLM 5.2
+Llama 4 Maverick
+Mistral Large 3
+GPT-OSS 120B
+Smaller open-weight (2)
+Gemma 4 31B
+Llama 3.3 70B
+Each of five LLM judges receives one generated
+perspective at a time, together with the topic, target population, and five reference perspectives.
+The judge selects the reference expressing the
+same underlying side and stance, or returns no
+match. Thematic overlap alone is insufficient. An
+output voiced from outside the target population
+also receives no match. In the saved judgments,
+no output was flagged as voiced from outside that
+population. Each judge makes five such assignments for a model’s five outputs on a topic. Judges
+do not see one another’s decisions, and recall is
+calculated only after their assignments have been
+collected.
+For example, all five judges matched a GPT 5.5
+output supporting UK fracking for energy security, jobs, and reduced import dependence to reference 1 in Table 2. A different output opposed
+fracking because it distrusted companies and regulators. Claude Sonnet 5 matched it to reference 2,
+whereas the other four judges returned no match.
+This disagreement concerns correspondence to the
+reference set, not whether the output expresses a
+legitimate position. Appendix G shows the saved
+outputs and all assignments, judges evaluated both
+summaries and explanations.
+We use family-disjoint judging: no judge
+shares the generator’s configured developer family. Google includes Gemini and Gemma, OpenAI includes GPT and GPT-OSS, and Anthropic
+includes Claude Opus and Claude Sonnet. The
+five judges in each panel also come from different
+developer families.
+The base panel contains Gemini 3.1 Pro, GPT
+5.5, Claude Sonnet 5, DeepSeek V4 Pro, and Kimi
+K2.6. When a generator shares a family with one
+of these judges, we replace that judge with a designated substitute, keeping five seats. Grok 4.5 substitutes for Google, OpenAI, Anthropic, or Moonshot; Qwen 3.7 Max substitutes for DeepSeek.
+Appendix C.1 gives the mapping. Each generator is judged by the same panel on its WEIRD and
+Serbian topics, avoiding changes in panel membership between the two settings. This does not
+exclude topic-dependent or culturally differential
+judging errors. Differences between panels may
+also affect comparisons of overall recall between
+generators (Section 4.2).
+Reference order is randomised independently
+for every judgment, and returned indices are
+DeepSeek
+Moonshot
+Z.AI
+Meta
+Mistral
+OpenAI
+Google
+Meta
+Judge assignments
+default reasoning behaviour and provider routing.
+The serving provider was not recorded. A response that could not be parsed received one repair
+request, and calls that still failed were re-run later.
+Valid responses were saved immediately and never
+regenerated, so no valid response was discarded.
+Each model-topic cell therefore has a single sample, and the analysis does not capture variation
+across repeated generations. Generation records
+date from 9-10 July 2026; judging, including retries, spans 10-20 July 2026. Appendix H lists the
+configured model identifiers.
+For the exploratory category comparison, we
+group the models into five Frontier systems,
+six larger open-weight systems, and two smaller
+open-weight systems. Frontier denotes systems
+without a verified public-weight release; Qwen 3.7
+Max is included because Alibaba documents it as
+a commercial API model.1 The smaller openweight group consists of the two selected systems labelled 31B and 70B, Gemma 4 31B and
+Llama 3.3 70B. The other six open-weight systems
+form the larger group. These labels identify the
+groups used in this comparison rather than a general size taxonomy. The categories describe access and relative size, not capability. All 13 systems were queried through the same API workflow. Appendix H records category membership
+and release-source links.
+See Alibaba Cloud’s Qwen3.7-Max commercial-model
+announcement.

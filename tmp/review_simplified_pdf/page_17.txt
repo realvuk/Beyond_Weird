@@ -1,0 +1,90 @@
+                                    Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1600   statistic is their mean. Exact two-sided sign-flip      and their uncertainty estimates.                       1650
+1601   tests enumerate all 28 = 256 sign assignments                                                                  1651
+1602   and compare the absolute permuted mean with the         D.6     Pairwise model comparisons                     1652
+1603   absolute observed mean. These tests assume in-          Pairwise model tests compare recall across the 16      1653
+1604   dependent, sign-exchangeable pair-level contrasts       topics. For models a and b, let di = Ra,i − Rb,i       1654
+1605   and hold the selected models fixed.                     for topic i. The observed statistic is                 1655
+1606      Holm correction is applied jointly to four                                                                  1656
+                                                                                          1 X
+1607   overall-recall contrasts: the three pairwise com-                         Tobs =       di .            (13)    1657
+                                                                                          16
+1608   parisons among Frontier/API, larger open-weight,                                         i                     1658
+1609   and smaller open-weight systems, and Fron-                For each model pair, the analysis samples            1659
+1610   tier/API versus all eight open-weight models            10, 000 random sign vectors si ∈ {−1, +1} and          1660
+1611   combined. The Frontier-versus-combined-open-            computes                                               1661
+1612   weight difference is 0.045, with raw p = 0.086                                                                 1662
+       and adjusted p = 0.258. None of the four com-                                    1 X
+1613                                                                             Ts =       si di .           (14)    1663
+       parisons meets the adjusted 0.05 threshold. The                                  16
+1614                                                                                        i                         1664
+1615
+       smallest adjusted value is 0.063, for Frontier ver-          The test is two-sided. The Monte Carlo p-value    1665
+       sus smaller open-weight systems. The accompa-           is
+1616                                                                                                                  1666
+       nying analysis files contain all four contrasts, in-
+1617                                                                                                                  1667
+       cluding raw and adjusted p-values.                                      1 + #{|Ts | ≥ |Tobs |}
+1618                                                                        p=                        .       (15)    1668
+                                                                                     10,001
+1619                                                                                                                  1669
+       D.5   Exploratory developer-country                        The random-number
+1620
+             comparisons                                                             13
+                                                                                        generator is initialized     1670
+1621                                                           with seed 42. All 2 = 78 model pairs use this          1671
+1622   The US group contains Claude Opus 4.8, GPT              procedure, and the resulting raw p-values are ad-      1672
+1623   5.5, Gemini 3.1 Pro, Grok 4.3, Llama 4 Maver-           justed jointly using the Benjamini-Hochberg pro-       1673
+1624   ick, GPT-OSS 120B, Gemma 4 31B, and Llama               cedure. This is a Monte Carlo paired sign-flip test,   1674
+       3.3 70B. The Chinese group contains DeepSeek            not exhaustive enumeration of all 216 sign pat-
+1625                                                                                                                  1675
+       V4 Pro, Qwen 3.7 Max, Kimi K2.6, and GLM 5.2.           terns.
+1626                                                                                                                  1676
+       Mistral is excluded from this contrast and retained        The individual-topic sign-flip procedure as-
+1627                                                                                                                  1677
+       elsewhere.                                              sumes sign exchangeability at the topic level and
+1628                                                                                                                  1678
+          We compare overall recall and, separately, the       does not preserve the matched pairs. To assess
+1629                                                                                                                  1679
+       WEIRD-minus-Serbian recall gap. Models re-              sensitivity to this choice, we also form eight pair-
+1630                                                                                                                  1680
+       ceive equal weight within each group. For each          level contrasts,
+1631                                                                                                                  1681
+       outcome, we calculate a US-minus-China con-                             W + RS       W + RS
+                                                                                           Rb,p
+1632                                                                          Ra,p   a,p          b,p                 1682
+       trast within each matched pair, giving eight con-                 xp =            −            ,
+1633                                                                               2            2                     1683
+       trasts. Exact two-sided sign-flip tests enumerate
+1634                                                                                                                  1684
+       all 28 = 256 sign assignments, using the mean           and enumerate all 28 = 256 sign assignments us-
+1635                                                                                                                  1685
+       contrast as the statistic. The tests assume indepen-    ing their mean as the statistic. Two-sided tail com-
+1636                                                                                                                  1686
+       dent, sign-exchangeable pair-level contrasts and        parisons allow a numerical tolerance of 10−12 ,
+1637                                                                                                                  1687
+       hold the selected models fixed. Confidence inter-       and Benjamini–Hochberg correction again covers
+1638                                                                                                                  1688
+       vals are percentile intervals from 10,000 resam-        all 78 model comparisons. This procedure as-
+1639   ples of the eight matched pairs. Holm correction                                                               1689
+                                                               sumes sign-exchangeable pair-level contrasts and
+1640   is applied across the two tests.                                                                               1690
+                                                               preserves the original mean difference. As a nu-
+1641                                                                                                                  1691
+          For overall recall, the US-minus-China differ-       merical check, exhaustive enumeration of the 216
+1642   ence is −0.030 (95% CI [−0.048, −0.013]), with          individual-topic sign patterns still yields 15 ad-     1692
+1643   raw p = 0.023 and Holm-adjusted p = 0.047. For          justed significant comparisons, whereas the pair-      1693
+1644   the cultural gap, the difference is −0.025 (95%         blocked procedure yields none (minimum adjusted        1694
+1645   CI [−0.082, 0.025]), with raw and adjusted p =          p = 0.087). The discrepancy therefore reflects         1695
+1646   0.453. These outcomes answer different ques-            the inferential unit rather than Monte Carlo sam-      1696
+1647   tions: an overall recall difference does not estab-     pling alone. The pair-blocked results qualify the      1697
+1648   lish a difference in the WEIRD-Serbian gap. The         individual topic findings; neither procedure estab-    1698
+1649   accompanying analysis files contain both contrasts      lishes equivalence between models                      1699
+
+
+
+
+                                                              17

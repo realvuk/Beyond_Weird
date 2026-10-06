@@ -1,0 +1,72 @@
+this comparison. We examine two outcomes:
+overall recall and the WEIRD-minus-Serbian recall gap.
+For RQ2 and RQ3, each comparison uses eight
+pair-level contrasts and an exact two-sided signflip test. We apply Holm adjustment across the
+four RQ2 comparisons and, separately, across the
+two RQ3 comparisons. These exploratory tests
+hold the selected models fixed and assume independent contrasts whose signs are exchangeable under the null. They do not isolate effects
+of model category or developer country. Appendices D.4 and D.5 give the calculations and supplementary uncertainty estimates. Reported pvalues for these group comparisons are Holmadjusted unless stated otherwise.
+16.9 points lower for Canadian residential schools
+than for Srebrenica. Mean topic recall ranges
+from 0.449 for the Serbian migration-route topic
+to 0.685 for Serbia’s West-versus-Russia alignment. Both extremes occur among the Serbian
+topics, indicating that topic-level variation does
+not follow a uniform cultural direction.
+Figure 1 shows all eight pair-level differences.
+Additional analyses and alternative uncertainty estimates are reported in Appendix D; they do not
+change the interpretation of the primary comparison. Appendix E.1 presents the model-level and
+individual model-pair views.
+Check judge consistency. We report nominal Krippendorff’s α overall and separately for
+WEIRD and Serbian topics, together with judgelevel no-match rates. We also recalculate scores
+after removing each judge in turn. These checks
+assess agreement and sensitivity to panel membership; they do not establish that the judgments are
+correct. Additional agreement measures and detailed results appear in Appendix F.
+Table 4 reports overall recall and separate means
+for WEIRD and Serbian topics. Overall recall
+ranges from 0.458 for Llama 3.3 70B to 0.698
+for Gemini 3.1 Pro. Even the highest-recall model
+leaves approximately 30% of the reference coverage unrecovered on average. These are descriptive
+comparisons of the selected models; the ordering
+does not establish that every difference between
+models is statistically distinguishable. Modellevel intervals and pairwise tests appear in Appendices E.2, D.1, and E.3.
+Mean recall is 0.615 for Frontier systems, 0.578
+for larger open-weight systems, and 0.548 for
+smaller open-weight systems. Across all eight
+open-weight models, mean recall is 0.570. The
+observed Frontier advantage over this combined
+group is therefore 4.5 percentage points (p =
+0.258). None of the four category comparisons
+reaches the 0.05 threshold after adjustment (Appendix D.4). These results do not establish equivalence or isolate effects of size, openness, or capability.
+Individual models vary substantially within categories. Gemma 4 31B has recall 0.638, close
+to the 0.645 reported for GPT 5.5 and DeepSeek
+V4 Pro, whereas Llama 3.3 70B has recall 0.458.
+These observed similarities do not establish equivalence. Comparisons also depend on panel composition: Gemini 3.1 Pro matched 52.7% of the
+outputs it judged, compared with 65.0–76.6% for
+the other judges. Removing it raises individual
+model recall by up to 3.6 percentage points (Appendix F.3). Google’s two generators are never
+scored by this judge because of the family-disjoint
+design. Small differences between their scores and
+Results
+4.1
+RQ1: Recall on matched WEIRD and
+Serbian topics
+4.2
+Mean recall is 0.581 for WEIRD topics and 0.594
+for Serbian topics. Across the eight matched
+topic pairs, the mean WEIRD-minus-Serbian difference is −0.013, or −1.3 percentage points
+(95% t-interval: −10.3 to 7.7; pair bootstrap:
+−8.1 to 5.8). The one-sided 95% upper bound
+is 5.9 points. The median pair-level difference is
+−0.014.
+Mean recall is 0.581 for WEIRD topics and
+0.594 for Serbian topics. Across the eight matched
+pairs, the mean WEIRD-minus-Serbian difference
+is −1.3 percentage points (95% CI: −10.3 to 7.7).
+The primary test finds no evidence for the hypothesised WEIRD advantage (p = 0.680). The interval includes differences in both directions, so the
+result does not establish equivalent coverage.
+Four matched pairs favour WEIRD topics and
+four favour Serbian topics. The largest differences
+point in opposite directions: recall is 19.1 percentage points higher for German immigration than
+for its Serbian migration-route counterpart, but
+RQ2: Recall by model and access
+category

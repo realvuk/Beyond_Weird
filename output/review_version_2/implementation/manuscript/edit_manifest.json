@@ -1,0 +1,382 @@
+[
+  {
+    "id": "preamble_hyperref",
+    "tex_start": 11,
+    "tex_end": 11,
+    "old": "\\usepackage{hyperref}",
+    "new": "",
+    "reason": "Let the journal style load hyperref after float-related packages, preventing duplicate float destinations.",
+    "location_key": "preamble_hyperref",
+    "status": "Applied"
+  },
+  {
+    "id": "preamble_cleveref",
+    "tex_start": 19,
+    "tex_end": 19,
+    "old": "\\usepackage{cleveref}",
+    "new": "",
+    "reason": "Move cleveref after the style loads hyperref.",
+    "location_key": "preamble_cleveref",
+    "status": "Applied"
+  },
+  {
+    "id": "preamble_style_order",
+    "tex_start": 62,
+    "tex_end": 62,
+    "old": "\\usepackage{tacl2021v1}",
+    "new": "\\usepackage{tacl2021v1}\n\\usepackage{cleveref}",
+    "reason": "Load cross-reference support in the correct order; no body text changes.",
+    "location_key": "preamble_style_order",
+    "status": "Applied"
+  },
+  {
+    "id": "abstract",
+    "tex_start": 166,
+    "tex_end": 166,
+    "old": "Large language models can describe political controversies accurately while omitting relevant perspectives. We test whether they recover fewer documented perspectives on Serbian controversies than on structurally matched topics from Western, Educated, Industrialised, Rich, and Democratic (WEIRD) settings. The benchmark pairs eight Serbian controversies with WEIRD counterparts; each of the 16 topics has five reference perspectives documented in surveys, polling, referendum results, research, or public debate. Thirteen LLMs each generated five perspectives per topic in English, and five LLM judges from other developers matched each output to a reference or returned no match. Mean recall was 0.581 on WEIRD topics and 0.594 on Serbian topics. The mean WEIRD-minus-Serbian difference across the eight pairs was $-1.3$ percentage points (95\\% CI: $-10.3$ to $7.7$), and an exact one-sided Wilcoxon signed-rank test found no evidence for the hypothesised WEIRD advantage ($p=0.680$). Differences between individual pairs ($-16.9$ to $+19.1$ points) were much larger than the pooled difference. Judges agreed similarly on both sets of topics (Fleiss' $\\kappa=0.77$), but agreement does not establish accuracy. Coverage was incomplete in both settings, and the result does not establish equivalent coverage.",
+    "new": "Large language models can describe political controversies accurately while omitting relevant perspectives. We test whether they recover fewer documented perspectives on Serbian controversies than on structurally matched topics from Western, Educated, Industrialised, Rich, and Democratic (WEIRD) settings. The benchmark pairs eight Serbian controversies with WEIRD counterparts; each of the 16 topics has five reference perspectives documented in surveys, polling, referendum results, research, or public debate. Thirteen LLMs each generated five perspectives per topic in English, and five LLM judges from other developers matched each output to a reference or returned no match. Mean recall was 0.581 on WEIRD topics and 0.594 on Serbian topics. The mean WEIRD-minus-Serbian difference across the eight pairs was $-1.3$ percentage points (95\\% $t$-based CI: $-10.3$ to $7.7$), and an exact one-sided Wilcoxon signed-rank test found no evidence for the hypothesised WEIRD advantage ($p=0.680$). Differences between individual pairs ($-16.9$ to $+19.1$ points) were much larger than the pooled difference. Inter-judge agreement was similar across the two settings (pooled Fleiss' $\\kappa=0.77$), but agreement does not establish accuracy. Coverage was incomplete in both settings, and the result does not establish equivalent coverage.",
+    "reason": "Name the interval procedure and identify the pooled agreement coefficient; all numbers remain unchanged.",
+    "location_key": "abstract",
+    "status": "Applied"
+  },
+  {
+    "id": "contributions",
+    "tex_start": 194,
+    "tex_end": 194,
+    "old": "The paper makes three contributions:",
+    "new": "The paper makes two contributions:",
+    "reason": "The list contains two contributions, not three.",
+    "location_key": "contributions",
+    "status": "Applied"
+  },
+  {
+    "id": "superglue",
+    "tex_start": 212,
+    "tex_end": 212,
+    "old": "The concentration of training, preference, and evaluation data in WEIRD and English-language settings raises concerns about uneven cultural representation \\cite{sorensenRoadmapPluralisticAlignment2024, wangMultilingualPromptingImproving2025, zewailMoralStereotypingLarge2026}. Multilingual and culturally adaptive prompting can improve diversity in some settings \\cite{wangMultilingualPromptingImproving2025}. Culturally focused benchmarks also document uneven resource coverage, including for Serbian and other South Slavic languages \\cite{perovicSerbianSuperGLUEEvaluation2026}. This work motivates our directional hypothesis, but does not determine whether a particular coverage difference reflects cultural setting or the topics chosen for comparison.",
+    "new": "The concentration of training, preference, and evaluation data in WEIRD and English-language settings raises concerns about uneven cultural representation \\cite{sorensenRoadmapPluralisticAlignment2024, wangMultilingualPromptingImproving2025, zewailMoralStereotypingLarge2026}. Multilingual and culturally adaptive prompting can improve diversity in some settings \\cite{wangMultilingualPromptingImproving2025}. Language-specific evaluation resources also remain unevenly developed. Serbian SuperGLUE addresses gaps in complex language-understanding evaluation for Serbian and motivates broader coverage of South Slavic languages \\cite{perovicSerbianSuperGLUEEvaluation2026}. This work motivates our directional hypothesis, but does not determine whether a particular coverage difference reflects cultural setting or the topics chosen for comparison.",
+    "reason": "Distinguish language-understanding resources from cultural-perspective benchmarks.",
+    "location_key": "superglue",
+    "status": "Applied"
+  },
+  {
+    "id": "overtonbench",
+    "tex_start": 220,
+    "tex_end": 220,
+    "old": "The closest benchmark is OvertonBench, which evaluates coverage of diverse positions and validates representation with people who hold those views \\cite{poole-dayanBenchmarkingOvertonPluralism2025}. We share its focus on perspective coverage. Our study adds a matched comparison of WEIRD and Serbian controversies to reduce confounding between cultural setting and topic selection.",
+    "new": "The closest benchmark is OvertonBench, which evaluates perspective coverage using viewpoint groups derived from human responses and ratings of how well model outputs represent participants' views \\cite{poole-dayanBenchmarkingOvertonPluralism2025}. Our study instead measures recovery of fixed, externally documented reference perspectives in structurally matched WEIRD and Serbian controversies. The contribution is this matched comparison across settings; differences in reference construction and scoring preclude direct comparison of absolute scores between the two benchmarks.",
+    "reason": "Make the measurement distinction and incremental contribution explicit.",
+    "location_key": "overtonbench",
+    "status": "Applied"
+  },
+  {
+    "id": "judge_citation",
+    "tex_start": 224,
+    "tex_end": 224,
+    "old": "Evaluating coverage requires deciding whether differently worded statements express the same stance. LLM judges can assess this semantic relationship, but their decisions may depend on presentation, style, and model provenance \\cite{poole-dayanBenchmarkingOvertonPluralism2025, chenBenchmarkingLargeLanguage2025}.",
+    "new": "Evaluating coverage requires deciding whether differently worded statements express the same stance. LLM judges can assess this relationship, but their agreement with human assessments can vary across the models being evaluated \\cite{poole-dayanBenchmarkingOvertonPluralism2025}.",
+    "reason": "Narrow the claim to the inspected evidence; remove the mismatched Chen citation explicitly.",
+    "location_key": "judge_citation",
+    "status": "Applied"
+  },
+  {
+    "id": "weird_scope",
+    "tex_start": 239,
+    "tex_end": 240,
+    "old": "The procedure was investigator-guided rather than algorithmic. A counterpart also needed enough external material to document distinct perspectives using the same construction procedure. Table~\\ref{tab:topics} lists the resulting pairs and their matching rationales. Here, WEIRD and Serbian identify the two benchmark groups; Serbia is the single non-WEIRD setting studied. Matching reduces ambiguity due to topic selection without experimentally isolating cultural setting.\n% AUTHOR CHECK: document the operational WEIRD inclusion rule; it was not recorded in the supplied project.",
+    "new": "The procedure was investigator-guided rather than algorithmic. A counterpart also needed enough external material to document distinct perspectives using the same construction procedure. Table~\\ref{tab:topics} lists the resulting pairs and their matching rationales. Comparator selection was guided by broad Western, educational, industrial and economic characteristics, rather than a quantified country-classification rule. WEIRD therefore labels the selected comparator populations in Table~\\ref{tab:topics}; it is not a validated binary country classification or representative sampling of a cultural category. Poland was included as a borderline case under this investigator judgment. Matching reduces ambiguity due to topic selection without experimentally isolating cultural setting.",
+    "reason": "Report the author-confirmed investigator-guided grouping and the acknowledged borderline inclusion of Poland, without inventing a formal classification rule.",
+    "location_key": "weird_scope",
+    "status": "Applied"
+  },
+  {
+    "id": "source_ledger",
+    "tex_start": 265,
+    "tex_end": 265,
+    "old": "A reference perspective is a substantively distinct stance documented as being held within the target population. The first author constructed all $80$ reference perspectives manually from research literature and news reporting, drawing on surveys, polling, referendum results, peer-reviewed research, and clearly attested public debate. The reference statements summarise positions supported by these sources, rather than positions generated by the models evaluated here. Every perspective is linked to its supporting sources, and these links will be released with the benchmark.",
+    "new": "A reference perspective is a substantively distinct stance documented as being held within the target population. The first author constructed all $80$ reference perspectives manually from research literature and news reporting, drawing on surveys, polling, referendum results, peer-reviewed research, and clearly attested public debate. The reference statements summarise positions supported by these sources, rather than positions generated by the models evaluated here. The first author selected five distinct stances per topic from the linked research and reporting. The source workbook records a source entry for each of the 80 reference perspectives. The accompanying source ledger links the evaluated reference identifiers to their workbook cells and preserves both the source text and any embedded hyperlink. All reference summaries and explanations in the workbook match the evaluated reference set exactly. Source entries identify the evidence used in construction; they do not imply that every clause of an advocate-style explanation is a quotation or a measured population belief.",
+    "reason": "Replace the missing-source concern with the newly supplied workbook and an explicit provenance ledger.",
+    "location_key": "source_ledger",
+    "status": "Applied"
+  },
+  {
+    "id": "source_language",
+    "tex_start": 267,
+    "tex_end": 267,
+    "old": "Sources for the Serbian topics are in Serbian, and the first author summarised them in English.",
+    "new": "Reference summaries and explanations were written in English. Sources cited for Serbian topics include English-language research, reporting, and survey materials; the language of the cited material was therefore not uniformly Serbian.",
+    "reason": "Correct the unsupported blanket claim that all Serbian-topic sources are in Serbian.",
+    "location_key": "source_language",
+    "status": "Applied"
+  },
+  {
+    "id": "size_groups",
+    "tex_start": 300,
+    "tex_end": 300,
+    "old": "For the exploratory category comparison, we group the models into five Frontier/API systems, six larger open-weight systems, and two smaller open-weight systems. Frontier/API denotes systems without a verified public-weight release; Qwen 3.7 Max is included because Alibaba documents it as a commercial API model.\\footnote{See \\href{https://www.alibabacloud.com/en/news/product/maxcompute-model-computing-service-supports-qwen37-max-and-other-commercial-models-mkv}{Alibaba Cloud's Qwen3.7-Max commercial-model announcement}.} Gemma 4 31B and Llama 3.3 70B are smaller only relative to the other open-weight models in this selection, \\textbf{[measured by total parameter count]}. The categories describe access and relative size, not capability. Weight availability describes the model release, not where a model was run: all $13$ systems were queried through the same API workflow. Appendix~\\ref{app:execution} records category membership and release-source links.",
+    "new": "For the exploratory category comparison, we group the models into five Frontier/API systems, six larger open-weight systems, and two smaller open-weight systems. Frontier/API denotes systems without a verified public-weight release; Qwen 3.7 Max is included because Alibaba documents it as a commercial API model.\\footnote{See \\href{https://www.alibabacloud.com/en/news/product/maxcompute-model-computing-service-supports-qwen37-max-and-other-commercial-models-mkv}{Alibaba Cloud's Qwen3.7-Max commercial-model announcement}.} The smaller open-weight group consists of the two selected systems labelled 31B and 70B, Gemma 4 31B and Llama 3.3 70B; the other six open-weight systems form the larger group. These labels identify the groups used in this comparison rather than a general size taxonomy. The categories describe access and relative size, not capability. Weight availability describes the model release, not where a model was run: all $13$ systems were queried through the same API workflow. Appendix~\\ref{app:execution} records category membership and release-source links.",
+    "reason": "Remove the visible drafting note and define membership without inventing a parameter-count rule.",
+    "location_key": "size_groups",
+    "status": "Applied"
+  },
+  {
+    "id": "panel_protection",
+    "tex_start": 340,
+    "tex_end": 340,
+    "old": "The base panel contains Gemini 3.1 Pro, GPT 5.5, Claude Sonnet 5, DeepSeek V4 Pro, and Kimi K2.6. When a generator shares a family with one of these judges, we replace that judge with a designated substitute, keeping five seats. Grok 4.5 substitutes for Google, OpenAI, Anthropic, or Moonshot; Qwen 3.7 Max substitutes for DeepSeek. Appendix~\\ref{app:judge_panels} gives the mapping. This prevents direct same-family evaluation, but cannot exclude shared bias across families. Because a generator's panel depends only on its developer, each generator is judged by the same panel on its WEIRD and Serbian topics. Panel substitution therefore cannot create a within-model WEIRD--Serbian difference, but it can shift a model's overall recall relative to other models (Section~\\ref{sec:rq2}).",
+    "new": "The base panel contains Gemini 3.1 Pro, GPT 5.5, Claude Sonnet 5, DeepSeek V4 Pro, and Kimi K2.6. When a generator shares a family with one of these judges, we replace that judge with a designated substitute, keeping five seats. Grok 4.5 substitutes for Google, OpenAI, Anthropic, or Moonshot; Qwen 3.7 Max substitutes for DeepSeek. Appendix~\\ref{app:judge_panels} gives the mapping. This prevents direct same-family evaluation, but cannot exclude shared bias across families. Each generator is judged by the same panel on its WEIRD and Serbian topics, avoiding changes in panel membership between the two settings. This does not exclude topic-dependent or culturally differential judging errors. Differences between panels may also affect comparisons of overall recall between generators (Section~\\ref{sec:rq2}).",
+    "reason": "Replace an unjustified guarantee with the actual control provided by constant panel membership.",
+    "location_key": "panel_protection",
+    "status": "Applied"
+  },
+  {
+    "id": "notation",
+    "tex_start": 362,
+    "tex_end": 368,
+    "old": "Each topic receives equal weight. Overall model recall averages its $16$ model-topic scores; WEIRD and Serbian recall each average eight:\n\\begin{equation}\n\\overline R_m=\\frac{1}{16}\\sum_{t=1}^{16}R_{mt}\n=\\frac{\\overline R_m^{\\mathrm W}+\\overline R_m^{\\mathrm S}}{2}.\n\\label{eq:model-recall}\n\\end{equation}\nLet $\\overline R_m$ denote the model's overall recall, and let $\\overline R_m^{\\mathrm W}$ and $\\overline R_m^{\\mathrm S}$ denote its mean recall on WEIRD and Serbian topics, respectively.",
+    "new": "Each topic receives equal weight. Let $\\overline R_m$ denote the model's overall recall, and let $\\overline R_m^{\\mathrm W}$ and $\\overline R_m^{\\mathrm S}$ denote its mean recall on WEIRD and Serbian topics, respectively. Overall model recall averages its $16$ model-topic scores; WEIRD and Serbian recall each average eight:\n\\begin{equation}\n\\overline R_m=\\frac{1}{16}\\sum_{t=1}^{16}R_{mt}\n=\\frac{\\overline R_m^{\\mathrm W}+\\overline R_m^{\\mathrm S}}{2}.\n\\label{eq:model-recall}\n\\end{equation}",
+    "reason": "Introduce model-summary symbols before their first equation; preserve the equation.",
+    "location_key": "notation",
+    "status": "Applied"
+  },
+  {
+    "id": "stats_summary",
+    "tex_start": 389,
+    "tex_end": 389,
+    "old": "We report overall recall, a $95$\\% interval based on $10{,}000$ bootstrap resamples of the $16$ topics, and separate WEIRD and Serbian means for each model. For exploratory category comparisons, models receive equal weight within each category and matched pairs are the comparison blocks. We test four contrasts: the three pairwise category comparisons and Frontier/API versus all eight open-weight models combined. Exact two-sided sign-flip tests enumerate all $2^8=256$ sign assignments; Holm correction accounts for the four contrasts. These tests hold the selected models fixed (Appendix~\\ref{app:category-tests}).",
+    "new": "We report overall recall, a $95$\\% interval based on $10{,}000$ bootstrap resamples of the $16$ topics, and separate WEIRD and Serbian means for each model. For exploratory category comparisons, models receive equal weight within each category and matched pairs are the comparison blocks. We test four contrasts: the three pairwise category comparisons and Frontier/API versus all eight open-weight models combined. Exact two-sided sign-flip tests enumerate all $2^8=256$ sign assignments; Holm correction accounts for the four contrasts. These tests hold the selected models fixed (Appendix~\\ref{app:category-tests}). Pairwise model tests and model-level intervals are also checked using matched-pair blocks, because the individual-topic procedures do not retain the pairing (Appendices~\\ref{app:model_pair_tests} and~\\ref{app:bootstrap}).",
+    "reason": "Make the new existing-data sensitivity visible in the main methods.",
+    "location_key": "stats_summary",
+    "status": "Applied"
+  },
+  {
+    "id": "rq2_pairwise",
+    "tex_start": 418,
+    "tex_end": 418,
+    "old": "Table~\\ref{tab:model-recall} reports perspective recall, with separate columns for WEIRD and Serbian topics. Overall recall ranges from $0.458$ for Llama 3.3 70B to $0.698$ for Gemini 3.1 Pro. Even the highest-recall model leaves approximately $30$\\% of the reference coverage unrecovered on average.  Of the 78 pairwise model comparisons, 15 remain significant after Benjamini--Hochberg adjustment (Appendix~\\ref{app:pairwise_results}).",
+    "new": "Table~\\ref{tab:model-recall} reports perspective recall, with separate columns for WEIRD and Serbian topics. Overall recall ranges from $0.458$ for Llama 3.3 70B to $0.698$ for Gemini 3.1 Pro. Even the highest-recall model leaves approximately $30$\\% of the reference coverage unrecovered on average.  Of the 78 pairwise model comparisons, 15 remain significant after Benjamini--Hochberg adjustment when the 16 topics are treated as separate sign-flip units. None remains significant when the eight matched pairs are retained as blocks (minimum adjusted $p=0.087$). The inferential result is therefore sensitive to the unit of analysis, although the mean differences are unchanged (Appendix~\\ref{app:pairwise_results}).",
+    "reason": "Retain the historical result and add the verified pair-blocked sensitivity without claiming equivalence.",
+    "location_key": "rq2_pairwise",
+    "status": "Applied"
+  },
+  {
+    "id": "figure1_interval_caption",
+    "tex_start": 412,
+    "tex_end": 412,
+    "old": "\\caption{Primary cultural comparison. Each point is the WEIRD-minus-Serbian recall difference averaged over the $13$ generators for one matched pair. Positive gaps favour WEIRD topics. The diamond is the mean across eight pairs, with the $95$\\% pair-bootstrap interval. Pair-specific confidence intervals are not shown.}",
+    "new": "\\caption{Primary cultural comparison. Each point is the WEIRD-minus-Serbian recall difference averaged over the $13$ generators for one matched pair. Positive gaps favour WEIRD topics. The diamond is the mean across eight pairs, with the $95$\\% pair-bootstrap interval. Pair-specific confidence intervals are not shown. The $t$-based interval for the mean is reported in Section~\\ref{sec:rq1}.}",
+    "reason": "Explicitly distinguish the displayed bootstrap interval from the t interval used in the abstract.",
+    "location_key": "figure1_interval_caption",
+    "status": "Applied"
+  },
+  {
+    "id": "rq2_panel_attribution",
+    "tex_start": 453,
+    "tex_end": 453,
+    "old": "Individual models also vary substantially within categories. Gemma 4 31B has recall 0.638, close to the 0.645 reported for GPT 5.5 and DeepSeek V4 Pro, whereas Llama 3.3 70B has recall 0.458. A category mean therefore does not describe every model in that category. Overlapping individual confidence intervals should not be interpreted as evidence of equivalence. Judge panels also differ across developers (Section~\\ref{sec:Judge evaluation}), and judges differ in strictness: Gemini 3.1 Pro matched 52.7\\% of the outputs it judged to a reference, compared with 65.0--76.6\\% for the other judges. Removing it raises individual model recall by up to 3.6 points (Appendix~\\ref{app:lojo}). Google's two generators are never scored by this judge, so small recall differences between them and other models, such as Gemma 4 31B's closeness to GPT 5.5, partly reflect panel composition.",
+    "new": "Individual models also vary substantially within categories. Gemma 4 31B has recall 0.638, close to the 0.645 reported for GPT 5.5 and DeepSeek V4 Pro, whereas Llama 3.3 70B has recall 0.458. A category mean therefore does not describe every model in that category. Overlapping individual confidence intervals should not be interpreted as evidence of equivalence. Judge panels also differ across developers (Section~\\ref{sec:Judge evaluation}), and judges differ in strictness: Gemini 3.1 Pro matched 52.7\\% of the outputs it judged to a reference, compared with 65.0--76.6\\% for the other judges. Removing it raises individual model recall by up to 3.6 points (Appendix~\\ref{app:lojo}). Google's two generators are never scored by this judge. Small recall differences between them and other models, such as Gemma 4 31B's closeness to GPT 5.5, should therefore be interpreted with this difference in panel composition in mind.",
+    "reason": "Avoid attributing a measured fraction of between-model differences to panels without identifying that effect.",
+    "location_key": "rq2_panel_attribution",
+    "status": "Applied"
+  },
+  {
+    "id": "rq3_effect",
+    "tex_start": 457,
+    "tex_end": 457,
+    "old": "The four models from Chinese developers had mean overall recall 0.609, compared with 0.579 for the eight models from US developers (Table~\\ref{tab:origin-recall}). The groups differ in composition: only the US group includes the two smaller open-weight models, and excluding them reduces the difference to about $-0.020$. The exploratory pair-blocked test ($p=0.023$; Holm-adjusted $p=0.047$) holds these models fixed; it indicates that the difference between these particular systems is consistent across topic pairs, not that it reflects developer country. The groups' WEIRD-minus-Serbian gaps did not differ detectably ($-0.019$ vs.\\ $+0.006$; $p=0.453$).",
+    "new": "The four models from Chinese developers had mean overall recall 0.609, compared with 0.579 for the eight models from US developers (Table~\\ref{tab:origin-recall}). The US-minus-China difference is $-0.030$ (95\\% pair-bootstrap CI $[-0.048,-0.013]$). The groups differ in composition: only the US group includes the two smaller open-weight models, and excluding them reduces the magnitude of the US-minus-China difference to about $-0.020$. The exploratory pair-blocked test ($p=0.023$; Holm-adjusted $p=0.047$) holds these models fixed; it indicates that the difference between these particular systems is consistent across topic pairs, not that it reflects developer country. The groups' WEIRD-minus-Serbian gaps did not differ detectably ($-0.019$ vs.\\ $+0.006$; $p=0.453$).",
+    "reason": "Add the verified existing interval for overall recall and specify the subtraction order.",
+    "location_key": "rq3_effect",
+    "status": "Applied"
+  },
+  {
+    "id": "rq3_duplicate",
+    "tex_start": 475,
+    "tex_end": 475,
+    "old": "The groups' cultural gaps differ less conclusively. The mean WEIRD-minus-Serbian gap is $-0.019$ in the US group and $+0.006$ in the Chinese group. Their difference is $-0.025$ (95\\% pair-bootstrap CI $[-0.082,0.025]$; raw and Holm-adjusted $p=0.453$). The observed overall-recall difference therefore does not establish a corresponding difference in the WEIRD-Serbian gap. Of the 78 pairwise model comparisons, 15 remain significant after Benjamini--Hochberg adjustment (Appendix~\\ref{app:pairwise_results}).",
+    "new": "The groups' cultural gaps differ less conclusively. The mean WEIRD-minus-Serbian gap is $-0.019$ in the US group and $+0.006$ in the Chinese group. Their difference is $-0.025$ (95\\% pair-bootstrap CI $[-0.082,0.025]$; raw and Holm-adjusted $p=0.453$). The observed overall-recall difference therefore does not establish a corresponding difference in the WEIRD-Serbian gap.",
+    "reason": "Remove the duplicated model-comparison result from the developer-country subsection.",
+    "location_key": "rq3_duplicate",
+    "status": "Applied"
+  },
+  {
+    "id": "discussion_duplicate",
+    "tex_start": 508,
+    "tex_end": 508,
+    "old": "The primary comparison found no detectable WEIRD recall advantage, while coverage remained incomplete in both settings.",
+    "new": "",
+    "reason": "Delete the standalone sentence repeating the immediately preceding paragraph.",
+    "location_key": "discussion_duplicate",
+    "status": "Applied"
+  },
+  {
+    "id": "discussion_categories",
+    "tex_start": 523,
+    "tex_end": 523,
+    "old": "Model performance also overlaps across access and size categories, and many differences among middle-ranked systems remain statistically unresolved. These categories are therefore poor substitutes for measuring perspective coverage directly. Appendix~\\ref{app:extremity} reports descriptive summaries of perspective extremity; these do not establish why coverage varies across topics.",
+    "new": "Model performance also overlaps across access and size categories, and many differences among middle-ranked systems remain statistically unresolved. These categories did not reliably summarise the variation among the selected models.",
+    "reason": "Limit the category interpretation to the selected models and remove the pointer to the author-withdrawn extremity analysis.",
+    "location_key": "discussion_categories",
+    "status": "Applied"
+  },
+  {
+    "id": "deliberation_citation",
+    "tex_start": 533,
+    "tex_end": 533,
+    "old": "This distinction also matters for AI-mediated deliberation. Systems that expose disagreement, support consensus, or introduce minority positions depend on the perspectives available to them \\cite{tesslerAICanHelp2024a, chiangEnhancingAIAssistedGroup2024b, kimDEBATEDevilsAdvocateBased2024a, leeAmplifyingMinorityVoices2025a}. A perspective that never enters the candidate set cannot inform those later processes. Perspective recall is thus a prerequisite for their use of diverse positions, not a substitute for deliberation itself.",
+    "new": "This distinction also matters for AI-mediated deliberation. Systems that expose disagreement, support consensus, or introduce minority positions depend on the perspectives available to them \\cite{tesslerAICanHelp2024a, chiangEnhancingAIAssistedGroup2024b, leeAmplifyingMinorityVoices2025a}. A perspective that never enters the candidate set cannot inform those later processes. Perspective recall is thus a prerequisite for their use of diverse positions, not a substitute for deliberation itself.",
+    "reason": "Remove DEBATE from the human-deliberation citation group; its evaluation setting differs.",
+    "location_key": "deliberation_citation",
+    "status": "Applied"
+  },
+  {
+    "id": "reference_limits_language",
+    "tex_start": 541,
+    "tex_end": 541,
+    "old": "Each topic has five externally documented reference perspectives. A single author constructed the reference sets without independent review; another constructor might have chosen different perspectives. Reference statements for Serbian topics are English summaries of Serbian-language sources, so translation choices may affect how closely model outputs match them. This common target supports comparison across topics, but it cannot represent every legitimate position within a population. Recall therefore measures coverage of the reference set. Similarly, an output that matches no reference receives no precision credit even if it expresses a legitimate position outside the benchmark. Absolute recall and precision values should be read in this context; their main value here is comparison under a common construction procedure.",
+    "new": "Each topic has five externally documented reference perspectives. A single author constructed the reference sets without independent review; another constructor might have chosen different perspectives. Reference statements for Serbian topics are English summaries of sources in more than one language, so summarisation and translation choices may affect how closely model outputs match them. This common target supports comparison across topics, but it cannot represent every legitimate position within a population. Recall therefore measures coverage of the reference set. Similarly, an output that matches no reference receives no precision credit even if it expresses a legitimate position outside the benchmark. Absolute recall and precision values should be read in this context; their main value here is comparison under a common construction procedure.",
+    "reason": "Propagate the corrected source-language description into the limitations.",
+    "location_key": "reference_limits_language",
+    "status": "Applied"
+  },
+  {
+    "id": "power_and_bound",
+    "tex_start": 551,
+    "tex_end": 551,
+    "old": "The primary comparison rests on eight topic pairs whose WEIRD-minus-Serbian differences vary widely (SD 10.7 percentage points). With eight resampling units, the percentile pair-bootstrap interval ($-8.1$ to $5.8$ points) is likely to be too narrow; a $t$-based interval is $-10.3$ to $7.7$ points, and the one-sided 95\\% upper bound is $5.9$ points. The data therefore argue against a WEIRD advantage much larger than about six points for pairs like these, but cannot exclude smaller advantages or moderate differences favouring Serbian topics. Given this between-pair variation, a one-sided test at $\\alpha=0.05$ would detect a five-point WEIRD advantage only about one time in three, and reaches 80\\% power only for advantages of about 10.5 points. We therefore report no detectable WEIRD advantage, not equality between settings.",
+    "new": "The primary comparison rests on eight topic pairs whose WEIRD-minus-Serbian differences vary widely (SD 10.7 percentage points). With eight resampling units, the percentile pair-bootstrap interval ($-8.1$ to $5.8$ points) may have limited coverage accuracy; a $t$-based interval is $-10.3$ to $7.7$ points, and the one-sided 95\\% upper bound is $5.9$ points. Under the independent-pair and $t$-interval assumptions, the one-sided bound is approximately six points. It is conditional on these assumptions and the selected benchmark; it does not establish a general upper bound on cultural disparities. Smaller WEIRD advantages and moderate differences favouring Serbian topics remain compatible with the interval. An illustrative sensitivity calculation for a one-sided one-sample $t$-test at $\\alpha=0.05$, assuming normally distributed pair-level differences and using the observed SD, gives approximately 32\\% power for a five-point WEIRD advantage and 80\\% power for an advantage of about 10.5 points. These values describe the $t$-test calculation, not the exact Wilcoxon procedure used for the primary test. We therefore report no detectable WEIRD advantage, not equality between settings.",
+    "reason": "Qualify the bound and correctly identify the power calculation; preserve reported numerical values.",
+    "location_key": "power_and_bound",
+    "status": "Applied"
+  },
+  {
+    "id": "availability",
+    "tex_start": 575,
+    "tex_end": 577,
+    "old": "The accompanying source package contains the topic definitions, reference statements, model configurations, the worked-example record, and supplementary result tables. Generation and judgment logs and analysis code are maintained in the evaluation project.\n% AUTHOR CHECK: insert the final public repository or archival URL. The supplied URL ended in REPOSITORY, and no git remote was configured.\n% AUTHOR CHECK: include the external source-to-reference ledger before publication.",
+    "new": "The accompanying source package contains the topic definitions, evaluated reference statements, original source workbook, reference-to-source ledger, model and judge configurations, worked-example record, and supplementary result tables. It also includes the saved model-topic scores and reproducible scripts for the additional matched-pair sensitivity analyses. The ledger preserves the workbook's source text and hyperlinks separately where they differ. The final repository or archival identifier will be added before submission.\n% AUTHOR QUERY: deposit the final package and replace the final sentence with its actual persistent URL; resolve the source-ledger query list first.",
+    "reason": "Make the local review package concrete without fabricating a public repository URL.",
+    "location_key": "availability",
+    "status": "Applied local-package description; public archive pending"
+  },
+  {
+    "id": "judge_table_reference",
+    "tex_start": 708,
+    "tex_end": 708,
+    "old": "The base panel contains five judges from distinct model families: Gemini 3.1 Pro, GPT 5.5, Claude Sonnet 5, DeepSeek V4 Pro, and Kimi K2.6. No generator is evaluated by a judge from the same model family. If a generator shares a family with a base-panel judge, that judge is replaced by a designated substitute. Generators from families not represented in the base panel use the unchanged five-judge panel.",
+    "new": "The base panel contains five judges from distinct model families: Gemini 3.1 Pro, GPT 5.5, Claude Sonnet 5, DeepSeek V4 Pro, and Kimi K2.6. No generator is evaluated by a judge from the same model family. If a generator shares a family with a base-panel judge, that judge is replaced by a designated substitute. Generators from families not represented in the base panel use the unchanged five-judge panel. Table~\\ref{tab:judge_substitutions} lists the substitutions.",
+    "reason": "Add the missing explicit Table 7 citation.",
+    "location_key": "judge_table_reference",
+    "status": "Applied"
+  },
+  {
+    "id": "judge_table_layout",
+    "tex_start": 714,
+    "tex_end": 726,
+    "old": "\\resizebox{\\columnwidth}{!}{%\n\\begin{tabular}{lll}\n\\toprule\n\\textbf{Generator being evaluated} & \\textbf{Base judge removed} & \\textbf{Substitute} \\\\\n\\midrule\nGPT 5.5 / GPT-OSS 120B & GPT 5.5 & Grok 4.5 \\\\\nClaude Opus 4.8 & Claude Sonnet 5 & Grok 4.5 \\\\\nGemini 3.1 Pro / Gemma 4 31B & Gemini 3.1 Pro & Grok 4.5 \\\\\nDeepSeek V4 Pro & DeepSeek V4 Pro & Qwen 3.7 Max \\\\\nKimi K2.6 & Kimi K2.6 & Grok 4.5 \\\\\n\\bottomrule\n\\end{tabular}%\n}",
+    "new": "\\small\n\\begin{tabularx}{\\columnwidth}{@{}Yp{0.25\\columnwidth}p{0.20\\columnwidth}@{}}\n\\toprule\nGenerator & Base judge removed & Substitute \\\\\n\\midrule\nGPT 5.5 / GPT-OSS 120B & GPT 5.5 & Grok 4.5 \\\\\nClaude Opus 4.8 & Claude Sonnet 5 & Grok 4.5 \\\\\nGemini 3.1 Pro / Gemma 4 31B & Gemini 3.1 Pro & Grok 4.5 \\\\\nDeepSeek V4 Pro & DeepSeek V4 Pro & Qwen 3.7 Max \\\\\nKimi K2.6 & Kimi K2.6 & Grok 4.5 \\\\\n\\bottomrule\n\\end{tabularx}",
+    "reason": "Wrap long table cells instead of shrinking the entire table.",
+    "location_key": "judge_table_layout",
+    "status": "Applied"
+  },
+  {
+    "id": "bootstrap_details",
+    "tex_start": 801,
+    "tex_end": 801,
+    "old": "Model-level recall, precision, and F1 confidence intervals are $95$\\% percentile bootstrap intervals based on $10,000$ resamples of the $16$ topics. The confidence interval for the mean WEIRD-Serbian recall difference uses the matched pair as the resampling unit and is based on $10,000$ resamples of the eight pairs. The canonical analysis uses seed $42$ and its saved random-number stream. The reported primary interval is $[-0.08096,\\,0.05823]$. The $t$-based interval for the mean gap uses the eight $\\Delta_p$ values (SD $0.107$, SE $0.038$) with $t_{7}$ quantiles, giving $[-0.103, 0.077]$; the one-sided 95\\% upper bound is $0.059$. Power uses the noncentral $t$ distribution with seven degrees of freedom and the observed between-pair SD: a five-point WEIRD advantage gives 32\\% power, and 80\\% power requires 10.5 points. These are sensitivity values for hypothetical effects, not power at the observed effect.",
+    "new": "Model-level recall, precision, and F1 confidence intervals are $95$\\% percentile bootstrap intervals based on $10,000$ resamples of the $16$ topics. The confidence interval for the mean WEIRD-Serbian recall difference uses the matched pair as the resampling unit and is based on $10,000$ resamples of the eight pairs. The canonical analysis uses seed $42$ and its saved random-number stream. The pair-bootstrap interval is $[-0.08096,\\,0.05823]$. The $t$-based interval for the mean gap uses the eight $\\Delta_p$ values (SD $0.107$, SE $0.038$) with $t_{7}$ quantiles, giving $[-0.103, 0.077]$; the one-sided 95\\% upper bound is $0.059$. Power uses the noncentral $t$ distribution with seven degrees of freedom and the observed between-pair SD: a five-point WEIRD advantage gives 32\\% power, and 80\\% power requires 10.5 points. These are sensitivity values for hypothetical effects, not power at the observed effect. As a sensitivity analysis for each model, we also resample the eight matched pairs with replacement, retaining both topics of each pair and their equal weights. We use $10{,}000$ resamples and a fresh NumPy generator with seed $42$. The resulting intervals, alongside the original topic-bootstrap intervals, are supplied in \\path{supplementary/model_pair_bootstrap_ci.csv}. This changes the resampling unit but not the model means.",
+    "reason": "Correct the interval label and document the new matched-pair model-interval sensitivity.",
+    "location_key": "bootstrap_details",
+    "status": "Applied"
+  },
+  {
+    "id": "owen_citation",
+    "tex_start": 834,
+    "tex_end": 834,
+    "old": "To examine both dimensions, a crossed bootstrap independently resamples generator rows and matched-pair columns with replacement. Each of $10{,}000$ replicates retains the Cartesian-product submatrix. The resulting approximate $95$\\% interval for the mean gap is $[-0.090,0.070]$.\\footnote{The resampling scheme follows Owen (2007), \\emph{The pigeonhole bootstrap}, \\href{https://arxiv.org/abs/0712.1111}{arXiv:0712.1111}.}",
+    "new": "To examine both dimensions, a crossed bootstrap independently resamples generator rows and matched-pair columns with replacement. Each of $10{,}000$ replicates retains the Cartesian-product submatrix. The resulting approximate $95$\\% interval for the mean gap is $[-0.090,0.070]$. The resampling scheme follows \\citet{owen2007pigeonhole}.",
+    "reason": "Move the already identified Owen source from a footnote into the bibliography.",
+    "location_key": "owen_citation",
+    "status": "Applied"
+  },
+  {
+    "id": "pairwise_details",
+    "tex_start": 878,
+    "tex_end": 878,
+    "old": "The random-number generator is initialized with seed $42$. All $\\binom{13}{2}=78$ model pairs use this procedure, and the resulting raw $p$-values are adjusted jointly using the Benjamini-Hochberg procedure. This is a Monte Carlo paired sign-flip test, not exhaustive enumeration of all $2^{16}$ sign patterns.",
+    "new": "The random-number generator is initialized with seed $42$. All $\\binom{13}{2}=78$ model pairs use this procedure, and the resulting raw $p$-values are adjusted jointly using the Benjamini-Hochberg procedure. This is a Monte Carlo paired sign-flip test, not exhaustive enumeration of all $2^{16}$ sign patterns.\n\nThe individual-topic sign-flip procedure assumes sign exchangeability at the topic level and does not preserve the matched pairs. To assess sensitivity to this choice, we also form eight pair-level contrasts,\n\\[\nx_p=\\frac{R_{a,p}^{\\mathrm W}+R_{a,p}^{\\mathrm S}}{2}\n    -\\frac{R_{b,p}^{\\mathrm W}+R_{b,p}^{\\mathrm S}}{2},\n\\]\nand enumerate all $2^8=256$ sign assignments using their mean as the statistic. Two-sided tail comparisons allow a numerical tolerance of $10^{-12}$, and Benjamini--Hochberg correction again covers all $78$ model comparisons. This procedure assumes sign-exchangeable pair-level contrasts and preserves the original mean difference. As a numerical check, exhaustive enumeration of the $2^{16}$ individual-topic sign patterns still yields 15 adjusted significant comparisons, whereas the pair-blocked procedure yields none (minimum adjusted $p=0.087$). The discrepancy therefore reflects the inferential unit rather than Monte Carlo sampling alone. The pair-blocked results qualify the individual-topic findings; neither procedure establishes equivalence between models.",
+    "reason": "Document the exact new sensitivity and its assumptions without silently replacing the original test.",
+    "location_key": "pairwise_details",
+    "status": "Applied"
+  },
+  {
+    "id": "pairwise_results",
+    "tex_start": 954,
+    "tex_end": 954,
+    "old": "The full $78$-row table is supplied as \\path{supplementary/pairwise_models.csv}. It contains mean recall differences, raw $p$-values, and Benjamini-Hochberg-adjusted $p$-values from the procedure in Appendix~\\ref{app:model_pair_tests}.",
+    "new": "The full $78$-row table is supplied as \\path{supplementary/pairwise_models.csv}. It contains mean recall differences, raw $p$-values, and Benjamini-Hochberg-adjusted $p$-values from the procedure in Appendix~\\ref{app:model_pair_tests}. The companion file \\path{supplementary/pair_blocked_model_comparisons.csv} reports the individual-topic Monte Carlo results, exact individual-topic checks, and exact matched-pair results for the same comparisons. Mean recall differences are unchanged; 15 comparisons survive adjustment under the individual-topic procedures and none under pair blocking.",
+    "reason": "Point readers to both inferential specifications and their results.",
+    "location_key": "pairwise_results",
+    "status": "Applied"
+  },
+  {
+    "id": "figure2_legibility",
+    "tex_start": 916,
+    "tex_end": 916,
+    "old": "\\includegraphics[width=\\textwidth]{plots/paired_recall.png}",
+    "new": "\\includegraphics[width=\\textwidth]{plots/paired_recall.pdf}",
+    "reason": "Use a vector figure with larger labels and a two-row arrangement; preserve all three panels and the 104 scores.",
+    "location_key": "figure2_legibility",
+    "status": "Applied"
+  },
+  {
+    "id": "per_model_table_layout",
+    "tex_start": 966,
+    "tex_end": 991,
+    "old": "\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lrrrrr}\n\\toprule\n\\textbf{Model} &\n\\textbf{Mean gap} &\n\\textbf{Median gap} &\n\\textbf{One-sided $p$} &\n\\textbf{Rank-biserial} &\n\\textbf{$p_{\\mathrm{BH}}$} \\\\\n\\midrule\nGLM 5.2 & $0.106$ & $0.100$ & $0.0625$ & $0.639$ & $0.6348$ \\\\\nGPT-OSS 120B & $0.058$ & $0.100$ & $0.0977$ & $0.556$ & $0.6348$ \\\\\nLlama 4 Maverick & $0.035$ & $-0.040$ & $0.4805$ & $0.056$ & $0.9445$ \\\\\nLlama 3.3 70B & $0.015$ & $0.000$ & $0.4336$ & $0.111$ & $0.9445$ \\\\\nDeepSeek V4 Pro & $0.010$ & $-0.020$ & $0.4688$ & $0.071$ & $0.9445$ \\\\\nKimi K2.6 & $-0.019$ & $0.000$ & $0.6875$ & $-0.200$ & $0.9445$ \\\\\nGPT 5.5 & $-0.020$ & $0.020$ & $0.6523$ & $-0.139$ & $0.9445$ \\\\\nGrok 4.3 & $-0.020$ & $-0.040$ & $0.6211$ & $-0.111$ & $0.9445$ \\\\\nMistral Large 3 & $-0.040$ & $-0.040$ & $0.7266$ & $-0.250$ & $0.9445$ \\\\\nGemini 3.1 Pro & $-0.045$ & $-0.020$ & $0.7188$ & $-0.222$ & $0.9445$ \\\\\nQwen 3.7 Max & $-0.073$ & $-0.100$ & $0.9375$ & $-0.583$ & $0.9688$ \\\\\nGemma 4 31B & $-0.082$ & $-0.100$ & $0.9688$ & $-0.810$ & $0.9688$ \\\\\nClaude Opus 4.8 & $-0.095$ & $-0.180$ & $0.8555$ & $-0.417$ & $0.9688$ \\\\\n\\bottomrule\n\\end{tabular}%\n}",
+    "new": "\\begin{tabular}{lrrrrr}\n\\toprule\n\\textbf{Model} &\n\\textbf{Mean gap} &\n\\textbf{Median gap} &\n\\textbf{One-sided $p$} &\n\\textbf{Rank-biserial} &\n\\textbf{$p_{\\mathrm{BH}}$} \\\\\n\\midrule\nGLM 5.2 & $0.106$ & $0.100$ & $0.0625$ & $0.639$ & $0.6348$ \\\\\nGPT-OSS 120B & $0.058$ & $0.100$ & $0.0977$ & $0.556$ & $0.6348$ \\\\\nLlama 4 Maverick & $0.035$ & $-0.040$ & $0.4805$ & $0.056$ & $0.9445$ \\\\\nLlama 3.3 70B & $0.015$ & $0.000$ & $0.4336$ & $0.111$ & $0.9445$ \\\\\nDeepSeek V4 Pro & $0.010$ & $-0.020$ & $0.4688$ & $0.071$ & $0.9445$ \\\\\nKimi K2.6 & $-0.019$ & $0.000$ & $0.6875$ & $-0.200$ & $0.9445$ \\\\\nGPT 5.5 & $-0.020$ & $0.020$ & $0.6523$ & $-0.139$ & $0.9445$ \\\\\nGrok 4.3 & $-0.020$ & $-0.040$ & $0.6211$ & $-0.111$ & $0.9445$ \\\\\nMistral Large 3 & $-0.040$ & $-0.040$ & $0.7266$ & $-0.250$ & $0.9445$ \\\\\nGemini 3.1 Pro & $-0.045$ & $-0.020$ & $0.7188$ & $-0.222$ & $0.9445$ \\\\\nQwen 3.7 Max & $-0.073$ & $-0.100$ & $0.9375$ & $-0.583$ & $0.9688$ \\\\\nGemma 4 31B & $-0.082$ & $-0.100$ & $0.9688$ & $-0.810$ & $0.9688$ \\\\\nClaude Opus 4.8 & $-0.095$ & $-0.180$ & $0.8555$ & $-0.417$ & $0.9688$ \\\\\n\\bottomrule\n\\end{tabular}",
+    "reason": "Remove automatic enlargement of Table 9 while preserving all entries.",
+    "location_key": "per_model_table_layout",
+    "status": "Applied"
+  },
+  {
+    "id": "per_model_table_reference",
+    "tex_start": 994,
+    "tex_end": 994,
+    "old": "No individual generator has a one-sided raw $p<0.05$, and none survives adjustment across the $13$ generators.",
+    "new": "Table~\\ref{tab:per_model_weird_gap} reports the per-model comparisons. No individual generator has a one-sided raw $p<0.05$, and none survives adjustment across the $13$ generators.",
+    "reason": "Add the missing explicit Table 9 citation.",
+    "location_key": "per_model_table_reference",
+    "status": "Applied"
+  },
+  {
+    "id": "remove_extremity",
+    "tex_start": 898,
+    "tex_end": 906,
+    "old": "\\subsection{Descriptive extremity analysis}\n\\label{app:extremity}\n\nThe $80$ reference perspectives contain $32$ perspectives tagged mainstream, $30$ tagged minority, and $18$ tagged extreme. The Serbian topics contain $18$ mainstream, $12$ minority, and $10$ extreme references; the WEIRD topics contain $14$ mainstream, $18$ minority, and $8$ extreme references.\n\nMean recovery is $0.593$ for mainstream perspectives, $0.650$ for minority perspectives, and $0.475$ for extreme perspectives. Across the $16$ topics, mean recall correlates weakly with the share of extreme references ($\\rho=-0.127$) and the share of minority references ($\\rho=-0.041$).\n\nThese summaries are descriptive. We report no inferential test of extremity differences or associations with topic-level recall, and they are not part of the primary hypothesis test.\n% AUTHOR CHECK: document who assigned the tiers and the annotation criteria.",
+    "new": "",
+    "reason": "Remove Appendix D.9 and its counts/correlations at the author's explicit request. Original data remain archived; no main RQ result changes.",
+    "location_key": "remove_extremity",
+    "status": "Applied"
+  },
+  {
+    "id": "worked_tables_layout",
+    "tex_start": 1040,
+    "tex_end": 1074,
+    "old": "\\begin{table}[htbp]\n\\centering\\small\n\\caption{The five generated summaries from GPT 5.5 for UK fracking.}\n\\label{tab:fracking-outputs}\n\\begin{tabularx}{\\columnwidth}{@{}rY@{}}\n\\toprule\nOutput & Summary \\\\\n\\midrule\n1 & Fracking should be banned because it threatens the climate, countryside, water, and local communities. \\\\\n2 & I oppose fracking mainly because I do not trust companies or government regulators to keep local people safe. \\\\\n3 & The UK should frack because we need domestic gas for energy security, jobs, tax revenue, and lower reliance on imports. \\\\\n4 & Fracking should be allowed only where geology supports it, regulation is strict, and local communities consent and benefit financially. \\\\\n5 & We should embrace fracking and stop letting net-zero politics block cheap domestic energy. \\\\\n\\bottomrule\n\\end{tabularx}\n\\end{table}\n\n\\begin{table}[htbp]\n\\centering\\small\n\\caption{Recorded assignments for the five GPT 5.5 outputs. A number identifies the matched reference; 0 denotes no match. Judge columns are Gemini 3.1 Pro (G), Claude Sonnet 5 (C), DeepSeek V4 Pro (D), Kimi K2.6 (K), and Grok 4.5 (X). All 25 judgments are valid.}\n\\label{tab:fracking-matches}\n\\begin{tabular}{@{}lrrrrr@{}}\n\\toprule\nOutput & G & C & D & K & X \\\\\n\\midrule\n1 & 2 & 2 & 2 & 2 & 2 \\\\\n2 & 0 & 2 & 0 & 0 & 0 \\\\\n3 & 1 & 1 & 1 & 1 & 1 \\\\\n4 & 5 & 5 & 5 & 5 & 0 \\\\\n5 & 1 & 1 & 1 & 1 & 1 \\\\\n\\midrule\nJudge recall & 0.60 & 0.60 & 0.60 & 0.60 & 0.40 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+    "new": "\\begin{table*}[!tp]\n\\begin{minipage}[t]{0.48\\textwidth}\n\\centering\\small\n\\caption{The five generated summaries from GPT 5.5 for UK fracking.}\n\\label{tab:fracking-outputs}\n\\begin{tabularx}{\\columnwidth}{@{}rY@{}}\n\\toprule\nOutput & Summary \\\\\n\\midrule\n1 & Fracking should be banned because it threatens the climate, countryside, water, and local communities. \\\\\n2 & I oppose fracking mainly because I do not trust companies or government regulators to keep local people safe. \\\\\n3 & The UK should frack because we need domestic gas for energy security, jobs, tax revenue, and lower reliance on imports. \\\\\n4 & Fracking should be allowed only where geology supports it, regulation is strict, and local communities consent and benefit financially. \\\\\n5 & We should embrace fracking and stop letting net-zero politics block cheap domestic energy. \\\\\n\\bottomrule\n\\end{tabularx}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.48\\textwidth}\n\\centering\\small\n\\caption{Recorded assignments for the five GPT 5.5 outputs. A number identifies the matched reference; 0 denotes no match. Judge columns are Gemini 3.1 Pro (G), Claude Sonnet 5 (C), DeepSeek V4 Pro (D), Kimi K2.6 (K), and Grok 4.5 (X). All 25 judgments are valid.}\n\\label{tab:fracking-matches}\n\\begin{tabular}{@{}lrrrrr@{}}\n\\toprule\nOutput & G & C & D & K & X \\\\\n\\midrule\n1 & 2 & 2 & 2 & 2 & 2 \\\\\n2 & 0 & 2 & 0 & 0 & 0 \\\\\n3 & 1 & 1 & 1 & 1 & 1 \\\\\n4 & 5 & 5 & 5 & 5 & 0 \\\\\n5 & 1 & 1 & 1 & 1 & 1 \\\\\n\\midrule\nJudge recall & 0.60 & 0.60 & 0.60 & 0.60 & 0.40 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{minipage}\n\\end{table*}",
+    "reason": "Place the generated-summary table and assignment table side by side, retaining their separate captions and labels.",
+    "location_key": "worked_tables_layout",
+    "status": "Applied"
+  },
+  {
+    "id": "identifier_table_layout",
+    "tex_start": 1092,
+    "tex_end": 1092,
+    "old": "\\begin{table*}[t]",
+    "new": "\\begin{table*}[!tp]",
+    "reason": "Allow the endpoint table to share the appendix float page with the worked-example tables.",
+    "location_key": "identifier_table_layout",
+    "status": "Applied"
+  }
+]

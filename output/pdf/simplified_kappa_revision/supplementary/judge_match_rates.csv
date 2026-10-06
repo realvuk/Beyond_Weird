@@ -1,0 +1,8 @@
+judge,n_decisions,match_rate
+anthropic/claude-sonnet-5,960,0.7645833333333333
+deepseek/deepseek-v4-pro,960,0.684375
+google/gemini-3.1-pro-preview,880,0.5272727272727272
+moonshotai/kimi-k2.6,954,0.649895178197065
+openai/gpt-5.5,880,0.7659090909090909
+qwen/qwen3.7-max,80,0.6875
+x-ai/grok-4.5,470,0.6851063829787234

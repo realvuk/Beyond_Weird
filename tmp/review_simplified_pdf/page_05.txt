@@ -1,0 +1,86 @@
+                                     Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+400                                                                 3.3.2   Judge assignments                              450
+      Table 3: The 13 generators, grouped by the access and
+401                                                                                                                        451
+      relative-size categories used throughout the analysis.        Each of five LLM judges receives one generated
+402                                                                                                                        452
+      Model                                       Developer         perspective at a time, together with the topic, tar-
+403                                                                                                                        453
+      Frontier (5)                                                  get population, and five reference perspectives.
+404                                                                                                                        454
+      Claude Opus 4.8                             Anthropic         The judge selects the reference expressing the
+405                                                                                                                        455
+      GPT 5.5                                     OpenAI            same underlying side and stance, or returns no
+406                                                                                                                        456
+      Gemini 3.1 Pro                              Google            match. Thematic overlap alone is insufficient. An
+407   Grok 4.3                                    xAI               output voiced from outside the target population       457
+408   Qwen 3.7 Max                                Alibaba           also receives no match. In the saved judgments,        458
+409   Larger open-weight (6)                                        no output was flagged as voiced from outside that      459
+410   DeepSeek V4 Pro                             DeepSeek          population. Each judge makes five such assign-         460
+411   Kimi K2.6                                   Moonshot          ments for a model’s five outputs on a topic. Judges    461
+412   GLM 5.2                                     Z.AI              do not see one another’s decisions, and recall is      462
+      Llama 4 Maverick                            Meta
+413                                                                 calculated only after their assignments have been      463
+      Mistral Large 3                             Mistral
+414
+      GPT-OSS 120B                                OpenAI            collected.                                             464
+415                                                                    For example, all five judges matched a GPT 5.5      465
+      Smaller open-weight (2)
+416
+      Gemma 4 31B                                 Google
+                                                                    output supporting UK fracking for energy secu-         466
+417   Llama 3.3 70B                               Meta              rity, jobs, and reduced import dependence to ref-      467
+418                                                                 erence 1 in Table 2. A different output opposed        468
+419                                                                 fracking because it distrusted companies and reg-      469
+420   default reasoning behaviour and provider routing.             ulators. Claude Sonnet 5 matched it to reference 2,    470
+421   The serving provider was not recorded. A re-                  whereas the other four judges returned no match.       471
+422   sponse that could not be parsed received one repair           This disagreement concerns correspondence to the       472
+423   request, and calls that still failed were re-run later.       reference set, not whether the output expresses a      473
+424   Valid responses were saved immediately and never              legitimate position. Appendix G shows the saved        474
+425   regenerated, so no valid response was discarded.              outputs and all assignments, judges evaluated both     475
+      Each model-topic cell therefore has a single sam-             summaries and explanations.
+426                                                                                                                        476
+427
+      ple, and the analysis does not capture variation                 We use family-disjoint judging: no judge            477
+428
+      across repeated generations. Generation records               shares the generator’s configured developer fam-       478
+      date from 9-10 July 2026; judging, including re-              ily. Google includes Gemini and Gemma, Ope-
+429                                                                                                                        479
+      tries, spans 10-20 July 2026. Appendix H lists the            nAI includes GPT and GPT-OSS, and Anthropic
+430                                                                                                                        480
+      configured model identifiers.                                 includes Claude Opus and Claude Sonnet. The
+431                                                                                                                        481
+         For the exploratory category comparison, we                five judges in each panel also come from different
+432                                                                                                                        482
+      group the models into five Frontier systems,                  developer families.
+433                                                                                                                        483
+      six larger open-weight systems, and two smaller                  The base panel contains Gemini 3.1 Pro, GPT
+434                                                                                                                        484
+      open-weight systems. Frontier denotes systems                 5.5, Claude Sonnet 5, DeepSeek V4 Pro, and Kimi
+435                                                                                                                        485
+      without a verified public-weight release; Qwen 3.7            K2.6. When a generator shares a family with one
+436                                                                                                                        486
+      Max is included because Alibaba documents it as               of these judges, we replace that judge with a desig-
+437   a commercial API model.1 The smaller open-                    nated substitute, keeping five seats. Grok 4.5 sub-    487
+438   weight group consists of the two selected sys-                                                                       488
+                                                                    stitutes for Google, OpenAI, Anthropic, or Moon-
+439   tems labelled 31B and 70B, Gemma 4 31B and                    shot; Qwen 3.7 Max substitutes for DeepSeek.           489
+440   Llama 3.3 70B. The other six open-weight systems              Appendix C.1 gives the mapping. Each genera-           490
+441   form the larger group. These labels identify the              tor is judged by the same panel on its WEIRD and       491
+442   groups used in this comparison rather than a gen-             Serbian topics, avoiding changes in panel mem-         492
+443   eral size taxonomy. The categories describe ac-               bership between the two settings. This does not        493
+444   cess and relative size, not capability. All 13 sys-           exclude topic-dependent or culturally differential     494
+445   tems were queried through the same API work-                  judging errors. Differences between panels may         495
+446   flow. Appendix H records category membership                  also affect comparisons of overall recall between      496
+447   and release-source links.                                     generators (Section 4.2).                              497
+448      1
+           See Alibaba Cloud’s Qwen3.7-Max commercial-model            Reference order is randomised independently         498
+449   announcement.                                                 for every judgment, and returned indices are           499
+
+
+
+
+                                                                5

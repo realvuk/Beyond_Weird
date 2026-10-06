@@ -1,0 +1,88 @@
+                                      Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+000                                                                                                                       050
+001
+          Matched WEIRD and Serbian Debates Show No Detectable WEIRD                                                      051
+002                 Advantage in LLM Perspective Coverage                                                                 052
+003                                                                                                                       053
+004                                                                                                                       054
+005                                                                                                                       055
+                                            Anonymous TACL submission
+006                                                                                                                       056
+007                                                                                                                       057
+008                                                                                                                       058
+009                                                                                                                       059
+010                                                                                                                       060
+011                                                                                                                       061
+                            Abstract                                Coverage of different perspectives may de-
+012                                                                                                                       062
+                                                                 pend on numerous factors. How frequently po-
+013                                                                                                                       063
+           Large language models can describe po-                sitions appear in training data, how readily mod-
+014        litical controversies accurately while omit-                                                                   064
+                                                                 els retrieve them, and whether post-training or
+015        ting relevant perspectives. We test whether                                                                    065
+                                                                 safety procedures discourage their expression.
+016        they recover fewer documented perspec-                These pressures may affect populations unevenly.         066
+017        tives on Serbian controversies than on struc-                                                                  067
+                                                                 The concentration of language-model develop-
+           turally matched topics from Western, Edu-
+018                                                              ment in Western, Educated, Industrialised, Rich,         068
+           cated, Industrialised, Rich, and Democratic
+019                                                              and Democratic (WEIRD) (Henrich et al., 2010)            069
+           (WEIRD) settings. The benchmark pairs
+020        eight Serbian controversies with WEIRD                and English-language settings motivates concern          070
+021        counterparts. Each of the 16 topics has five          about cultural representation (Sorensen et al.,          071
+022        reference perspectives documented in sur-             2024; Feng et al., 2024; Wang et al., 2025; Zewail       072
+023
+           veys, polling, referendum results, research,          et al., 2026). We therefore hypothesise that models      073
+           or public debate. Thirteen LLMs each gen-
+024                                                              recover perspectives more completely on WEIRD            074
+           erated five perspectives per topic in English,
+025        and five LLM judges from other develop-               controversies than on Serbian controversies.             075
+026        ers matched each output to a reference or                Testing this expectation requires attention to        076
+027        returned no match. Mean recall was 0.581              topic selection. Political controversies differ in       077
+028        on WEIRD topics and 0.594 on Serbian top-             documentation, history, sensitivity, and structure.      078
+           ics. The mean WEIRD-minus-Serbian dif-                A comparison of unrelated WEIRD and Serbian
+029                                                                                                                       079
+           ference across the eight pairs was −1.3 per-          topics could attribute differences in topic difficulty
+030                                                                                                                       080
+           centage points (95% CI: −10.3 to 7.7), with
+031                                                              to cultural setting. We reduce this ambiguity by         081
+           no evidence for the hypothesised WEIRD
+032        advantage (p = 0.680). Differences be-                comparing structurally analogous controversies.          082
+033        tween individual pairs (−16.9 to +19.1                   The benchmark contains 16 topics arranged             083
+034
+           points) were much larger than the pooled              into eight WEIRD-Serbian pairs. Each topic has           084
+           difference. Inter-judge agreement was sim-            five reference perspectives documented in sur-
+035                                                                                                                       085
+           ilar across the two settings, although agree-         veys, polling, referendum results, peer-reviewed
+036        ment does not establish accuracy. Coverage                                                                     086
+                                                                 research, or clearly attested public debate. These
+037        was incomplete in both settings, and the re-                                                                   087
+                                                                 references provide a fixed evaluation target but
+038        sult does not establish equivalent coverage.                                                                   088
+                                                                 they do not exhaust the legitimate positions on an
+039                                                                                                                       089
+                                                                 issue. Thirteen LLMs each generate five perspec-
+040                                                                                                                       090
+      1   Introduction                                           tives per topic in English. Five LLM judges in-
+041                                                                                                                       091
+                                                                 dependently match each generated perspective to
+042   An LLM answering a controversial political ques-                                                                    092
+                                                                 one of the references or return no match. No judge
+043   tion selects both facts and perspectives. An an-                                                                    093
+                                                                 evaluates a generator from its own model family.
+044   swer about Kosovo’s independence, immigration,             Recall then measures how much of the reference           094
+045   or historical responsibility may be factually accu-        set the outputs recover.                                 095
+046   rate yet omit positions held by people involved in            We address three research questions:                  096
+047   the debate. As language models mediate access to                                                                    097
+048   political information, we need to evaluate which           RQ1 (primary). Do LLMs recover fewer docu-               098
+049   perspectives their answers recover.                        mented perspectives on Serbian sociopolitical top-       099
+
+
+
+
+                                                             1

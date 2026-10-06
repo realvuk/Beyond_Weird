@@ -1,0 +1,56 @@
+Matched WEIRD and Serbian Debates Show No Detectable WEIRD
+Advantage in LLM Perspective Coverage
+Anonymous TACL submission
+Abstract
+Coverage of different perspectives may depend on numerous factors. How frequently positions appear in training data, how readily models retrieve them, and whether post-training or
+safety procedures discourage their expression.
+These pressures may affect populations unevenly.
+The concentration of language-model development in Western, Educated, Industrialised, Rich,
+and Democratic (WEIRD) (Henrich et al., 2010)
+and English-language settings motivates concern
+about cultural representation (Sorensen et al.,
+2024; Feng et al., 2024; Wang et al., 2025; Zewail
+et al., 2026). We therefore hypothesise that models
+recover perspectives more completely on WEIRD
+controversies than on Serbian controversies.
+Testing this expectation requires attention to
+topic selection. Political controversies differ in
+documentation, history, sensitivity, and structure.
+A comparison of unrelated WEIRD and Serbian
+topics could attribute differences in topic difficulty
+to cultural setting. We reduce this ambiguity by
+comparing structurally analogous controversies.
+The benchmark contains 16 topics arranged
+into eight WEIRD-Serbian pairs. Each topic has
+five reference perspectives documented in surveys, polling, referendum results, peer-reviewed
+research, or clearly attested public debate. These
+references provide a fixed evaluation target but
+they do not exhaust the legitimate positions on an
+issue. Thirteen LLMs each generate five perspectives per topic in English. Five LLM judges independently match each generated perspective to
+one of the references or return no match. No judge
+evaluates a generator from its own model family.
+Recall then measures how much of the reference
+set the outputs recover.
+We address three research questions:
+Large language models can describe political controversies accurately while omitting relevant perspectives. We test whether
+they recover fewer documented perspectives on Serbian controversies than on structurally matched topics from Western, Educated, Industrialised, Rich, and Democratic
+(WEIRD) settings. The benchmark pairs
+eight Serbian controversies with WEIRD
+counterparts. Each of the 16 topics has five
+reference perspectives documented in surveys, polling, referendum results, research,
+or public debate. Thirteen LLMs each generated five perspectives per topic in English,
+and five LLM judges from other developers matched each output to a reference or
+returned no match. Mean recall was 0.581
+on WEIRD topics and 0.594 on Serbian topics. The mean WEIRD-minus-Serbian difference across the eight pairs was −1.3 percentage points (95% CI: −10.3 to 7.7), with
+no evidence for the hypothesised WEIRD
+advantage (p = 0.680). Differences between individual pairs (−16.9 to +19.1
+points) were much larger than the pooled
+difference. Inter-judge agreement was similar across the two settings, although agreement does not establish accuracy. Coverage
+was incomplete in both settings, and the result does not establish equivalent coverage.
+Introduction
+An LLM answering a controversial political question selects both facts and perspectives. An answer about Kosovo’s independence, immigration,
+or historical responsibility may be factually accurate yet omit positions held by people involved in
+the debate. As language models mediate access to
+political information, we need to evaluate which
+perspectives their answers recover.
+RQ1 (primary). Do LLMs recover fewer documented perspectives on Serbian sociopolitical top-

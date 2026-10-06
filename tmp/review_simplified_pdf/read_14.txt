@@ -1,0 +1,121 @@
+# 1-based number of the
+best-matching reference (1 to N), or 0
+if none matches or scope_ok is false
+=== USER ===
+Topic: {topic_title}
+Population: {population}
+CANDIDATE perspective to evaluate:
+Summary: {candidate_summary}
+Explanation: {candidate_explanation}
+REFERENCE perspectives (numbered
+options):
+{gold_block}
+Task: decide which single reference
+perspective (if any) expresses the
+same underlying viewpoint as the
+CANDIDATE, for this topic and
+population. Work through the following
+reasoning chain and report it.
+Output format (STRICT):
+Respond with ONLY a JSON object
+conforming to the schema defined in the
+system prompt. Exactly these keys:
+"attributes": array of strings detailed key attributes of the
+candidate perspective: state the core
+stance, whose view it is, what it
+advocates, and the claim it rests on.
+"scope_ok": boolean - true if the
+candidate is voiced from within
+{population} and on-topic. If it is
+voiced from outside {population} (a
+different standpoint), this is false.
+"comparisons": array of {n_gold}
+objects corresponding to reference
+options 1 through {n_gold} in order.
+Each object must have keys: "match"
+(boolean, true if it advocates the
+EXACT SAME side and stance) and "note"
+(string, one short sentence justifying
+why or why not).
+"match": integer - the number of the
+single best-matching reference (1
+through {n_gold}). If none matches, or
+if "scope_ok" is false, output 0.
+Loose thematic overlap is NOT a match.
+When in doubt, output 0.
+"reason": string - one or two
+sentences justifying the final
+decision.
+C
+Evaluation and aggregation details
+C.1
+Family-disjoint judge panels
+The base panel contains five judges from distinct
+model families: Gemini 3.1 Pro, GPT 5.5, Claude
+Sonnet 5, DeepSeek V4 Pro, and Kimi K2.6. No
+generator is evaluated by a judge from the same
+model family. If a generator shares a family with a
+base-panel judge, that judge is replaced by a des-
+reason: str
+# One or two sentences justifying
+the final decision
+ignated substitute. Generators from families not
+represented in the base panel use the unchanged
+five-judge panel. Table 7 lists the substitutions.
+Table 7: Family-disjoint judge substitutions.
+Generator
+Base judge
+removed
+Substitute
+GPT 5.5 / GPT-OSS
+120B
+Claude Opus 4.8
+GPT 5.5
+Grok 4.5
+Claude Sonnet 5
+Gemini 3.1
+Pro
+DeepSeek V4
+Pro
+Kimi K2.6
+Grok 4.5
+Gemini 3.1 Pro /
+Gemma 4 31B
+DeepSeek V4 Pro
+Kimi K2.6
+Grok 4.5
+Qwen 3.7
+Max
+Grok 4.5
+The final valid judgments contain no samefamily generator-judge assignments. Family disjointness prevents direct same-family evaluation,
+but it does not imply that judges from different
+families are free from shared biases.
+C.2
+Reference-order randomisation
+The five reference perspectives are independently
+randomized for every judge execution. Judges
+respond to the displayed reference index. After
+judging, the displayed index is mapped back to the
+canonical reference identifier before aggregation.
+This prevents any reference perspective from systematically occupying the same list position.
+C.3
+Panel aggregation and duplicate
+handling
+The implementation combines fractional reference
+credits and accounts for missing judgments separately for each output. For a fixed model and
+topic, let yjk be judge j’s assignment for generated perspective k, where references are indexed
+by g ∈ {1, . . . , 5} and zero denotes no match.
+Let njg be the number of available assignments by
+judge j to reference g. Each assignment receives
+credit
+(
+1/njg , yjk = g,
+cjkg =
+(5)
+0,
+otherwise.
+Thus, two matches to the same reference receive
+one half each; together they contribute one unit
+for
+P that judge. For each judge and reference,
+k cjkg ≤ 1. If Jk contains the judges with a

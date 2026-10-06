@@ -1,0 +1,89 @@
+                                   Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+200   tion to uncertain cases (Mehrotra et al., 2026). Our       counterpart with a comparable political struc-         250
+201   evaluation instead uses externally documented ref-         ture. For example, the Kosovo and Catalan in-          251
+202   erence perspectives, keeping the scoring target            dependence debates concern secession, territorial      252
+203   separate from the models being evaluated.                  sovereignty, and self-determination. The Vučić       253
+204      The closest benchmark is OvertonBench, which            and Orbán debates concern political leadership         254
+205   evaluates perspective coverage using viewpoint             and authoritarian or illiberal governance. Match-      255
+206   groups derived from human responses and ratings            ing concerned the structure of the controversy,        256
+207   of how well model outputs represent participants’          rather than historical equivalence or similarity be-   257
+208   views (Poole-Dayan et al., 2025). Our study in-            tween the societies themselves.                        258
+209   stead measures recovery of fixed, externally docu-             The procedure was investigator-guided rather       259
+210   mented reference perspectives in matched WEIRD             than algorithmic. A counterpart also needed            260
+211   and Serbian controversies. The contribution is this        enough external material to document distinct per-     261
+212
+      matched comparison across settings. Differences            spectives using the same construction procedure.       262
+213
+      in reference construction and scoring preclude di-         Table 1 lists the resulting pairs and their matching   263
+214
+      rect comparison of absolute scores between the             rationales. Comparator selection was guided by         264
+      two benchmarks.                                            broad WEIRD characteristics, rather than a quan-
+215                                                                                                                     265
+                                                                 tified country-classification rule. Poland was in-
+216   2.3    Evaluating generated perspectives                                                                          266
+                                                                 cluded as a borderline case under this investiga-
+217                                                                                                                     267
+      Evaluating coverage requires deciding whether              tor judgment. Matching reduces ambiguity due
+218                                                                                                                     268
+      differently worded statements express the same             to topic selection without experimentally isolating
+219                                                                                                                     269
+      stance. LLM judges can assess this relationship,           cultural setting.
+220                                                                                                                     270
+      but their agreement with human assessments can
+221                                                                                                                     271
+      vary across the models being evaluated (Poole-             3.2   Constructing the reference sets
+222                                                                                                                     272
+      Dayan et al., 2025).
+223                                                              A reference perspective is a substantively distinct    273
+         We use five judges, present each generated
+224                                                              stance documented as being held within the tar-        274
+      perspective separately, randomise reference order,
+225                                                              get population. The first author constructed all       275
+      and exclude judges from the generator’s model
+226                                                              80 reference perspectives manually from research       276
+      family. We also report inter-judge agreement and
+227
+                                                                 literature and news reporting, drawing on sur-         277
+      compare it across WEIRD and Serbian topics.
+228
+                                                                 veys, polling, referendum results, peer-reviewed       278
+      These checks assess consistency of the matching
+                                                                 research, and clearly attested public debate. The
+229   procedure. They cannot establish correctness, be-                                                                 279
+                                                                 reference statements summarise positions sup-
+230   cause several judges may share an error, and they                                                                 280
+                                                                 ported by these sources, rather than positions gen-
+231   do not replace human validation.                                                                                  281
+                                                                 erated by the models evaluated here. The first au-
+232                                                                                                                     282
+                                                                 thor selected five distinct stances per topic from
+233   3     Methodology                                                                                                 283
+                                                                 the linked sources. The source workbook records
+234                                                                                                                     284
+      The benchmark fixes the topics and reference               a source entry for each of the 80 perspectives. The
+235                                                                                                                     285
+      perspectives before model outputs are evaluated.           accompanying source ledger links the evaluated
+236                                                              reference identifiers to their workbook cells and      286
+      It contains eight matched WEIRD-Serbian topic
+237                                                              preserves both the source text and any embedded        287
+      pairs, with five reference perspectives for each
+238   of the 16 topics. The evaluation then asks how             hyperlink. All reference summaries and explana-        288
+239   much of each reference set a model recovers when           tions in the workbook match the evaluated refer-       289
+240   prompted for five perspectives.                            ence set exactly. Source entries identify the evi-     290
+241                                                              dence used in construction.                            291
+242   3.1    Selecting and matching topics                          Reference summaries and explanations were           292
+243   We began with Serbian sociopolitical controver-            written in English. Sources cited for Serbian top-     293
+244   sies. Selection was informed by the first author’s         ics include English-language research, reporting,      294
+245   domain knowledge of Serbian history and poli-              and survey materials. The language of the cited        295
+246   tics. We sought notable controversies with mul-            material was therefore not uniformly Serbian.          296
+247   tiple substantively distinct positions that could be          Each topic has five references so that all topics   297
+248   documented using external sources.                         share the same evaluation budget. This is a de-        298
+249      For each Serbian topic, we identified a WEIRD           sign choice, not a claim that a controversy has ex-    299
+
+
+
+
+                                                             3

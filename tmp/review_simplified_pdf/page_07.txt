@@ -1,0 +1,78 @@
+                                    Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+600   this comparison. We examine two outcomes:                   16.9 points lower for Canadian residential schools      650
+601   overall recall and the WEIRD-minus-Serbian re-              than for Srebrenica. Mean topic recall ranges           651
+602   call gap.                                                   from 0.449 for the Serbian migration-route topic        652
+603      For RQ2 and RQ3, each comparison uses eight              to 0.685 for Serbia’s West-versus-Russia align-         653
+604   pair-level contrasts and an exact two-sided sign-           ment. Both extremes occur among the Serbian             654
+605   flip test. We apply Holm adjustment across the              topics, indicating that topic-level variation does      655
+606   four RQ2 comparisons and, separately, across the            not follow a uniform cultural direction.                656
+607   two RQ3 comparisons. These exploratory tests                   Figure 1 shows all eight pair-level differences.     657
+608   hold the selected models fixed and assume in-               Additional analyses and alternative uncertainty es-     658
+609   dependent contrasts whose signs are exchange-               timates are reported in Appendix D; they do not         659
+610   able under the null. They do not isolate effects            change the interpretation of the primary compar-        660
+611   of model category or developer country. Appen-              ison. Appendix E.1 presents the model-level and         661
+612
+      dices D.4 and D.5 give the calculations and sup-            individual model-pair views.                            662
+613
+      plementary uncertainty estimates. Reported p-                                                                       663
+614
+      values for these group comparisons are Holm-                4.2   RQ2: Recall by model and access                   664
+      adjusted unless stated otherwise.                                 category
+615                                                                                                                       665
+616   Check judge consistency. We report nomi-                    Table 4 reports overall recall and separate means       666
+617   nal Krippendorff’s α overall and separately for             for WEIRD and Serbian topics. Overall recall            667
+618   WEIRD and Serbian topics, together with judge-              ranges from 0.458 for Llama 3.3 70B to 0.698            668
+619   level no-match rates. We also recalculate scores            for Gemini 3.1 Pro. Even the highest-recall model       669
+620   after removing each judge in turn. These checks             leaves approximately 30% of the reference cover-        670
+621   assess agreement and sensitivity to panel member-           age unrecovered on average. These are descriptive       671
+622   ship; they do not establish that the judgments are          comparisons of the selected models; the ordering        672
+623   correct. Additional agreement measures and de-              does not establish that every difference between        673
+624   tailed results appear in Appendix F.                        models is statistically distinguishable. Model-         674
+625                                                               level intervals and pairwise tests appear in Appen-     675
+626   4     Results                                               dices E.2, D.1, and E.3.                                676
+627                                                                  Mean recall is 0.615 for Frontier systems, 0.578     677
+      4.1    RQ1: Recall on matched WEIRD and                     for larger open-weight systems, and 0.548 for
+628                                                                                                                       678
+             Serbian topics                                       smaller open-weight systems. Across all eight
+629                                                                                                                       679
+630
+      Mean recall is 0.581 for WEIRD topics and 0.594             open-weight models, mean recall is 0.570. The           680
+631
+      for Serbian topics. Across the eight matched                observed Frontier advantage over this combined          681
+      topic pairs, the mean WEIRD-minus-Serbian dif-              group is therefore 4.5 percentage points (p =
+632                                                                                                                       682
+      ference is −0.013, or −1.3 percentage points                0.258). None of the four category comparisons
+633                                                                                                                       683
+      (95% t-interval: −10.3 to 7.7; pair bootstrap:              reaches the 0.05 threshold after adjustment (Ap-
+634                                                                                                                       684
+      −8.1 to 5.8). The one-sided 95% upper bound                 pendix D.4). These results do not establish equiv-
+635                                                                                                                       685
+      is 5.9 points. The median pair-level difference is          alence or isolate effects of size, openness, or capa-
+636                                                                                                                       686
+      −0.014.                                                     bility.
+637                                                                                                                       687
+         Mean recall is 0.581 for WEIRD topics and                   Individual models vary substantially within cat-
+638                                                                                                                       688
+      0.594 for Serbian topics. Across the eight matched          egories. Gemma 4 31B has recall 0.638, close
+639                                                                                                                       689
+      pairs, the mean WEIRD-minus-Serbian difference              to the 0.645 reported for GPT 5.5 and DeepSeek
+640   is −1.3 percentage points (95% CI: −10.3 to 7.7).                                                                   690
+                                                                  V4 Pro, whereas Llama 3.3 70B has recall 0.458.
+641   The primary test finds no evidence for the hypoth-                                                                  691
+                                                                  These observed similarities do not establish equiv-
+642   esised WEIRD advantage (p = 0.680). The inter-              alence. Comparisons also depend on panel com-           692
+643   val includes differences in both directions, so the         position: Gemini 3.1 Pro matched 52.7% of the           693
+644   result does not establish equivalent coverage.              outputs it judged, compared with 65.0–76.6% for         694
+645      Four matched pairs favour WEIRD topics and               the other judges. Removing it raises individual         695
+646   four favour Serbian topics. The largest differences         model recall by up to 3.6 percentage points (Ap-        696
+647   point in opposite directions: recall is 19.1 percent-       pendix F.3). Google’s two generators are never          697
+648   age points higher for German immigration than               scored by this judge because of the family-disjoint     698
+649   for its Serbian migration-route counterpart, but            design. Small differences between their scores and      699
+
+
+
+
+                                                              7

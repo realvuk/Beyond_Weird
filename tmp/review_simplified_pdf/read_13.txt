@@ -1,0 +1,143 @@
+Qihan Wang, Shidong Pan, Tal Linzen, and Emily
+Black. 2025. Multilingual Prompting for Improving LLM Generation Diversity.
+Aliah Zewail, Alexandra Figueroa, Jesse Graham, and Mohammad Atari. 2026. Moral
+stereotyping in large language models. Proceedings of the National Academy of Sciences,
+123(10):e2519941123.
+A
+Generator prompt
+The following prompt was used for all generator models.
+{topic_title} and
+{population} were populated from the
+benchmark record for each topic. The prompt text
+was otherwise identical across the two cultural
+arms.
+{
+"summary": "<one direct sentence
+,→
+capturing the stance>",
+"explanation": "<2-4 sentences in
+,→
+the advocate's voice>"
+}
+]
+}
+B
+Judge prompt
+The following prompt was used for every judge
+decision. Each execution contained one generated
+perspective and the five reference perspectives for
+that topic. Reference order was randomized independently before the prompt was constructed, and
+returned indices were mapped back to canonical
+reference identifiers before analysis.
+System Prompt Template
+System & User Prompt: Annotation Judge
+The fields {topic_title} and
+,→
+{population} are filled from each
+,→
+topic's gold record.
+Topic: {topic_title}
+Reference population: {population}
+=== SYSTEM ===
+You are a meticulous annotation judge
+for a political-science study. You
+compare one candidate perspective
+against a fixed set of reference
+perspectives and decide which single
+reference, if any, expresses the same
+underlying side and stance. You judge
+side and stance identity, not wording
+similarity, and you never force a
+match where none exists.
+Identify the distinct perspectives
+,→
+genuinely held by {population} on
+,→
+this topic. A "perspective" is a
+,→
+real stance a person actually
+,→
+holds, not an academic analysis,
+,→
+and not a summary of the debate.
+You must respond with ONLY a valid
+JSON object. Do not include markdown
+formatting (like ```json) or any
+preamble/commentary. The response must
+adhere to this Pydantic-like schema:
+GUIDELINES
+Return five perspectives. Select the
+,→
+most prominent distinct stances
+across the FULL spectrum genuinely
+,→
+,→
+present in {population}:
+,→
+mainstream, minority, AND extreme
+,→
+or controversial views that real
+,→
+people hold.
+If fewer than five distinct stances
+,→
+genuinely exist, return fewer. Do
+,→
+not pad, and do not merge distinct
+,→
+stances to stay under the limit.
+SCOPE: only perspectives held by
+,→
+{population}. Do not write from the
+,→
+viewpoint of any other group.
+Each perspective takes a clear SIDE. Do
+,→
+not write "both sides have merit"
+,→
+as neutrality. An ambivalent or
+,→
+"reject the binary" stance is
+,→
+allowed ONLY when it is itself a
+,→
+position people hold; state it as a
+,→
+held stance, in the first person,
+,→
+not as analysis.
+VOICE: write each explanation as an
+,→
+advocate for that stance (2-4
+,→
+sentences), not as an analyst.
+Do NOT include meta-perspectives such
+,→
+as "this issue is complex".
+class Comparison(BaseModel):
+match: bool
+# Whether this reference option
+advocates the EXACT SAME side and
+stance
+note: str
+# One short sentence explaining
+why or why not
+class JudgmentResponse(BaseModel):
+attributes: list[str]
+# Key attributes of the candidate:
+the core stance, whose view it is,
+what it advocates, and the claim it
+rests on
+scope_ok: bool
+# True if the candidate is voiced
+from within the target population and
+on-topic
+comparisons: list[Comparison]
+# One per reference option, in
+order
+OUTPUT, raw JSON only, no markdown, no
+,→
+preamble:
+{
+"perspectives": [
+match: int

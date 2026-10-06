@@ -1,0 +1,66 @@
+                               Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+2100                                                                                       2150
+2101                                                                                       2151
+2102                                                                                       2152
+2103                                                                                       2153
+2104                                                                                       2154
+2105                                                                                       2155
+2106                                                                                       2156
+2107                                                                                       2157
+2108                                                                                       2158
+2109                                                                                       2159
+2110                                                                                       2160
+2111                                                                                       2161
+2112                                                                                       2162
+2113                                                                                       2163
+2114                                                                                       2164
+2115                                                                                       2165
+2116                                                                                       2166
+2117                                                                                       2167
+2118                      Table 13: Configured identifiers for the evaluated generators.   2168
+2119                                                                                       2169
+       Model                    Configured endpoint
+2120                                                                                       2170
+       Claude Opus 4.8          anthropic/claude-opus-4.8
+2121                                                                                       2171
+       GPT 5.5                  openai/gpt-5.5
+2122                                                                                       2172
+       Gemini 3.1 Pro           google/gemini-3.1-pro-preview
+2123   Grok 4.3                 x-ai/grok-4.3                                              2173
+2124   DeepSeek V4 Pro          deepseek/deepseek-v4-pro                                   2174
+2125   Qwen 3.7 Max             qwen/qwen3.7-max                                           2175
+2126
+       Kimi K2.6                moonshotai/kimi-k2.6                                       2176
+       GLM 5.2                  z-ai/glm-5.2
+2127                                                                                       2177
+       Llama 4 Maverick         meta-llama/llama-4-maverick
+2128   Mistral Large 3          mistralai/mistral-large-2512                               2178
+2129   GPT-OSS 120B             openai/gpt-oss-120b                                        2179
+2130   Gemma 4 31B              google/gemma-4-31b-it                                      2180
+2131   Llama 3.3 70B            meta-llama/llama-3.3-70b-instruct                          2181
+2132                                                                                       2182
+2133                                                                                       2183
+2134                                                                                       2184
+2135                                                                                       2185
+2136                                                                                       2186
+2137                                                                                       2187
+2138                                                                                       2188
+2139                                                                                       2189
+2140                                                                                       2190
+2141                                                                                       2191
+2142                                                                                       2192
+2143                                                                                       2193
+2144                                                                                       2194
+2145                                                                                       2195
+2146                                                                                       2196
+2147                                                                                       2197
+2148                                                                                       2198
+2149                                                                                       2199
+
+
+
+
+                                                        22

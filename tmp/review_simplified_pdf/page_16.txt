@@ -1,0 +1,94 @@
+                                    Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1500   do not retain matched-pair blocks. A sensitiv-          independent pair-level differences and symmetry        1550
+1501   ity analysis for model recall instead resamples the     under the null; it does not directly test the arith-   1551
+1502   eight matched pairs, retaining both topics and their    metic mean.                                            1552
+1503   equal weights, with 10,000 resamples and a fresh                                                               1553
+1504   NumPy generator using seed 42. Both sets of re-         D.3   Sensitivity analyses of the model-pair           1554
+1505   call intervals are supplied in the accompanying               gaps                                             1555
+1506   analysis files. The model means are unchanged.          The primary test averages over generators within       1556
+1507   Neither overlapping intervals nor an absence of         each matched pair. We also examine an alter-           1557
+1508   significant pairwise differences establishes model      native aggregation. The mean P    over eight pairs     1558
+       equivalence.                                                                            1
+1509                                                           within each generator, dm = 8 p dmp . An ex-           1559
+1510                                                           act signed-rank calculation uses these 13 model        1560
+       Illustrative sensitivity calculation. For a one-
+1511                                                           means, removes numerical roundoff before rank-         1561
+       sided one-sample t-test at α = 0.05, normally
+1512
+                                                               ing, assigns average ranks to ties, and enumer-        1562
+       distributed independent pair-level differences, and
+1513
+                                                               ates every sign assignment. It gives one-sided         1563
+       the observed between-pair SD, a hypothetical five-
+1514
+                                                               p = 0.843 and two-sided p = 0.331. This com-           1564
+       percentage-point WEIRD advantage gives approx-
+                                                               parison is conditional on the same eight pairs; the
+1515   imately 32% power. An advantage of about 10.5                                                                  1565
+                                                               selected model families are not independent cul-
+1516   points gives 80% power. These values use a non-                                                                1566
+                                                               tural replications.
+1517   central t distribution with seven degrees of free-                                                             1567
+                                                                  To examine both dimensions, a crossed boot-
+1518   dom. They describe hypothetical effects under a                                                                1568
+                                                               strap independently resamples generator rows and
+1519   t-test, not power at the observed effect or power of                                                           1569
+                                                               matched-pair columns with replacement. Each
+1520   the exact Wilcoxon test.                                                                                       1570
+                                                               of 10,000 replicates retains the Cartesian-product
+1521                                                                                                                  1571
+       D.2   Primary WEIRD-Serbian signed-rank                 submatrix. The resulting approximate 95% inter-
+1522                                                           val for the mean gap is [−0.090, 0.070].The re-        1572
+             test
+1523                                                           sampling scheme follows Owen.                          1573
+1524   For model m and matched pair p, we first compute                                                               1574
+                                                                  A model-based check fits the 104 model-pair
+1525                                                           differences using crossed random intercepts:           1575
+                             W     S
+1526                  dmp = Rmp − Rmp .               (10)                                                            1576
+1527     We then average across the 13 generators within                  dmp = µ + um + vp + ϵmp .           (12)    1577
+1528   each pair,                                                                                                     1578
+1529                                                           Generator and pair effects and the residual are as-    1579
+1530
+                                13                             sumed independent. Restricted maximum likeli-          1580
+                              1 X
+1531
+                      ∆p =              dmp ,         (11)     hood gives µ = −0.013 (SE 0.038; 95% Wald              1581
+                             13
+1532
+                                  m=1                          CI [−0.088, 0.062]; approximate two-sided p =          1582
+         which yields eight pair-level WEIRD-minus-            0.733). The fit converged but produced a boundary
+1533                                                                                                                  1583
+       Serbian differences. The observed differences are       warning, so the result remains a sensitivity check.
+1534                                                                                                                  1584
+                                                                  These procedures account for the two grouping
+1535                                                                                                                  1585
+                                                               dimensions under their respective assumptions.
+1536                                                                                                                  1586
+             (0.000769, 0.055385, 0.003077,                    They do not establish that the selected models or
+1537                                                                                                                  1587
+              − 0.028846, −0.169231, 0.190769,                 topics are representative, or explicitly model de-
+1538                                                                                                                  1588
+              − 0.100769, −0.055769).                          pendence between different generators from the
+1539                                                                                                                  1589
+                                                               same developer family. The 104 differences are
+1540                                                                                                                  1590
+       All eight differences are non-zero, and no two          not treated as independent replicates. The per-
+1541                                                           reference model in Appendix D.8 is a separate          1591
+       have the same absolute value, so there are no
+1542   tied ranks. The primary exact Wilcoxon signed-          specification.                                         1592
+1543   rank test uses a one-sided alternative of a positive                                                           1593
+1544   shift in WEIRD-minus-Serbian recall and gives           D.4   Exploratory category comparisons                 1594
+1545   p = 0.6797. The observed mean difference is             For each model and matched pair, we first aver-        1595
+1546   −0.0131, and the median is −0.0140. For com-            age WEIRD and Serbian recall. We then aver-            1596
+1547   pleteness, the two-sided result is p = 0.7422,          age across models within each category, weight-        1597
+1548   and the matched-pairs rank-biserial correlation is      ing models equally. Each category contrast there-      1598
+1549   −0.1667. The signed-rank inference assumes              fore contains eight pair-level differences. The test   1599
+
+
+
+
+                                                              16

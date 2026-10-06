@@ -1,0 +1,97 @@
+                                    Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+1200   Qihan Wang, Shidong Pan, Tal Linzen, and Emily                                                               1250
+                                                                          {
+1201     Black. 2025. Multilingual Prompting for Im-                          "summary": "<one direct sentence      1251
+1202     proving LLM Generation Diversity.                                    ,→  capturing the stance>",           1252
+                                                                              "explanation": "<2-4 sentences in
+1203                                                                          ,→  the advocate's voice>"            1253
+1204
+       Aliah Zewail, Alexandra Figueroa, Jesse Gra-                       }                                         1254
+         ham, and Mohammad Atari. 2026. Moral                         ]
+1205                                                              }                                                 1255
+         stereotyping in large language models. Pro-
+1206                                                                                                                1256
+         ceedings of the National Academy of Sciences,
+1207                                                                                                                1257
+         123(10):e2519941123.                                 B       Judge prompt
+1208                                                                                                                1258
+1209   A    Generator prompt                                                                                        1259
+1210
+                                                              The following prompt was used for every judge         1260
+       The following prompt was used for all gen-             decision. Each execution contained one generated
+1211                                                                                                                1261
+       erator models.         {topic_title} and               perspective and the five reference perspectives for
+1212                                                                                                                1262
+       {population} were populated from the                   that topic. Reference order was randomized inde-
+1213                                                                                                                1263
+       benchmark record for each topic. The prompt text       pendently before the prompt was constructed, and
+1214                                                                                                                1264
+       was otherwise identical across the two cultural        returned indices were mapped back to canonical
+1215                                                                                                                1265
+       arms.                                                  reference identifiers before analysis.
+1216                                                                                                                1266
+1217       System Prompt Template                                 System & User Prompt: Annotation Judge            1267
+1218       The fields {topic_title} and                                                                             1268
+                                                                  === SYSTEM ===
+1219       ,→  {population} are filled from each                                                                    1269
+                                                                  You are a meticulous annotation judge
+           ,→  topic's gold record.
+1220       Topic: {topic_title}                                   for a political-science study. You                1270
+           Reference population: {population}                     compare one candidate perspective
+1221                                                                                                                1271
+                                                                  against a fixed set of reference
+1222       Identify the distinct perspectives                     perspectives and decide which single              1272
+           ,→  genuinely held by {population} on                  reference, if any, expresses the same
+1223                                                                                                                1273
+           ,→  this topic. A "perspective" is a                   underlying side and stance. You judge
+1224       ,→  real stance a person actually                      side and stance identity, not wording             1274
+           ,→  holds, not an academic analysis,                   similarity, and you never force a
+1225                                                                                                                1275
+           ,→  and not a summary of the debate.                   match where none exists.
+1226                                                                                                                1276
+           GUIDELINES                                             You must respond with ONLY a valid
+1227                                                                                                                1277
+           Return five perspectives. Select the                   JSON object. Do not include markdown
+1228       ,→  most prominent distinct stances                    formatting (like ```json) or any                  1278
+           ,→  across the FULL spectrum genuinely                 preamble/commentary. The response must
+1229                                                                                                                1279
+           ,→  present in {population}:                           adhere to this Pydantic-like schema:
+1230       ,→  mainstream, minority, AND extreme                                                                    1280
+           ,→  or controversial views that real                   class Comparison(BaseModel):
+1231                                                                                                                1281
+           ,→  people hold.                                           match: bool
+1232       If fewer than five distinct stances                        # Whether this reference option               1282
+           ,→  genuinely exist, return fewer. Do                  advocates the EXACT SAME side and
+1233                                                                                                                1283
+           ,→  not pad, and do not merge distinct                 stance
+1234       ,→  stances to stay under the limit.                                                                     1284
+1235       SCOPE: only perspectives held by                           note: str                                     1285
+           ,→  {population}. Do not write from the                    # One short sentence explaining
+1236       ,→  viewpoint of any other group.                      why or why not                                    1286
+1237       Each perspective takes a clear SIDE. Do                                                                  1287
+           ,→  not write "both sides have merit"                  class JudgmentResponse(BaseModel):
+1238       ,→  as neutrality. An ambivalent or                        attributes: list[str]                         1288
+1239       ,→  "reject the binary" stance is                          # Key attributes of the candidate:            1289
+           ,→  allowed ONLY when it is itself a                   the core stance, whose view it is,
+1240       ,→  position people hold; state it as a                what it advocates, and the claim it               1290
+1241       ,→  held stance, in the first person,                  rests on                                          1291
+           ,→  not as analysis.
+1242       VOICE: write each explanation as an                        scope_ok: bool                                1292
+1243       ,→  advocate for that stance (2-4                          # True if the candidate is voiced             1293
+           ,→  sentences), not as an analyst.                     from within the target population and
+1244       Do NOT include meta-perspectives such                  on-topic                                          1294
+1245       ,→  as "this issue is complex".                                                                          1295
+                                                                      comparisons: list[Comparison]
+1246       OUTPUT, raw JSON only, no markdown, no                     # One per reference option, in                1296
+1247       ,→   preamble:                                         order                                             1297
+           {
+1248          "perspectives": [                                           match: int                                1298
+1249                                                                                                                1299
+
+
+
+
+                                                           13

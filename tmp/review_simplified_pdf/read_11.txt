@@ -1,0 +1,70 @@
+the data under the interval’s assumptions. Eight
+investigator-selected pairs provide limited statistical resolution and do not represent a random sample of cultural controversies. We therefore report
+no detectable WEIRD advantage, not equivalent
+coverage. Alternative intervals and an illustrative
+sensitivity calculation appear in Appendix D.1.
+6.4
+Serbia is one non-WEIRD setting
+The Serbian controversies studied here are European, relatively well documented, and often discussed in multilingual or internationally indexed
+sources. They represent one non-WEIRD setting.
+The findings cannot be generalised to all nonWEIRD populations. Larger coverage gaps may
+occur in less documented societies, lower-resource
+languages, or political contexts with less international attention. Matched comparisons involving
+additional populations are needed to test this possibility.
+6.5
+The paper tests direct elicitation at one
+point in time
+We explicitly asked models for diverse perspectives. The benchmark therefore measures recovery
+under direct elicitation, rather than the perspectives models would spontaneously include in ordinary conversation. All prompts were in English,
+holding elicitation and judging language constant
+across settings. The study does not test Serbianlanguage or multilingual prompting, which may
+produce different coverage patterns.
+The results also reflect one snapshot of changing model systems. Rankings may change as
+those systems are updated. The matched design
+is intended to remain useful beyond the evaluated
+model versions.
+6.6
+Structural matching reduces but does not
+eliminate topic confounding
+The pairs share broad political structures, but may
+differ in documentation, historical depth, polarisation, and training-data prevalence. Matching improves the interpretability of the comparison without experimentally isolating cultural setting. It
+was investigator-guided rather than based on a prespecified quantitative rule, and alternative pairings
+may be defensible.
+Releasing the topic definitions, matching rationales, reference perspectives, and their supporting
+sources will allow others to inspect these choices
+and test alternative pairings.
+Conclusion
+Across eight matched WEIRD-Serbian topic pairs
+and 13 generators, we did not detect the predicted
+WEIRD recall advantage. Differences between individual pairs were much larger than the pooled
+difference, and coverage remained incomplete in
+both settings and varied across models and controversies. The main methodological implication
+is to measure perspective coverage directly, using
+comparisons that account for topic selection and
+examining which perspectives are omitted on particular controversies.
+Data and code availability
+The final repository or archival identifier will be
+added before submission.
+Acknowledgments
+This paper was produced as part of the Datavysts
+MSCA network, funded by Horizon Europe [grant
+number 101169037] and UK Research and Innovation (UKRI) under the UK government’s Horizon Europe funding Guarantee [grant number
+EP/Z536581/1].
+References
+Dalia Ali, Dora Zhao, Allison Koenecke, and
+Orestis Papakyriakopoulos. 2025. Operationalizing Pluralistic Values in Large Language
+Model Alignment Reveals Trade-offs in Safety,
+Inclusivity, and Model Behavior.
+Valerio Basile, Michael Fell, Tommaso Fornaciari,
+Dirk Hovy, Silviu Paun, Barbara Plank, Massimo Poesio, and Alexandra Uma. 2021. We
+Need to Consider Disagreement in Evaluation.
+In Proceedings of the 1st Workshop on Benchmarking: Past, Present and Future, pages 15–
+21, Online. Association for Computational Linguistics.
+Chun-Wei Chiang, Zhuoran Lu, Zhuoyan Li,
+and Ming Yin. 2024.
+Enhancing AIAssisted Group Decision Making through
+LLM-Powered Devil’s Advocate.
+In Proceedings of the 29th International Conference
+on Intelligent User Interfaces, pages 103–119,
+Greenville SC USA. ACM.
+Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi, and

@@ -1,0 +1,16 @@
+{
+  "panel": [
+    {"slug": "google/gemini-3.1-pro-preview", "family": "google", "display_name": "Gemini 3.1 Pro Preview"},
+    {"slug": "openai/gpt-5.5", "family": "openai", "display_name": "GPT 5.5"},
+    {"slug": "anthropic/claude-sonnet-5", "family": "anthropic", "display_name": "Claude Sonnet 5"},
+    {"slug": "deepseek/deepseek-v4-pro", "family": "deepseek", "display_name": "DeepSeek V4 Pro"},
+    {"slug": "moonshotai/kimi-k2.6", "family": "moonshot", "display_name": "Kimi K2.6"}
+  ],
+  "substitutes": {
+    "google":    {"slug": "x-ai/grok-4.5", "family": "xai", "display_name": "Grok 4.5"},
+    "openai":    {"slug": "x-ai/grok-4.5", "family": "xai", "display_name": "Grok 4.5"},
+    "anthropic": {"slug": "x-ai/grok-4.5", "family": "xai", "display_name": "Grok 4.5"},
+    "deepseek":  {"slug": "qwen/qwen3.7-max", "family": "alibaba", "display_name": "Qwen 3.7 Max"},
+    "moonshot":  {"slug": "x-ai/grok-4.5", "family": "xai", "display_name": "Grok 4.5"}
+  }
+}

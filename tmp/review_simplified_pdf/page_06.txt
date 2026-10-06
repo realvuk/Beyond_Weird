@@ -1,0 +1,93 @@
+                                      Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+500   mapped back to the original identifiers. The de-            bian recall each average eight:                       550
+501   sign requires 25 decisions per model-topic re-                                                                    551
+                                                                                    16               W    S
+502   sponse, or 5,200 in total. After retries, 5,184 deci-                       1 X               Rm + Rm             552
+                                                                         Rm =               Rmt =             .   (2)
+503   sions are valid: 1,024 outputs have five judgments                         16                    2                553
+                                                                                      t=1
+504   and 16 have four. Failed calls are missing data. A                                                                554
+505   valid no-match decision remains in the calculation                 W      S
+                                                                  Here, Rm and Rm denote the model’s mean recall        555
+506   and earns zero credit (Appendix C.6).                       on WEIRD and Serbian topics. To describe a topic      556
+507                                                               across models, we instead average its scores over     557
+508
+      3.3.3   From assignments to recall                                                                                558
+                                                                  the 13 generators. Precision and F1 are defined in
+509   Recall measures the proportion of the five refer-           Appendix C.4 and reported in Appendix E.2.            559
+510   ence perspectives recovered by a model’s five out-                                                                560
+511   puts. A repeated match does not recover an addi-            3.3.4 Comparisons and statistical analysis            561
+512   tional reference. We calculate recall in three steps.       RQ1: compare the eight matched pairs. For             562
+513                                                               each model m and matched pair p, we subtract          563
+      Step 1: calculate recall for one judge. In the              Serbian recall from WEIRD recall:
+514                                                                                                                     564
+      worked example (Tables 2 and 12), Claude Son-
+515                                                                                     W     S                         565
+      net 5 assigns GPT 5.5’s five outputs to references                         dmp = Rmp − Rmp .                (3)
+516                                                                                                                     566
+      2, 2, 1, 5, and 1. These assignments recover
+517                                                               Positive differences favour the WEIRD topic. We       567
+      three distinct references, so this judge’s recall is
+518   3/5 = 0.60. All five outputs match a reference,             then average the 13 model differences within each     568
+519   but they cover only three. Precision counts match-          pair:                                                 569
+520                                                                                          13                         570
+      ing outputs; recall counts distinct references re-                                 1 X
+521   covered.                                                                    ∆p =          dmp .           (4)     571
+                                                                                         13
+522                                                                                           m=1                       572
+523   Step 2: combine the judges for one model and                The primary analysis therefore uses eight pair-       573
+524   topic. Let m identify the model, t the topic, and           level differences. We report their mean and a 95%     574
+525   j the judge. Write Rmtj for recall calculated from          t-based confidence interval with seven degrees of     575
+526   judge j’s assignments. When all five judges sup-            freedom. This interval assumes independent, ap-       576
+527
+      ply valid decisions for all five outputs, model-topic       proximately normally distributed pair-level differ-   577
+528
+      recall is their mean:                                       ences. We test the hypothesised positive shift us-    578
+529
+                                                                  ing an exact one-sided Wilcoxon signed-rank test,     579
+                                 5
+                           1X                                     which assumes independent differences and sym-
+530                  Rmt =    Rmtj .                    (1)                                                             580
+                           5                                      metry under the null. The interval describes the
+531                             j=1                                                                                     581
+                                                                  arithmetic mean; the signed-rank test assesses a
+532                                                                                                                     582
+      In the example, the five recalls are 0.60, 0.60,            directional shift. The 104 model-pair differences
+533                                                                                                                     583
+      0.60, 0.60, and 0.40, giving Rmt = 0.56. Judges             are not independent replications. Supplementary
+534                                                                                                                     584
+      need not agree on which references were recov-              calculations appear in Appendix D.
+535                                                                                                                     585
+536
+      ered; there is no majority-vote threshold.                  RQ2: describe models and compare categories.          586
+537
+         When judgments are missing, the available                We report overall, WEIRD, and Serbian recall for      587
+538
+      judges can differ between outputs. The calcula-             each model. For category comparisons, we first        588
+539
+      tion therefore splits duplicate matches within each         average the two topics within each matched pair       589
+      judge, averages the resulting credits over valid            and then average across models within each cat-
+540                                                                                                                     590
+      judges for each output, and caps each reference’s           egory, giving models equal weight. We compare
+541                                                                                                                     591
+      total credit at one. Appendix C.3 gives the exact           the three categories pairwise and compare Fron-
+542                                                                                                                     592
+      equations, which reduce to Eq. 1 for complete pan-          tier with all eight open-weight models combined.
+543                                                                                                                     593
+      els. Every output has at least four valid judgments.        Individual-model intervals and pairwise tests are
+544                                                                                                                     594
+      A missing judgment is excluded; a valid no-match            supplementary.
+545                                                                                                                     595
+      decision remains and earns zero credit.
+546                                                               RQ3: compare developer groups. We compare             596
+547   Step 3: summarise a model across topics. We                 eight models from US developers with four from        597
+548   give each topic equal weight. Overall recall aver-          Chinese developers, weighting models equally          598
+549   ages the 16 model-topic scores; WEIRD and Ser-              within each group. Mistral is excluded only from      599
+
+
+
+
+                                                              6

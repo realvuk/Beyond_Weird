@@ -1,0 +1,73 @@
+unmatched comparison could misattribute such
+variation to cultural setting. Structural matching
+reduces this ambiguity, although it cannot remove
+all differences between controversies.
+5.2
+Incomplete coverage remains
+The absence of a detectable WEIRD advantage
+does not imply comprehensive coverage. Even the
+strongest models omit a substantial share of the
+reference perspectives. In this benchmark, omissions occur across both cultural settings rather
+than consistently concentrating in one.
+Recall varies within each access and size category, and individual scores overlap across categories. Although the observed category means
+differ, none of the four exploratory comparisons
+reaches the adjusted significance threshold. These
+results do not establish equivalence between categories or identify the effects of size and openness
+separately.
+Future work could examine what makes particular controversies or perspectives difficult to recover. Candidate factors include the amount and
+visibility of documentation, the prominence of positions in training data, and their responsiveness
+to elicitation after post-training. Measuring these
+properties directly would allow them to be tested
+as predictors, rather than inferred from cultural or
+model-level averages.
+5.3
+Implications for evaluation and culturally
+adaptive systems
+The matched design can support comparisons involving other populations. Its purpose is to make
+differences in perspective coverage easier to interpret by accounting for topic selection. Coverage
+should also be evaluated directly. General capability, multilingual performance, and overall answer
+quality do not establish that a model will recover
+the positions relevant to a contested issue.
+The appropriate intervention depends on the observed deficit. A systematic cultural coverage gap
+may motivate targeted cultural or linguistic adaptation. If coverage is incomplete across both sides
+of a matched comparison, improving the retrieval
+or elicitation of omitted perspectives may be more
+relevant. The present result does not make cultural adaptation unnecessary, instead it helps specify what an intervention would need to address.
+This distinction also matters for AI-mediated
+deliberation. Systems that expose disagreement,
+support consensus, or introduce minority positions depend on the perspectives available to them
+(Tessler et al., 2024; Chiang et al., 2024; Lee et al.,
+2025). A perspective that never enters the candidate set cannot inform those later processes. Perspective recall is thus a prerequisite for their use of
+diverse positions, not a substitute for deliberation
+itself.
+Limitations
+The findings apply to a finite reference benchmark, a selected set of models and topics, and one
+elicitation and judging procedure.
+6.1
+The reference sets are not exhaustive
+Each topic has five externally documented reference perspectives that a single author constructed.
+Reference statements for Serbian topics are English summaries of sources in more than one language, so summarisation and translation choices
+may affect how closely model outputs match them.
+This common target supports comparison across
+topics, but it cannot represent every legitimate position within a population. Recall therefore measures coverage of the reference set. Similarly, an
+output that matches no reference receives no precision credit even if it expresses a legitimate position
+outside the benchmark. Absolute recall and precision values should be read in this context. Their
+main value here is comparison under a common
+construction procedure.
+6.2
+Judge agreement does not establish judge
+validity
+The scores depend on LLM judgments of whether
+generated and reference perspectives express the
+same stance.
+Agreement and judge-removal
+checks describe consistency and sensitivity to
+panel membership. They do not establish correctness, because judges may share errors. Excluding
+judges from the generator’s developer family prevents direct within-family evaluation but does not
+remove shared biases or differences in judge strictness.
+6.3
+Eight matched pairs limit statistical
+resolution
+The primary comparison rests on eight topic pairs
+whose recall differences vary widely (SD 10.7 percentage points). The 95% confidence interval for
+the mean gap spans −10.3 to 7.7 points, leaving differences in either direction compatible with

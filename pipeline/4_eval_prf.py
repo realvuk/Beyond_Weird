@@ -20,34 +20,32 @@ Usage:
   python eval_prf.py --agg out/ --out out/ [--gold-credit sum] [--n-boot 10000]
 """
 import argparse
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from bweird.analysis import bootstrap_ci, log
-
-# Repo-root-relative defaults, resolved from this file so the stage runs from
-# any working directory. Every path can still be overridden on the command line.
-ROOT = Path(__file__).resolve().parent.parent
-ADAPTED = ROOT / "results" / "adapted"
-AGG = ROOT / "results" / "agg"
+from bweird.analysis import AGG_DIR, bootstrap_ci, log
+from bweird.logging_utils import run_stage
 
 
 def harmonic(a, b):
     return 0.0 if (a + b) == 0 else 2 * a * b / (a + b)
 
 
-def main():
+def build_arg_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--agg", default=str(AGG), help="directory with 3_aggregate.py outputs")
-    ap.add_argument("--out", default=str(AGG))
+    ap.add_argument("--agg", default=str(AGG_DIR), help="directory with 3_aggregate.py outputs")
+    ap.add_argument("--out", default=str(AGG_DIR))
     ap.add_argument("--gold-credit", choices=["sum", "max"], default="sum")
     ap.add_argument("--n-boot", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=42)
-    args = ap.parse_args()
+    return ap
 
+
+def run(args: argparse.Namespace) -> int:
     agg = Path(args.agg)
     cov = pd.read_csv(agg / "coverage_topic.csv")
     prec = pd.read_csv(agg / "precision_topic.csv")
@@ -98,7 +96,12 @@ def main():
           f"95% CIs from {args.n_boot} topic resamples):")
     print(disp.to_string(index=False))
     print(f"\nWritten: {out/'ranking.csv'}, {out/'prf_per_topic.csv'}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    return run_stage(build_arg_parser(), run, argv)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

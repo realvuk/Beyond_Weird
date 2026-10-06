@@ -1,0 +1,68 @@
+                                     Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+700                                                                                                                        750
+701                                                                                                                        751
+702                                                                                                                        752
+703                                                                                                                        753
+704                                                                                                                        754
+705                                                                                                                        755
+706                                                                                                                        756
+707                                                                                                                        757
+708                                                                                                                        758
+709                                                                                                                        759
+710                                                                                                                        760
+711                                                                                                                        761
+712                                                                                                                        762
+713                                                                                                                        763
+714                                                                                                                        764
+715                                                                                                                        765
+716                                                                                                                        766
+717                                                                                                                        767
+718                                                                                                                        768
+719                                                                                                                        769
+720                                                                                                                        770
+721                                                                                                                        771
+      Figure 1: Recall differences for the eight matched topic pairs. Each point is the WEIRD-minus-Serbian difference
+722                                                                                                                        772
+      averaged over the 13 generators; positive values favour WEIRD topics. The diamond shows the mean across pairs,
+723   with the 95% t-based confidence interval used in the primary analysis. Pair-specific confidence intervals are not    773
+724   shown.                                                                                                               774
+725                                                                                                                        775
+726   Table 4: Perspective recall by model category. Each topic receives equal weight. Models are ordered by overall re-   776
+727   call within each category. Supplementary intervals are reported in Appendix E.2, with the matched-pair sensitivity   777
+728   analysis described in Appendix D.1.                                                                                  778
+729                               Model                Overall recall    WEIRD     Serbian                                 779
+730                               Frontier/API systems (5)                                                                 780
+731                               Gemini 3.1 Pro           0.698         0.675      0.720                                  781
+732                               GPT 5.5                  0.645         0.635      0.655                                  782
+733                               Qwen 3.7 Max             0.582         0.545      0.618                                  783
+                                  Claude Opus 4.8          0.578         0.530      0.625
+734                                                                                                                        784
+                                  Grok 4.3                 0.575         0.565      0.585
+735                                                                                                                        785
+736
+                                  Larger open-weight systems (6)                                                           786
+                                  DeepSeek V4 Pro         0.645          0.650      0.640
+737                                                                                                                        787
+                                  GLM 5.2                 0.607          0.660      0.554
+738                               Kimi K2.6               0.604          0.595      0.614                                  788
+739                               Mistral Large 3         0.565          0.545      0.585                                  789
+740                               GPT-OSS 120B            0.541          0.570      0.513                                  790
+741                               Llama 4 Maverick        0.502          0.520      0.485                                  791
+742                               Smaller open-weight systems (2)                                                          792
+743                               Gemma 4 31B             0.638          0.598      0.679                                  793
+744
+                                  Llama 3.3 70B           0.458          0.465      0.450                                  794
+745                                                                                                                        795
+746                                                                                                                        796
+      those of other generators therefore require caution.        4.3   RQ3: US and Chinese developer groups
+747                                                                                                                        797
+748                                                               The four models from Chinese developers have             798
+749                                                               mean overall recall 0.609, compared with 0.579           799
+
+
+
+
+                                                              8

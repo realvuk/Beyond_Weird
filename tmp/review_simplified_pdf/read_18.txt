@@ -1,0 +1,73 @@
+D.7
+Per-model WEIRD-Serbian tests
+The WEIRD-Serbian comparison is also repeated
+separately for each generator using its eight
+matched differences. Some generators contain
+zero differences or tied absolute differences. Differences read from the analysis files are therefore
+rounded to 12 decimal places to remove negligible floating-point representation noise. Exact zeros are dropped, and the remaining absolute differences receive midranks.
+For the n remaining non-zero differences, all
+2n sign assignments are enumerated. For each assignment, the positive-rank sum W + is calculated.
+The directional p-value is
+
++
++
+P Wnull
+≥ Wobs
+.
+(16)
+Rank-biserial correlation is calculated from the
+same signed ranks. The 13 resulting p-values are
+adjusted using Benjamini-Hochberg.
+D.8
+A separate robustness check fits a mixed-effects
+model to the 1, 040 per-reference recall-credit observations. Cultural arm is entered as a fixed effect, with random intercepts for matched pair and
+generator. The estimated WEIRD coefficient is
+βWEIRD = −0.0131 (SE = 0.0268, p = 0.626),
+consistent with the primary matched-pair analysis. This specification uses per-reference credits, whereas Appendix D.3 models 104 model-pair
+differences. The two results come from different
+observational units and must not be interchanged.
+The per-reference specification does not explicitly
+model all dependence among references within a
+model-topic response.
+Per-reference mixed-effects check
+of model-level precision and recall, not an average of topic-level F1 scores. The displayed intervals use the original 10,000-resample individualtopic bootstrap. Appendix D.1 explains its distinction from the matched-pair recall sensitivity analysis supplied with the accompanying files. An unmatched output may express a legitimate position
+outside the reference set.
+Pairwise model comparisons
+The 78 pairwise model comparisons are supplementary and are not used to establish an inferential ranking in the main paper. The accompanying analysis files report mean recall differences,
+raw p-values, and Benjamini–Hochberg-adjusted
+p-values for the procedures in Appendix D.6. Fifteen comparisons survive adjustment when the 16
+topics are treated as separate sign-flip units, both
+with the original Monte Carlo calculation and with
+exhaustive enumeration. None survives when the
+eight matched pairs are retained as blocks; the
+smallest adjusted p-value is 0.087. The mean differences are unchanged. This sensitivity concerns
+the inferential unit, not merely Monte Carlo sampling. Neither result establishes equivalence between models.
+Per-model WEIRD-Serbian comparisons
+Table 9 reports the per-model comparisons. No individual generator has a one-sided raw p < 0.05,
+and none survives adjustment across the 13 generators. Figure 2, panel B, displays mean recall in
+each cultural group for every generator.
+F
+Judge reliability and robustness
+Agreement coefficients
+E.1
+Paired recall at three levels
+Figure 2 shows the same paired scores at the topicpair, model, and individual-cell levels. It complements the primary difference plot in Figure 1. The
+104 cells share generators and matched pairs; they
+are descriptive observations rather than independent replicates.
+The main paper reports nominal Krippendorff’s α,
+which accommodates multiple judges and missing ratings. Table 10 also preserves Fleiss’
+κ and Gwet’s AC1 from the original analysis.
+The pipeline excludes missing ratings and uses
+variable-rater formulations for κ and AC1. These
+coefficients use different chance-agreement calculations; they need not agree in general. Their similar values here support the same descriptive account of judge consistency, but do not establish
+accuracy or equal error rates across cultural settings.
+“‘
+E.2
+Supplementary precision and F1
+Table 8 preserves the model-level recall intervals and supplementary precision and F1 summaries from the saved analysis. Recall remains
+the primary outcome. F1 is the harmonic mean
+F.1
+E.4
+Secondary results
+E.3
+E

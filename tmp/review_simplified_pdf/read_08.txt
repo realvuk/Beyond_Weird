@@ -1,0 +1,70 @@
+Figure 1: Recall differences for the eight matched topic pairs. Each point is the WEIRD-minus-Serbian difference
+averaged over the 13 generators; positive values favour WEIRD topics. The diamond shows the mean across pairs,
+with the 95% t-based confidence interval used in the primary analysis. Pair-specific confidence intervals are not
+shown.
+Table 4: Perspective recall by model category. Each topic receives equal weight. Models are ordered by overall recall within each category. Supplementary intervals are reported in Appendix E.2, with the matched-pair sensitivity
+analysis described in Appendix D.1.
+Model
+Frontier/API systems (5)
+Gemini 3.1 Pro
+0.698
+GPT 5.5
+0.645
+Qwen 3.7 Max
+0.582
+Claude Opus 4.8
+0.578
+Grok 4.3
+0.575
+0.675
+0.635
+0.545
+0.530
+0.565
+Larger open-weight systems (6)
+DeepSeek V4 Pro
+0.645
+GLM 5.2
+0.607
+Kimi K2.6
+0.604
+Mistral Large 3
+0.565
+GPT-OSS 120B
+0.541
+Llama 4 Maverick
+0.502
+0.650
+0.660
+0.595
+0.545
+0.570
+0.520
+0.640
+0.554
+0.614
+0.585
+0.513
+0.485
+Smaller open-weight systems (2)
+Gemma 4 31B
+0.638
+Llama 3.3 70B
+0.458
+0.598
+0.465
+0.679
+0.450
+Overall recall
+WEIRD
+Serbian
+0.720
+0.655
+0.618
+0.625
+0.585
+4.3
+those of other generators therefore require caution.
+RQ3: US and Chinese developer groups
+The four models from Chinese developers have
+mean overall recall 0.609, compared with 0.579

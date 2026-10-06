@@ -67,27 +67,43 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from bweird.config import JudgeConfig, ModelSpec
+from bweird.errors import DataError
+
 log = logging.getLogger("bw_eval")
-logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
 NO_MATCH = "0"  # canonical no-match label used in agreement analyses
+
+# Repo-root-relative defaults for stages 3-6, resolved from this file so each
+# stage runs from any working directory; every path is still overridable on
+# the stage's own command line.
+ROOT_DIR = Path(__file__).resolve().parent.parent
+ADAPTED_DIR = ROOT_DIR / "results" / "adapted"
+AGG_DIR = ROOT_DIR / "results" / "agg"
 
 # ---------------------------------------------------------------------------
 # Loading & validation
 # ---------------------------------------------------------------------------
 
-def load_topics(path: str | Path) -> dict:
-    """Load topics.json, enforcing unique ids and one arm of each per pair."""
+def load_eval_topics(path: str | Path) -> dict:
+    """Load the eval-contract topics.json.
+
+    Enforces unique ids and one arm of each per pair. Distinct from
+    :func:`bweird.schemas.load_topics`, which parses the
+    study's canonical topic instrument (a bare list) into typed ``Topic``
+    objects; this loads the adapter-produced ``{"topics": [...]}`` file that
+    stages 3-6 consume.
+    """
     data = json.loads(Path(path).read_text(encoding="utf-8"))
     topics = {}
     for t in data["topics"]:
         tid = t["topic_id"]
         if tid in topics:
-            raise ValueError(f"duplicate topic_id {tid}")
+            raise DataError(f"duplicate topic_id {tid}")
         if t["arm"] not in ("weird", "serbian"):
-            raise ValueError(f"topic {tid}: arm must be 'weird' or 'serbian'")
+            raise DataError(f"topic {tid}: arm must be 'weird' or 'serbian'")
         if len(t["gold_ids"]) != len(set(t["gold_ids"])):
-            raise ValueError(f"topic {tid}: duplicate gold_ids")
+            raise DataError(f"topic {tid}: duplicate gold_ids")
         topics[tid] = t
     # every pair must have exactly one weird and one serbian arm
     pairs = {}
@@ -105,10 +121,10 @@ def load_panels(path: str | Path) -> dict:
     p = json.loads(Path(path).read_text(encoding="utf-8"))
     for key in ("families", "base_panel", "substitutions"):
         if key not in p:
-            raise ValueError(f"panels.json missing '{key}'")
+            raise DataError(f"panels.json missing '{key}'")
     for j in p["base_panel"]:
         if j not in p["families"]:
-            raise ValueError(f"base panel judge {j} missing from families map")
+            raise DataError(f"base panel judge {j} missing from families map")
     return p
 
 
@@ -146,11 +162,11 @@ def load_verdicts(path: str | Path, topics: dict) -> pd.DataFrame:
             })
     df = pd.DataFrame(rows)
     if df.empty:
-        raise ValueError("no verdicts loaded")
+        raise DataError("no verdicts loaded")
     # validate topic ids and gold ids
     unknown_topics = set(df.topic_id) - set(topics)
     if unknown_topics:
-        raise ValueError(f"verdicts reference unknown topics: {sorted(unknown_topics)}")
+        raise DataError(f"verdicts reference unknown topics: {sorted(unknown_topics)}")
     bad = 0
     for tid, sub in df[df.match.notna()].groupby("topic_id"):
         gold = set(topics[tid]["gold_ids"])
@@ -173,6 +189,23 @@ def load_verdicts(path: str | Path, topics: dict) -> pd.DataFrame:
 # Panel resolution
 # ---------------------------------------------------------------------------
 
+def _judge_config_from_panels_dict(panels: dict) -> JudgeConfig:
+    """Adapt the eval-contract panels.json dict into a typed JudgeConfig.
+
+    Reuses bweird.config's family-disjoint substitution algorithm instead of
+    re-deriving it here (this used to be a second, independently-maintained
+    implementation of the same rule).
+    """
+    families = panels["families"]
+    base = tuple(ModelSpec(slug=j, family=families[j].lower(), display_name=j)
+                 for j in panels["base_panel"])
+    substitutes = {
+        fam.lower(): ModelSpec(slug=slug, family=families[slug].lower(), display_name=slug)
+        for fam, slug in panels["substitutions"].items()
+    }
+    return JudgeConfig(base_panel=base, substitutes=substitutes)
+
+
 def resolve_panel(generator: str, panels: dict, config: str = "disjoint") -> list[str]:
     """Return the 5-judge panel for a generator.
 
@@ -180,42 +213,31 @@ def resolve_panel(generator: str, panels: dict, config: str = "disjoint") -> lis
     (Table 3); config='full' returns the base panel unchanged (used only by
     the bias-control analysis).
     """
-    base = list(panels["base_panel"])
     fam = panels["families"].get(generator)
     if fam is None:
-        raise ValueError(f"generator {generator} missing from families map")
+        raise DataError(f"generator {generator} missing from families map")
+
+    base = list(panels["base_panel"])
     if config == "full":
         _check_distinct_families(base, panels, f"generator {generator} (full panel)")
         return base
 
-    resolved = []
-    for j in base:
-        if panels["families"][j] == fam:
-            sub = panels["substitutions"].get(fam)
-            if sub is None:
-                raise ValueError(
-                    f"generator {generator} (family {fam}) needs a substitute judge "
-                    f"but none is configured")
-            resolved.append(sub)
-        else:
-            resolved.append(j)
-
-    # validation: pairwise-distinct families (subsumes duplicate judges — and
-    # catches two different models from the same family, e.g. Grok 4.3 on the
-    # base panel plus Grok 4.5 substituted in), and no own-family judge
-    _check_distinct_families(resolved, panels, f"generator {generator}")
-    for j in resolved:
-        if panels["families"].get(j) == fam:
-            raise ValueError(
-                f"resolved panel for {generator} still contains own-family judge {j}")
-    return resolved
+    judge_config = _judge_config_from_panels_dict(panels)
+    panel = judge_config.build_panel(fam)
+    return [member.judge.slug for member in panel]
 
 
 def _check_distinct_families(panel_list: list[str], panels: dict, context: str):
+    """Validate pairwise-distinct families for the (unsubstituted) 'full' panel.
+
+    The 'disjoint' path's equivalent validation is handled by
+    JudgeConfig.build_panel; this remains only for 'full' mode, which
+    deliberately skips substitution so build_panel doesn't apply.
+    """
     fams = [panels["families"][j] for j in panel_list]
     dupes = sorted({f for f in fams if fams.count(f) > 1})
     if dupes:
-        raise ValueError(
+        raise DataError(
             f"panel for {context} contains two judges from the same family "
             f"{dupes}: {panel_list}. The panel must comprise five judges from "
             f"pairwise-distinct families; substitutes must come from families "
@@ -348,6 +370,16 @@ def aggregate_all(verdicts: pd.DataFrame, topics: dict, panels: dict,
 # Agreement metrics (variable raters per item; nominal categories)
 # ---------------------------------------------------------------------------
 # items: list of Counter(label -> count). Items with <2 ratings are dropped.
+#
+# These stay hand-rolled rather than delegating to statsmodels/krippendorff:
+# (1) fleiss_kappa needs the variable-rater generalisation -- statsmodels'
+#     version asserts a fixed rater count per item, which real verdicts don't
+#     have (an errored/abstained judge is simply absent from that item); (2)
+# even where a library gives a mathematically-equivalent result, its
+# different summation order changes the last bit of the float, which would
+# "dirty" the committed results/agg/*.csv on every re-run -- verified
+# empirically when trying the swap. This project treats that reproducibility
+# as load-bearing (see the mixed-effects rounding note in 6_eval_stats.py).
 
 def _prep_items(items):
     items = [it for it in items if sum(it.values()) >= 2]

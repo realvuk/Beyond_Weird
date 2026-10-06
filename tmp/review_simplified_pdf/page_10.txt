@@ -1,0 +1,86 @@
+                                   Confidential TACL submission. DO NOT DISTRIBUTE.
+
+
+
+900   unmatched comparison could misattribute such            support consensus, or introduce minority posi-            950
+901   variation to cultural setting. Structural matching      tions depend on the perspectives available to them        951
+902   reduces this ambiguity, although it cannot remove       (Tessler et al., 2024; Chiang et al., 2024; Lee et al.,   952
+903   all differences between controversies.                  2025). A perspective that never enters the candi-         953
+904                                                           date set cannot inform those later processes. Per-        954
+905   5.2   Incomplete coverage remains                       spective recall is thus a prerequisite for their use of   955
+906   The absence of a detectable WEIRD advantage             diverse positions, not a substitute for deliberation      956
+907   does not imply comprehensive coverage. Even the         itself.                                                   957
+908   strongest models omit a substantial share of the        6     Limitations
+                                                                                                                        958
+909   reference perspectives. In this benchmark, omis-                                                                  959
+910   sions occur across both cultural settings rather        The findings apply to a finite reference bench-           960
+911   than consistently concentrating in one.                 mark, a selected set of models and topics, and one        961
+912      Recall varies within each access and size cat-       elicitation and judging procedure.                        962
+913   egory, and individual scores overlap across cat-                                                                  963
+                                                              6.1    The reference sets are not exhaustive
+914   egories. Although the observed category means                                                                     964
+915   differ, none of the four exploratory comparisons        Each topic has five externally documented refer-          965
+      reaches the adjusted significance threshold. These      ence perspectives that a single author constructed.
+916                                                                                                                     966
+      results do not establish equivalence between cate-      Reference statements for Serbian topics are En-
+917                                                                                                                     967
+      gories or identify the effects of size and openness     glish summaries of sources in more than one lan-
+918                                                                                                                     968
+      separately.                                             guage, so summarisation and translation choices
+919                                                                                                                     969
+         Future work could examine what makes partic-         may affect how closely model outputs match them.
+920                                                                                                                     970
+      ular controversies or perspectives difficult to re-     This common target supports comparison across
+921                                                                                                                     971
+      cover. Candidate factors include the amount and         topics, but it cannot represent every legitimate po-
+922                                                                                                                     972
+      visibility of documentation, the prominence of po-      sition within a population. Recall therefore mea-
+923                                                           sures coverage of the reference set. Similarly, an        973
+      sitions in training data, and their responsiveness
+924                                                           output that matches no reference receives no preci-       974
+      to elicitation after post-training. Measuring these
+925                                                           sion credit even if it expresses a legitimate position    975
+      properties directly would allow them to be tested
+926                                                           outside the benchmark. Absolute recall and preci-         976
+      as predictors, rather than inferred from cultural or
+927
+      model-level averages.                                   sion values should be read in this context. Their         977
+928                                                           main value here is comparison under a common              978
+929   5.3   Implications for evaluation and culturally        construction procedure.                                   979
+930         adaptive systems                                                                                            980
+                                                              6.2    Judge agreement does not establish judge
+931                                                                                                                     981
+      The matched design can support comparisons in-                 validity
+932                                                                                                                     982
+      volving other populations. Its purpose is to make       The scores depend on LLM judgments of whether
+933                                                                                                                     983
+      differences in perspective coverage easier to inter-    generated and reference perspectives express the
+934                                                                                                                     984
+      pret by accounting for topic selection. Coverage        same stance.      Agreement and judge-removal
+935                                                                                                                     985
+      should also be evaluated directly. General capabil-     checks describe consistency and sensitivity to
+936                                                                                                                     986
+      ity, multilingual performance, and overall answer       panel membership. They do not establish correct-
+937                                                                                                                     987
+      quality do not establish that a model will recover      ness, because judges may share errors. Excluding
+938                                                                                                                     988
+      the positions relevant to a contested issue.            judges from the generator’s developer family pre-
+939                                                                                                                     989
+         The appropriate intervention depends on the ob-      vents direct within-family evaluation but does not
+940   served deficit. A systematic cultural coverage gap                                                                990
+                                                              remove shared biases or differences in judge strict-
+941   may motivate targeted cultural or linguistic adap-                                                                991
+                                                              ness.
+942   tation. If coverage is incomplete across both sides                                                               992
+943   of a matched comparison, improving the retrieval        6.3    Eight matched pairs limit statistical              993
+944   or elicitation of omitted perspectives may be more             resolution                                         994
+945   relevant. The present result does not make cul-         The primary comparison rests on eight topic pairs         995
+946   tural adaptation unnecessary, instead it helps spec-    whose recall differences vary widely (SD 10.7 per-        996
+947   ify what an intervention would need to address.         centage points). The 95% confidence interval for          997
+948      This distinction also matters for AI-mediated        the mean gap spans −10.3 to 7.7 points, leav-             998
+949   deliberation. Systems that expose disagreement,         ing differences in either direction compatible with       999
+
+
+
+
+                                                             10
